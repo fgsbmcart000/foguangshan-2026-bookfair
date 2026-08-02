@@ -153,7 +153,7 @@ export default function Home() {
       <a className="skip-link" href="#content">跳至主要內容</a>
       <header className="site-header">
         <a className="brand" href="#top" onClick={closeMenu} aria-label="回到首頁">
-          <span className="brand-mark">吉</span>
+          <img className="brand-animal" src="/assets/animal-icons/owl.png" alt="" />
           <span>
             <strong>佛光山 2026 書展暨蔬食博覽會</strong>
             <small>吉祥動物派對</small>
@@ -216,15 +216,15 @@ export default function Home() {
             </article>
             <div className="info-stack">
               <div className="info-card teal-card">
-                <span className="info-icon" aria-hidden="true">日</span>
+                <img className="info-animal" src="/assets/animal-icons/deer.png" alt="" />
                 <div><small>活動日期</small><strong>2026.11.07 — 11.13</strong></div>
               </div>
               <div className="info-card cream-card">
-                <span className="info-icon" aria-hidden="true">時</span>
+                <img className="info-animal" src="/assets/animal-icons/turtle.png" alt="" />
                 <div><small>開放時間</small><strong>平日 09:00–18:00<br />假日 09:00–19:00</strong></div>
               </div>
               <div className="info-card yellow-card">
-                <span className="info-icon" aria-hidden="true">地</span>
+                <img className="info-animal" src="/assets/animal-icons/whale.png" alt="" />
                 <div><small>活動地點</small><strong>佛光山佛陀紀念館</strong></div>
               </div>
               <div className="free-badge"><span>FREE</span> 免費參觀</div>
@@ -242,9 +242,7 @@ export default function Home() {
             {highlights.map((item) => (
               <article className={`highlight-card ${item.color}`} key={item.title}>
                 <span className="highlight-number">{item.number}</span>
-                <div className="animal-symbol" aria-hidden="true">
-                  {item.number === "01" ? "◉" : item.number === "02" ? "❀" : "✦"}
-                </div>
+                <img className="highlight-animal" src={item.number === "01" ? "/assets/animal-icons/owl.png" : item.number === "02" ? "/assets/animal-icons/turtle.png" : "/assets/animal-icons/rabbit.png"} alt="" />
                 <small>{item.subtitle}</small>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
@@ -334,7 +332,7 @@ export default function Home() {
           </div>
           <div className="online-shell">
             <div className="coming-soon">
-              <span className="book-lines" aria-hidden="true">冊</span>
+              <img className="online-animal" src="/assets/animal-icons/bear.png" alt="" />
               <p>2026 線上書展</p>
               <h3>精選書單・即將上線</h3>
               <span>敬請期待</span>
@@ -400,7 +398,7 @@ export default function Home() {
           </div>
           <div className="visit-grid">
             <article className="venue-card">
-              <div className="map-pattern" aria-hidden="true"><span>佛</span></div>
+              <div className="map-pattern" aria-hidden="true"><img src="/assets/animal-icons/giraffe.png" alt="" /></div>
               <div>
                 <small>活動地點</small>
                 <h3>佛光山佛陀紀念館</h3>
@@ -409,9 +407,9 @@ export default function Home() {
               </div>
             </article>
             <div className="travel-cards">
-              <article><span>車</span><div><h3>自行開車</h3><p>國道 10 號「旗山大樹交流道」下，接省道 29 號右轉前往佛光山佛陀紀念館。</p></div></article>
-              <article><span>時</span><div><h3>開放時間</h3><p>週一至週五 09:00–18:00<br />週六至週日 09:00–19:00</p></div></article>
-              <article><span>禮</span><div><h3>開幕典禮</h3><p>11 月 7 日（六）10:30<br />佛陀紀念館本館大覺堂</p></div></article>
+              <article><img src="/assets/animal-icons/rhino.png" alt="" /><div><h3>自行開車</h3><p>國道 10 號「旗山大樹交流道」下，接省道 29 號右轉前往佛光山佛陀紀念館。</p></div></article>
+              <article><img src="/assets/animal-icons/turtle.png" alt="" /><div><h3>開放時間</h3><p>週一至週五 09:00–18:00<br />週六至週日 09:00–19:00</p></div></article>
+              <article><img src="/assets/animal-icons/rabbit.png" alt="" /><div><h3>開幕典禮</h3><p>11 月 7 日（六）10:30<br />佛陀紀念館本館大覺堂</p></div></article>
             </div>
           </div>
           <div className="notice-bar"><strong>參觀提醒</strong><span>戶外活動建議準備防曬、防雨用品與環保水瓶；最新交通及活動異動以主辦單位公告為準。</span></div>
@@ -419,7 +417,7 @@ export default function Home() {
       </div>
 
       <footer>
-        <div className="footer-title"><span>吉</span><div><strong>佛光山 2026 年書展暨蔬食博覽會</strong><small>Fo Guang Shan 2026 Book Fair and Vegetarian Expo</small></div></div>
+        <div className="footer-title"><img className="footer-animal" src="/assets/animal-icons/bear.png" alt="" /><div><strong>佛光山 2026 年書展暨蔬食博覽會</strong><small>Fo Guang Shan 2026 Book Fair and Vegetarian Expo</small></div></div>
         <div className="footer-orgs"><p>指導單位｜教育部</p><p>主辦單位｜環境部、高雄市政府、財團法人人間文教基金會</p></div>
         <p className="copyright">© 2026 Fo Guang Shan Book Fair & Vegetarian Expo</p>
       </footer>

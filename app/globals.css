@@ -42,7 +42,13 @@ img { display: block; max-width: 100%; }
   backdrop-filter: blur(18px);
 }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.brand-animal { width: 54px; height: 54px; object-fit: contain; }
+.brand-animal {
+  width: 92px;
+  height: 54px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 13px;
+}
 .brand strong { display: block; font-size: 15px; letter-spacing: .04em; }
 .brand small { display: block; margin-top: 2px; color: var(--teal); font-size: 12px; letter-spacing: .15em; }
 .main-nav { display: flex; align-items: center; gap: clamp(13px, 1.8vw, 28px); }
@@ -236,7 +242,7 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
 @media (max-width: 720px) {
   html { scroll-padding-top: 70px; }
   .site-header { min-height: 70px; padding: 9px 16px; }
-  .brand-animal { width: 46px; height: 46px; }
+  .brand-animal { width: 72px; height: 44px; border-radius: 10px; }
   .brand strong { max-width: 225px; font-size: 12px; }
   .brand small { font-size: 10px; }
   .main-nav { top: 70px; }

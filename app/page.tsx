@@ -153,7 +153,11 @@ export default function Home() {
       <a className="skip-link" href="#content">跳至主要內容</a>
       <header className="site-header">
         <a className="brand" href="#top" onClick={closeMenu} aria-label="回到首頁">
-          <img className="brand-animal" src="/assets/animal-icons/owl.png" alt="" />
+          <img
+            className="brand-animal"
+            src="/assets/brand-reading-group.png"
+            alt="貓頭鷹、台灣黑熊、女孩與烏龜一起閱讀"
+          />
           <span>
             <strong>佛光山 2026 書展暨蔬食博覽會</strong>
             <small>吉祥動物派對</small>

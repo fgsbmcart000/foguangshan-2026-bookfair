@@ -5,8 +5,8 @@ import { useState } from "react";
 const navigation = [
   ["關於書展", "about"],
   ["活動亮點", "highlights"],
-  ["線上書展", "online"],
   ["每日行程", "schedule"],
+  ["線上書展", "online"],
   ["教育推廣", "education"],
   ["攤位一覽", "booths"],
   ["參觀資訊", "visit"],
@@ -118,6 +118,29 @@ const onlineCategories = [
   ["心靈成長", "在字裡行間安住自己"],
   ["外文精選", "打開世界視野的閱讀"],
 ];
+
+const activityOverview = [
+  ["好好看", "書展", "11/7（六）–11/13（五）", "09:00–18:00", "風雨長廊"],
+  ["好好看", "雲水書坊－行動圖書館", "11/7（六）–11/13（五）", "09:00–18:00", "成佛大道"],
+  ["好好看", "文化深耕・書香生活・閱讀閱有趣", "11/7（六）", "配合開幕式", "本館大覺堂"],
+  ["好好看", "洪易戶外雕塑展", "11/7（六）–11/13（五）", "09:00–18:00", "萬人照相台及館內戶外草地"],
+  ["好好看", "走進有熊國", "11/7（六）–11/13（五）", "09:00–18:00", "禮敬大廳二樓迴廊"],
+  ["好好看", "鈷藍猶珍－震旦典藏元青花特展", "11/7（六）–11/13（五）", "09:00–18:00", "本館二樓第一展廳"],
+  ["好好看", "菩提心起－國立歷史博物館典藏佛像特展", "11/7（六）–11/13（五）", "09:00–18:00", "本館二樓第二展廳"],
+  ["好好看", "海洋未來式巡迴特展", "11/7（六）–11/13（五）", "09:00–18:00", "本館二樓第三展廳"],
+  ["好好看", "名家講座", "11/8（日）–11/12（四）", "14:00–15:30", "禮敬大廳五觀堂"],
+  ["好好看", "千人抄經", "11/7（六）–11/13（五）", "10:00–17:00", "大佛平台抄經堂"],
+  ["好好吃", "蔬食博覽會", "11/7（六）–11/13（五）", "09:00–18:00", "風雨長廊"],
+  ["好好吃", "綠色飲食", "11/7（六）–11/13（五）", "依各滴水坊用餐時間", "各滴水坊"],
+  ["好好吃", "千人茶禪", "11/7（六）", "16:00–17:30", "菩提廣場"],
+  ["好好吃", "千人素食 Buffet", "11/7（六）", "17:30–18:30", "菩提廣場"],
+  ["好好玩", "戲曲好好玩《九色鹿》", "11/9（一）–11/13（五）", "10:30、13:30（各30分鐘）", "本館大覺堂"],
+  ["好好玩", "三好兒童體驗館", "11/7（六）–11/13（五）", "09:00–18:00", "二眾塔"],
+  ["好好玩", "大樹下的故事屋", "11/7（六）–11/13（五）", "09:00–16:00", "犀牛區"],
+  ["好好玩", "佛光環教列車", "11/7（六）–11/13（五）", "09:00–17:00", "二眾塔、四給塔、七誡塔"],
+  ["好好玩", "佛教植物園區", "11/7（六）–11/13（五）", "09:00–18:00", "佛教植物園區"],
+  ["好好玩", "龍火車與馬車", "11/8（日）–11/13（五）", "假日11:00–17:00／平日09:30–15:30", "成佛大道"],
+] as const;
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -233,31 +256,33 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section online-section" id="online">
+        <section className="section overview-section" aria-labelledby="overview-title">
           <div className="section-heading split-heading">
             <div>
-              <p className="eyebrow">Online book fair</p>
-              <h2>線上書展</h2>
+              <p className="eyebrow">Program overview</p>
+              <h2 id="overview-title">活動一覽表</h2>
             </div>
-            <p className="lead">讓好書不受距離限制。2026 主題選書與參展出版社書單將陸續上線。</p>
+            <p className="lead">依企劃書彙整主要活動日期、時間及場地，出發前可快速查找想參加的活動。</p>
           </div>
-          <div className="online-shell">
-            <div className="coming-soon">
-              <span className="book-lines" aria-hidden="true">冊</span>
-              <p>2026 線上書展</p>
-              <h3>精選書單・即將上線</h3>
-              <span>敬請期待</span>
-            </div>
-            <div className="category-list">
-              {onlineCategories.map(([title, text], index) => (
-                <div className="category-row" key={title}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <div><strong>{title}</strong><small>{text}</small></div>
-                  <i aria-hidden="true">↗</i>
-                </div>
-              ))}
-            </div>
+          <div className="overview-table-wrap" tabIndex={0} aria-label="活動一覽表，可左右捲動">
+            <table className="overview-table">
+              <thead>
+                <tr><th>主題</th><th>活動名稱</th><th>日期</th><th>時間</th><th>地點</th></tr>
+              </thead>
+              <tbody>
+                {activityOverview.map(([theme, title, date, time, place]) => (
+                  <tr key={title}>
+                    <td><span className={`theme-pill ${theme}`}>{theme}</span></td>
+                    <th scope="row">{title}</th>
+                    <td>{date}</td>
+                    <td>{time}</td>
+                    <td>{place}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+          <p className="overview-note">※ 活動內容、場次與地點如有調整，以主辦單位最新公告為準。</p>
         </section>
 
         <section className="section schedule-section" id="schedule">
@@ -295,6 +320,33 @@ export default function Home() {
                 </div>
               ))}
               <p className="schedule-note">※ 完整場次與講者資訊將依主辦單位最新公告更新。</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section online-section" id="online">
+          <div className="section-heading split-heading">
+            <div>
+              <p className="eyebrow">Online book fair</p>
+              <h2>線上書展</h2>
+            </div>
+            <p className="lead">讓好書不受距離限制。2026 主題選書與參展出版社書單將陸續上線。</p>
+          </div>
+          <div className="online-shell">
+            <div className="coming-soon">
+              <span className="book-lines" aria-hidden="true">冊</span>
+              <p>2026 線上書展</p>
+              <h3>精選書單・即將上線</h3>
+              <span>敬請期待</span>
+            </div>
+            <div className="category-list">
+              {onlineCategories.map(([title, text], index) => (
+                <div className="category-row" key={title}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <div><strong>{title}</strong><small>{text}</small></div>
+                  <i aria-hidden="true">↗</i>
+                </div>
+              ))}
             </div>
           </div>
         </section>

@@ -155,7 +155,7 @@ export default function Home() {
         <a className="brand" href="#top" onClick={closeMenu} aria-label="回到首頁">
           <img
             className="brand-animal"
-            src="/assets/brand-reading-group.png"
+            src="/assets/brand-reading-group-transparent.png"
             alt="貓頭鷹、台灣黑熊、女孩與烏龜一起閱讀"
           />
           <span>

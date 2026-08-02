@@ -111,13 +111,70 @@ const schedule = [
   },
 ];
 
-const onlineCategories = [
-  ["環境教育", "與自然共生的閱讀選書"],
-  ["養生健康", "照顧身心的生活提案"],
-  ["品德生命", "陪伴孩子成長的好故事"],
-  ["心靈成長", "在字裡行間安住自己"],
-  ["外文精選", "打開世界視野的閱讀"],
-];
+const bookShowcase = [
+  ["與自然一起閱讀", "環境教育", "從日常觀察認識土地、生態與萬物共生。"],
+  ["小小生態觀察家", "環境教育", "陪孩子發現植物、昆蟲與四季變化。"],
+  ["海洋的未來式", "環境教育", "理解海洋環境，從閱讀開始守護藍色星球。"],
+  ["低碳生活練習", "環境教育", "把惜物、減塑與節能化為每日行動。"],
+  ["一日好食光", "養生健康", "從均衡飲食與規律生活照顧自己。"],
+  ["身心安住的日常", "養生健康", "在忙碌生活中找回呼吸與安定。"],
+  ["四季養生提案", "養生健康", "跟著節氣調整飲食、作息與身體感受。"],
+  ["樂活蔬食餐桌", "養生健康", "用豐富植物食材創造健康美味。"],
+  ["做好事的力量", "品德生命", "從小小善行開始，為身邊帶來溫暖。"],
+  ["說好話的練習", "品德生命", "學習傾聽、表達與真誠溝通。"],
+  ["存好心的故事", "品德生命", "用善念理解自己，也關懷他人。"],
+  ["勇敢與善良", "品德生命", "陪伴孩子面對選擇、責任與成長。"],
+  ["親子共讀時光", "品德生命", "在故事與對話中累積家庭記憶。"],
+  ["和情緒做朋友", "品德生命", "認識感受，練習溫柔地照顧內心。"],
+  ["生命中的好故事", "品德生命", "從真實故事體會珍惜、感恩與希望。"],
+  ["成長路上的光", "品德生命", "在挫折與改變中發現自己的力量。"],
+  ["靜心閱讀課", "心靈成長", "以閱讀沉澱思緒，重新看見內在。"],
+  ["日常裡的禪意", "心靈成長", "在吃飯、行走與工作中練習專注。"],
+  ["慈悲的力量", "心靈成長", "從理解與包容出發，建立溫柔關係。"],
+  ["書寫自己的心", "心靈成長", "透過閱讀與書寫整理生命經驗。"],
+  ["世界故事選讀", "外文精選", "從不同文化的故事打開國際視野。"],
+  ["雙語自然探索", "外文精選", "用雙語閱讀認識動物與自然環境。"],
+  ["文化旅行讀本", "外文精選", "在文字與圖像中走訪多元世界。"],
+  ["外文圖畫書精選", "外文精選", "以優美圖像陪伴孩子跨語言閱讀。"],
+] as const;
+
+const boothShowcase = [
+  ["植感漢堡", "西式蔬食", "植物排、鮮蔬與特製醬料組成的飽足人氣餐點。"],
+  ["酥香蔬食小點", "台式點心", "外酥內嫩的經典小吃，適合全家一起分享。"],
+  ["香麻蔬食燙", "暖心料理", "多種蔬菜、豆製品與菇類自由搭配。"],
+  ["手作蔬食水餃", "麵食點心", "新鮮時蔬入餡，呈現清甜扎實口感。"],
+  ["古早味拌麵", "台式麵食", "香氣濃郁的拌醬與彈牙麵條簡單耐吃。"],
+  ["椰香蔬食咖哩", "異國料理", "溫潤香料與根莖蔬菜熬煮出豐富層次。"],
+  ["五穀能量飯糰", "輕食料理", "穀物、蔬菜與植物蛋白的便利組合。"],
+  ["彩蔬薄餅披薩", "西式蔬食", "薄脆餅皮搭配繽紛蔬菜與香草。"],
+  ["元氣蔬食便當", "健康餐盒", "兼顧蛋白質、蔬菜與全穀的均衡餐盒。"],
+  ["植物肉串燒", "創意料理", "醬香炙烤風味，展現植物料理新口感。"],
+  ["香煎蘿蔔糕", "台式點心", "外層微酥、內裡柔軟的熟悉好滋味。"],
+  ["鮮蔬手作春捲", "輕食料理", "以當季蔬菜包入清爽口感與自然甜味。"],
+  ["濃醇豆乳飲", "植物飲品", "豆香溫潤，適合搭配各式蔬食餐點。"],
+  ["繽紛鮮果飲", "天然飲品", "以新鮮水果調和出清爽自然風味。"],
+  ["台灣好茶", "茶飲", "精選茶葉沖泡，感受甘醇回韻與土地香氣。"],
+  ["植感咖啡", "咖啡飲品", "咖啡搭配植物奶，呈現柔和滑順口感。"],
+  ["古早味豆花", "傳統甜品", "細緻豆花搭配配料，清爽而不甜膩。"],
+  ["季節水果冰品", "清涼甜品", "用當季水果帶來自然酸甜與沁涼口感。"],
+  ["純植物甜點", "烘焙甜品", "不使用蛋奶也能呈現細膩香甜風味。"],
+  ["手作蔬食烘焙", "烘焙點心", "麵包與小點以單純食材展現溫暖香氣。"],
+  ["原味堅果小舖", "健康零食", "保留堅果原味與營養，方便隨身補充。"],
+  ["自然果乾", "在地好物", "低度加工保留水果風味與自然甜香。"],
+  ["友善在地農產", "產地直送", "從產地認識當季蔬果與支持友善耕作。"],
+  ["蔬食特色伴手禮", "精選好物", "將健康、環保與地方風味一起帶回家。"],
+] as const;
+
+const catalogAnimals = [
+  "/assets/animal-icons/owl.png",
+  "/assets/animal-icons/bear.png",
+  "/assets/animal-icons/deer.png",
+  "/assets/animal-icons/turtle.png",
+  "/assets/animal-icons/rabbit.png",
+  "/assets/animal-icons/whale.png",
+  "/assets/animal-icons/rhino.png",
+  "/assets/animal-icons/giraffe.png",
+] as const;
 
 const activityOverview = [
   ["好好看", "書展", "精選環境教育、養生健康、品德生命、心靈成長與外文讀物，透過多元主題選書，讓親子以閱讀拓展視野、培養思考與良好品格。", "11/7（六）–11/13（五）", "09:00–18:00", "風雨長廊"],
@@ -368,24 +425,28 @@ export default function Home() {
               <p className="eyebrow">Online book fair</p>
               <h2>線上書展</h2>
             </div>
-            <p className="lead">讓好書不受距離限制。2026 主題選書與參展出版社書單將陸續上線。</p>
+            <p className="lead">以線上書店方式展示 24 本主題選書，不標示價格，讓讀者專注探索每本書的內容與閱讀價值。</p>
           </div>
-          <div className="online-shell">
-            <div className="coming-soon">
-              <img className="online-animal" src="/assets/animal-icons/bear.png" alt="" />
-              <p>2026 線上書展</p>
-              <h3>精選書單・即將上線</h3>
-              <span>敬請期待</span>
-            </div>
-            <div className="category-list">
-              {onlineCategories.map(([title, text], index) => (
-                <div className="category-row" key={title}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <div><strong>{title}</strong><small>{text}</small></div>
-                  <i aria-hidden="true">↗</i>
+          <div className="catalog-intro">
+            <strong>24 本主題選書</strong>
+            <span>以下書名、封面與介紹為版型示意，正式書單確認後可逐本替換。</span>
+          </div>
+          <div className="book-grid" aria-label="線上書展24本主題選書">
+            {bookShowcase.map(([title, category, description], index) => (
+              <article className="book-card" key={title}>
+                <div className="book-cover">
+                  <span>示意選書 {String(index + 1).padStart(2, "0")}</span>
+                  <img src={catalogAnimals[index % catalogAnimals.length]} alt="" />
+                  <small>2026<br />BOOK FAIR</small>
                 </div>
-              ))}
-            </div>
+                <div className="book-card-copy">
+                  <span>{category}</span>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                  <strong>書籍資訊待公布</strong>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
@@ -428,6 +489,51 @@ export default function Home() {
             </div>
             <div className="booth-status"><span>名單整理中</span><strong>完整攤位圖即將公開</strong><p>主辦單位將於參展商與位置確認後更新此頁。</p></div>
           </div>
+
+          <section className="booth-map-section" aria-labelledby="booth-map-title">
+            <div className="subsection-heading">
+              <div><small>SIMULATED FLOOR PLAN</small><h3 id="booth-map-title">模擬攤位配置表</h3></div>
+              <p>以 24 個蔬食攤位模擬風雨長廊動線，正式攤號與位置確認後可直接更新。</p>
+            </div>
+            <div className="booth-map" aria-label="24個蔬食攤位模擬配置">
+              <div className="booth-map-row">
+                {boothShowcase.slice(0, 12).map(([dish], index) => (
+                  <div className="booth-cell" key={dish}><strong>V{String(index + 1).padStart(2, "0")}</strong><span>{dish}</span></div>
+                ))}
+              </div>
+              <div className="main-aisle"><span>入口</span><strong>風雨長廊・主要參觀動線</strong><span>出口</span></div>
+              <div className="booth-map-row">
+                {boothShowcase.slice(12).map(([dish], index) => (
+                  <div className="booth-cell" key={dish}><strong>V{String(index + 13).padStart(2, "0")}</strong><span>{dish}</span></div>
+                ))}
+              </div>
+            </div>
+            <p className="overview-note">※ 此圖為版面與動線模擬，不代表正式攤位位置。</p>
+          </section>
+
+          <section className="food-showcase" aria-labelledby="food-showcase-title">
+            <div className="subsection-heading">
+              <div><small>VEGGIE FOOD PICKS</small><h3 id="food-showcase-title">24 家蔬食攤位・推薦美食</h3></div>
+              <p>以線上商店卡片方式呈現攤位招牌料理，不顯示價格；正式攤商名單與餐點照片可逐項替換。</p>
+            </div>
+            <div className="food-grid" aria-label="24家蔬食攤位推薦美食">
+              {boothShowcase.map(([dish, category, description], index) => (
+                <article className="food-card" key={dish}>
+                  <div className="food-card-media">
+                    <span>V{String(index + 1).padStart(2, "0")}</span>
+                    <img src={catalogAnimals[(index + 3) % catalogAnimals.length]} alt="" />
+                    <small>餐點圖片待更新</small>
+                  </div>
+                  <div className="food-card-copy">
+                    <span>示意攤位 {String(index + 1).padStart(2, "0")}・{category}</span>
+                    <h4>{dish}</h4>
+                    <p>{description}</p>
+                    <strong>攤商資訊待公布</strong>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
         </section>
 
         <section className="section visit-section" id="visit">

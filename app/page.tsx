@@ -142,6 +142,15 @@ const activityOverview = [
   ["好好玩", "龍火車與馬車", "搭乘龍火車穿梭成佛大道，或體驗歐式馬車的悠閒步調，與家人從不同角度欣賞佛館景致，重溫充滿童趣的遊園時光。", "11/8（日）–11/13（五）", "假日11:00–17:00／平日09:30–15:30", "成佛大道"],
 ] as const;
 
+const activityThemes = [
+  ["好好看", "閱讀・文化・藝術", "從好書、講座到典藏展覽，展開一場跨越閱讀、藝術與生命關懷的文化旅程。", "/assets/animal-icons/owl.png"],
+  ["好好吃", "蔬食・健康・永續", "用蔬食、茶禪與在地食材連結健康生活，從日常飲食實踐慈悲與環境永續。", "/assets/animal-icons/turtle.png"],
+  ["好好玩", "親子・體驗・共學", "以戲曲、故事、生態與遊園體驗陪伴親子，在互動參與中創造共同學習的吉祥記憶。", "/assets/animal-icons/rabbit.png"],
+] as const;
+
+// 後續取得活動照片時，只要以活動名稱設定圖片路徑，就會自動取代目前的動物示意圖。
+const activityPhotoByTitle: Record<string, string> = {};
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDay, setActiveDay] = useState(0);
@@ -221,7 +230,7 @@ export default function Home() {
             <div className="info-stack">
               <div className="info-card teal-card">
                 <img className="info-animal" src="/assets/animal-icons/deer.png" alt="" />
-                <div><small>活動日期</small><strong>2026.11.07 — 11.13</strong></div>
+                <div><small>活動日期</small><strong>2026.11.07(六) — 11.13(五)</strong></div>
               </div>
               <div className="info-card cream-card">
                 <img className="info-animal" src="/assets/animal-icons/turtle.png" alt="" />
@@ -264,25 +273,52 @@ export default function Home() {
               <p className="eyebrow">Program overview</p>
               <h2 id="overview-title">活動一覽表</h2>
             </div>
-            <p className="lead">依企劃書彙整主要活動日期、時間及場地，出發前可快速查找想參加的活動。</p>
+            <p className="lead">依企劃書彙整主要活動內容、日期、時間及場地，並以圖文卡片呈現；後續活動照片可直接置入各卡片上方。</p>
           </div>
-          <div className="overview-table-wrap" tabIndex={0} aria-label="活動一覽表，可左右捲動">
-            <table className="overview-table">
-              <thead>
-                <tr><th>主題</th><th>活動名稱與內容</th><th>日期</th><th>時間</th><th>地點</th></tr>
-              </thead>
-              <tbody>
-                {activityOverview.map(([theme, title, description, date, time, place]) => (
-                  <tr key={title}>
-                    <td><span className={`theme-pill ${theme}`}>{theme}</span></td>
-                    <th scope="row"><strong>{title}</strong><small>{description}</small></th>
-                    <td>{date}</td>
-                    <td>{time}</td>
-                    <td>{place}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="activity-groups">
+            {activityThemes.map(([theme, subtitle, introduction, fallbackImage]) => {
+              const activities = activityOverview.filter(([activityTheme]) => activityTheme === theme);
+
+              return (
+                <section className={`activity-group theme-${theme}`} key={theme} aria-labelledby={`theme-${theme}`}>
+                  <div className="activity-group-heading">
+                    <img src={fallbackImage} alt="" />
+                    <div>
+                      <p>{subtitle}</p>
+                      <h3 id={`theme-${theme}`}>吉祥{theme}</h3>
+                      <span>{introduction}</span>
+                    </div>
+                    <strong>{activities.length} 項活動</strong>
+                  </div>
+
+                  <div className="activity-card-grid">
+                    {activities.map(([, title, description, date, time, place], index) => {
+                      const photo = activityPhotoByTitle[title];
+                      const animalFallbacks = [fallbackImage, "/assets/animal-icons/bear.png", "/assets/animal-icons/deer.png", "/assets/animal-icons/whale.png", "/assets/animal-icons/rhino.png", "/assets/animal-icons/giraffe.png"];
+
+                      return (
+                        <article className="activity-card" key={title}>
+                          <div className={`activity-media ${photo ? "has-photo" : "is-placeholder"}`}>
+                            <img src={photo || animalFallbacks[index % animalFallbacks.length]} alt={photo ? `${title}活動照片` : ""} />
+                            {!photo && <span>活動影像可更新</span>}
+                          </div>
+                          <div className="activity-card-body">
+                            <span className={`theme-pill ${theme}`}>{theme}</span>
+                            <h4>{title}</h4>
+                            <p>{description}</p>
+                            <dl className="activity-meta">
+                              <div><dt>日期</dt><dd>{date}</dd></div>
+                              <div><dt>時間</dt><dd>{time}</dd></div>
+                              <div><dt>地點</dt><dd>{place}</dd></div>
+                            </dl>
+                          </div>
+                        </article>
+                      );
+                    })}
+                  </div>
+                </section>
+              );
+            })}
           </div>
           <p className="overview-note">※ 活動內容、場次與地點如有調整，以主辦單位最新公告為準。</p>
         </section>

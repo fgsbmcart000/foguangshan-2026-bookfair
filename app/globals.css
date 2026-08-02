@@ -108,19 +108,35 @@ h1, h2 { margin: 0; font-size: clamp(38px, 5vw, 68px); line-height: 1.06; letter
 .tag-list span { padding: 7px 12px; border: 1px solid rgba(255,255,255,.55); border-radius: 999px; font-size: 12px; }
 
 .overview-section { background: #fffdf7; }
-.overview-table-wrap { max-width: 1300px; margin: auto; overflow-x: auto; border: 1px solid var(--line); border-radius: 26px 8px 26px 8px; background: #fff; box-shadow: 0 20px 55px rgba(20,59,76,.07); }
-.overview-table { width: 100%; min-width: 1180px; border-collapse: collapse; }
-.overview-table th, .overview-table td { padding: 18px 20px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
-.overview-table thead th { color: #fff; background: var(--deep-teal); font-size: 13px; letter-spacing: .08em; }
-.overview-table thead th:first-child { border-radius: 24px 0 0; }
-.overview-table tbody tr:last-child th, .overview-table tbody tr:last-child td { border-bottom: 0; }
-.overview-table tbody tr:hover { background: #fffaf0; }
-.overview-table tbody th { min-width: 440px; max-width: 520px; }
-.overview-table tbody th strong, .overview-table tbody th small { display: block; }
-.overview-table tbody th strong { color: var(--ink); font-size: 17px; }
-.overview-table tbody th small { margin-top: 8px; color: var(--muted); font-size: 13px; font-weight: 400; line-height: 1.75; }
-.overview-table tbody td { color: #4e676e; font-size: 14px; white-space: nowrap; }
-.overview-table tbody td:last-child { white-space: normal; }
+.activity-groups { display: grid; gap: 76px; max-width: 1300px; margin: auto; }
+.activity-group { scroll-margin-top: 100px; }
+.activity-group-heading { display: grid; grid-template-columns: 108px 1fr auto; align-items: center; gap: 22px; margin-bottom: 24px; padding: 22px 28px; border-radius: 30px 9px 30px 9px; background: #e9f5f2; }
+.theme-好好吃 .activity-group-heading { background: #edf4dc; }
+.theme-好好玩 .activity-group-heading { background: #fff0dc; }
+.activity-group-heading img { width: 108px; height: 92px; object-fit: contain; }
+.activity-group-heading p { margin: 0 0 4px; color: var(--teal); font-size: 12px; font-weight: 900; letter-spacing: .16em; }
+.activity-group-heading h3 { margin: 0; font-size: clamp(28px, 3vw, 42px); }
+.activity-group-heading span { display: block; max-width: 750px; margin-top: 7px; color: var(--muted); line-height: 1.7; }
+.activity-group-heading > strong { align-self: start; padding: 8px 13px; border-radius: 999px; color: #fff; background: var(--blue); font-size: 12px; white-space: nowrap; }
+.theme-好好吃 .activity-group-heading > strong { background: var(--green); }
+.theme-好好玩 .activity-group-heading > strong { background: var(--orange); }
+.activity-card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.activity-card { display: grid; grid-template-columns: minmax(190px, .72fr) 1.28fr; min-height: 330px; overflow: hidden; border: 1px solid var(--line); border-radius: 28px 8px 28px 8px; background: #fff; box-shadow: 0 18px 45px rgba(20,59,76,.07); transition: transform .2s, box-shadow .2s; }
+.activity-card:hover { transform: translateY(-4px); box-shadow: 0 24px 55px rgba(20,59,76,.12); }
+.activity-media { position: relative; display: grid; min-height: 100%; place-items: center; overflow: hidden; background: linear-gradient(145deg, #dff1ec, #a8d9d1); }
+.theme-好好吃 .activity-media { background: linear-gradient(145deg, #eef2ce, #c8d98d); }
+.theme-好好玩 .activity-media { background: linear-gradient(145deg, #fff0d6, #f7c985); }
+.activity-media img { width: 78%; height: 76%; object-fit: contain; transition: transform .25s; }
+.activity-card:hover .activity-media img { transform: scale(1.04); }
+.activity-media.has-photo img { width: 100%; height: 100%; object-fit: cover; }
+.activity-media span { position: absolute; right: 12px; bottom: 12px; padding: 6px 9px; border-radius: 6px; color: rgba(20,59,76,.7); background: rgba(255,255,255,.82); font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+.activity-card-body { display: flex; align-items: flex-start; flex-direction: column; padding: 26px; }
+.activity-card-body h4 { margin: 12px 0 10px; font-size: clamp(21px, 2vw, 27px); line-height: 1.35; }
+.activity-card-body > p { margin: 0 0 22px; color: var(--muted); font-size: 14px; line-height: 1.85; }
+.activity-meta { width: 100%; margin: auto 0 0; padding-top: 16px; border-top: 1px solid var(--line); }
+.activity-meta div { display: grid; grid-template-columns: 44px 1fr; gap: 10px; margin-top: 7px; }
+.activity-meta dt { color: var(--teal); font-size: 12px; font-weight: 900; }
+.activity-meta dd { margin: 0; color: #4e676e; font-size: 13px; line-height: 1.5; }
 .theme-pill { display: inline-flex; min-width: 74px; justify-content: center; padding: 7px 10px; border-radius: 999px; color: #fff; font-size: 12px; font-weight: 900; }
 .theme-pill.好好看 { background: var(--blue); }
 .theme-pill.好好吃 { background: var(--green); }
@@ -235,7 +251,7 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
   .highlight-card { min-height: auto; border-radius: 32px 10px 32px 10px; }
   .highlight-card p { min-height: 0; }
   .highlight-animal { height: 130px; }
-  .overview-table-wrap { border-radius: 18px 6px 18px 6px; }
+  .activity-card-grid { grid-template-columns: 1fr; }
   .booth-status { min-height: 300px; }
 }
 
@@ -257,6 +273,13 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
   .info-card { padding: 20px; }
   .highlight-card { padding: 28px; }
   .highlight-card h3 { font-size: 29px; }
+  .activity-groups { gap: 54px; }
+  .activity-group-heading { grid-template-columns: 76px 1fr; gap: 15px; padding: 18px; }
+  .activity-group-heading img { width: 76px; height: 70px; }
+  .activity-group-heading > strong { grid-column: 2; justify-self: start; }
+  .activity-card { grid-template-columns: 1fr; min-height: 0; }
+  .activity-media { min-height: 235px; }
+  .activity-card-body { padding: 24px 21px; }
   .coming-soon { min-height: 390px; }
   .date-tabs { display: flex; overflow-x: auto; border-radius: 12px; }
   .date-tabs button { flex: 0 0 82px; }

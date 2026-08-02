@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navigation = [
   ["關於書展", "about"],
@@ -211,8 +211,46 @@ const activityPhotoByTitle: Record<string, string> = {};
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDay, setActiveDay] = useState(0);
+  const [activeBook, setActiveBook] = useState<number | null>(null);
+  const [activeBookPage, setActiveBookPage] = useState(0);
 
   const closeMenu = () => setMenuOpen(false);
+  const closeBook = () => setActiveBook(null);
+  const openBook = (index: number) => {
+    setActiveBook(index);
+    setActiveBookPage(0);
+  };
+
+  useEffect(() => {
+    if (activeBook === null) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeBook();
+      if (event.key === "ArrowLeft") setActiveBookPage((page) => (page + 7) % 8);
+      if (event.key === "ArrowRight") setActiveBookPage((page) => (page + 1) % 8);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeBook]);
+
+  const activeBookData = activeBook === null ? null : bookShowcase[activeBook];
+  const bookDetailPages = activeBookData ? [
+    ["BOOK COVER", activeBookData[0], activeBookData[1]],
+    ["選書簡介", "這本書談什麼？", activeBookData[2]],
+    ["閱讀亮點", "從主題走進生活", `以「${activeBookData[1]}」為閱讀核心，從故事、知識與生活經驗建立連結。`],
+    ["核心主題", activeBookData[1], "透過清楚易讀的內容，引導讀者觀察、思考，並把閱讀所得帶回日常。"],
+    ["適讀對象", "推薦給這樣的你", "適合親子共讀、學生延伸學習，以及關注生活、文化與生命議題的讀者。"],
+    ["延伸閱讀", "讀完之後，繼續探索", "可搭配書展講座、主題展覽與教育體驗，從一本書延伸至更完整的學習旅程。"],
+    ["書籍資料", "作者・出版社・ISBN", "正式作者、出版社、出版日期與書籍識別資訊，將於主辦單位確認書單後補充。"],
+    ["2026 線上書展", "完整書訊即將上線", "本頁為 1:1 社群圖文版型示意，正式封面、內頁與選書資訊確認後可逐頁替換。"],
+  ] as const : [];
 
   return (
     <main>
@@ -433,7 +471,7 @@ export default function Home() {
           </div>
           <div className="book-grid" aria-label="線上書展24本主題選書">
             {bookShowcase.map(([title, category, description], index) => (
-              <article className="book-card" key={title}>
+              <button className="book-card" type="button" key={title} onClick={() => openBook(index)} aria-label={`開啟《${title}》8頁圖文介紹`}>
                 <div className="book-cover">
                   <span>示意選書 {String(index + 1).padStart(2, "0")}</span>
                   <img src={catalogAnimals[index % catalogAnimals.length]} alt="" />
@@ -443,11 +481,49 @@ export default function Home() {
                   <span>{category}</span>
                   <h3>{title}</h3>
                   <p>{description}</p>
-                  <strong>書籍資訊待公布</strong>
+                  <strong>點選查看 8 頁介紹 →</strong>
                 </div>
-              </article>
+              </button>
             ))}
           </div>
+
+          {activeBookData && (
+            <div className="book-modal-backdrop" onMouseDown={(event) => event.target === event.currentTarget && closeBook()}>
+              <section className="book-modal" role="dialog" aria-modal="true" aria-labelledby="book-modal-title">
+                <div className="book-modal-header">
+                  <div>
+                    <small>ONLINE BOOK FAIR・1:1 社群圖文</small>
+                    <h3 id="book-modal-title">{activeBookData[0]}</h3>
+                  </div>
+                  <button type="button" className="book-modal-close" onClick={closeBook} aria-label="關閉書籍介紹">×</button>
+                </div>
+
+                <div className="book-detail-stage">
+                  <button type="button" className="book-page-arrow previous" onClick={() => setActiveBookPage((page) => (page + 7) % 8)} aria-label="上一頁">‹</button>
+                  <div className={`book-detail-page page-${activeBookPage + 1}`}>
+                    <span className="book-detail-number">{String(activeBookPage + 1).padStart(2, "0")}</span>
+                    <img src={catalogAnimals[(activeBook + activeBookPage) % catalogAnimals.length]} alt="" />
+                    <div className="book-detail-copy">
+                      <small>{bookDetailPages[activeBookPage][0]}</small>
+                      <h4>{bookDetailPages[activeBookPage][1]}</h4>
+                      <p>{bookDetailPages[activeBookPage][2]}</p>
+                    </div>
+                    <strong>{activeBookPage + 1} / 8</strong>
+                  </div>
+                  <button type="button" className="book-page-arrow next" onClick={() => setActiveBookPage((page) => (page + 1) % 8)} aria-label="下一頁">›</button>
+                </div>
+
+                <div className="book-page-thumbnails" aria-label="介紹頁面選擇">
+                  {bookDetailPages.map(([label], index) => (
+                    <button type="button" className={activeBookPage === index ? "active" : ""} onClick={() => setActiveBookPage(index)} key={label} aria-label={`第${index + 1}頁：${label}`}>
+                      <span>{String(index + 1).padStart(2, "0")}</span><small>{label}</small>
+                    </button>
+                  ))}
+                </div>
+                <p className="book-modal-note">使用左右方向鍵切換頁面，按 Esc 關閉；正式內頁圖可依相同比例逐張替換。</p>
+              </section>
+            </div>
+          )}
         </section>
 
         <section className="section education-section" id="education">

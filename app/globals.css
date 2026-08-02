@@ -176,6 +176,8 @@ h1, h2 { margin: 0; font-size: clamp(38px, 5vw, 68px); line-height: 1.06; letter
 .book-detail-page.page-2, .book-detail-page.page-6 { background: linear-gradient(145deg, #168bb6, #7456a6); }
 .book-detail-page.page-3, .book-detail-page.page-7 { background: linear-gradient(145deg, #e8762e, #f6b522); }
 .book-detail-page.page-4, .book-detail-page.page-8 { background: linear-gradient(145deg, #e85d7e, #8c5fb7); }
+.book-detail-page.page-5, .book-detail-page.page-9 { background: linear-gradient(145deg, #288d67, #8ebc58); }
+.book-detail-page.page-10 { background: linear-gradient(145deg, #143b4c, #137f7a); }
 .book-detail-page::before { position: absolute; right: -12%; bottom: -18%; width: 56%; height: 56%; border-radius: 46% 54% 38% 62%; background: rgba(255,255,255,.1); transform: rotate(-18deg); content: ""; }
 .book-detail-page > img { position: relative; z-index: 1; width: 100%; max-height: 68%; object-fit: contain; filter: drop-shadow(16px 18px 0 rgba(255,255,255,.1)); }
 .book-detail-number { position: absolute; top: 24px; left: 26px; font-size: 13px; font-weight: 900; letter-spacing: .14em; opacity: .68; }
@@ -183,10 +185,14 @@ h1, h2 { margin: 0; font-size: clamp(38px, 5vw, 68px); line-height: 1.06; letter
 .book-detail-copy small { font-size: 11px; font-weight: 900; letter-spacing: .16em; opacity: .78; }
 .book-detail-copy h4 { margin: 10px 0 16px; font-size: clamp(27px, 4vw, 48px); line-height: 1.18; }
 .book-detail-copy p { margin: 0; font-size: clamp(14px, 1.5vw, 19px); line-height: 1.8; }
+.book-detail-page.text-focused { grid-template-columns: 1fr; align-items: start; }
+.book-detail-page.text-focused > img { position: absolute; right: 3%; bottom: 2%; width: 30%; height: 32%; opacity: .14; }
+.book-detail-page.text-focused .book-detail-copy { display: flex; z-index: 2; width: 92%; height: 100%; min-height: 0; flex-direction: column; }
+.book-detail-page.text-focused .book-detail-copy p { max-height: 390px; padding-right: 13px; overflow-y: auto; scrollbar-color: rgba(255,255,255,.65) rgba(255,255,255,.12); scrollbar-width: thin; }
 .book-detail-page > strong { position: absolute; right: 24px; bottom: 22px; font-size: 12px; letter-spacing: .1em; }
 .book-page-arrow { display: grid; width: 52px; height: 52px; place-items: center; padding: 0; border: 1px solid var(--line); border-radius: 50%; color: var(--ink); background: #fff; font-size: 38px; line-height: 1; cursor: pointer; }
 .book-page-arrow:hover, .book-modal-close:hover { background: var(--yellow); color: var(--ink); }
-.book-page-thumbnails { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; max-width: 880px; margin: 18px auto 0; }
+.book-page-thumbnails { display: grid; grid-template-columns: repeat(10, 1fr); gap: 7px; max-width: 960px; margin: 18px auto 0; }
 .book-page-thumbnails button { min-width: 0; padding: 8px 5px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); background: #fff; cursor: pointer; }
 .book-page-thumbnails button.active { border-color: var(--teal); color: #fff; background: var(--teal); }
 .book-page-thumbnails span, .book-page-thumbnails small { display: block; }
@@ -358,6 +364,10 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
   .book-modal-header h3 { font-size: 23px; }
   .book-detail-stage { position: relative; display: block; }
   .book-detail-page { grid-template-columns: .68fr 1.32fr; gap: 13px; padding: 38px 28px; }
+  .book-detail-page.text-focused { display: block; padding: 42px 31px; }
+  .book-detail-page.text-focused > img { display: none; }
+  .book-detail-page.text-focused .book-detail-copy { width: 100%; }
+  .book-detail-page.text-focused .book-detail-copy p { max-height: 185px; padding-right: 8px; }
   .book-detail-copy h4 { margin: 7px 0 9px; font-size: clamp(21px, 7vw, 29px); }
   .book-detail-copy p { font-size: 12px; line-height: 1.55; }
   .book-page-arrow { position: absolute; z-index: 3; top: 50%; width: 38px; height: 38px; transform: translateY(-50%); font-size: 28px; }

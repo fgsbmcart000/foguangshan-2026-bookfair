@@ -176,6 +176,8 @@ const catalogAnimals = [
   "/assets/animal-icons/giraffe.png",
 ] as const;
 
+const BOOK_DETAIL_PAGE_COUNT = 10;
+
 const activityOverview = [
   ["好好看", "書展", "精選環境教育、養生健康、品德生命、心靈成長與外文讀物，透過多元主題選書，讓親子以閱讀拓展視野、培養思考與良好品格。", "11/7（六）–11/13（五）", "09:00–18:00", "風雨長廊"],
   ["好好看", "雲水書坊－行動圖書館", "全台雲水書車回到佛館大會師，把優良好書送進偏鄉。會飛的書車象徵孩子藉由閱讀與知識，獲得展翅飛翔的力量。", "11/7（六）–11/13（五）", "09:00–18:00", "成佛大道"],
@@ -229,8 +231,8 @@ export default function Home() {
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") closeBook();
-      if (event.key === "ArrowLeft") setActiveBookPage((page) => (page + 7) % 8);
-      if (event.key === "ArrowRight") setActiveBookPage((page) => (page + 1) % 8);
+      if (event.key === "ArrowLeft") setActiveBookPage((page) => (page + BOOK_DETAIL_PAGE_COUNT - 1) % BOOK_DETAIL_PAGE_COUNT);
+      if (event.key === "ArrowRight") setActiveBookPage((page) => (page + 1) % BOOK_DETAIL_PAGE_COUNT);
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -247,9 +249,11 @@ export default function Home() {
     ["閱讀亮點", "從主題走進生活", `以「${activeBookData[1]}」為閱讀核心，從故事、知識與生活經驗建立連結。`],
     ["核心主題", activeBookData[1], "透過清楚易讀的內容，引導讀者觀察、思考，並把閱讀所得帶回日常。"],
     ["適讀對象", "推薦給這樣的你", "適合親子共讀、學生延伸學習，以及關注生活、文化與生命議題的讀者。"],
+    ["內容架構", "十頁圖文，循序認識一本書", "介紹頁可以依序安排封面、選書理由、內容摘要、閱讀亮點、核心主題、適讀對象、章節導讀、延伸閱讀、出版資訊與行動邀請。"],
     ["延伸閱讀", "讀完之後，繼續探索", "可搭配書展講座、主題展覽與教育體驗，從一本書延伸至更完整的學習旅程。"],
-    ["書籍資料", "作者・出版社・ISBN", "正式作者、出版社、出版日期與書籍識別資訊，將於主辦單位確認書單後補充。"],
-    ["2026 線上書展", "完整書訊即將上線", "本頁為 1:1 社群圖文版型示意，正式封面、內頁與選書資訊確認後可逐頁替換。"],
+    ["長篇介紹示意", "可容納 300–500 字的文字說明", `《${activeBookData[0]}》以「${activeBookData[1]}」為主要方向，透過清楚易讀的文字、具體生活情境與循序漸進的閱讀安排，協助讀者從認識主題開始，逐步連結自身經驗，並延伸至家庭、校園與社會環境中的實際行動。本頁特別設計為長篇內容版型，可放置約三百至五百字的選書說明、作者介紹、章節摘要、策展觀點或閱讀指南；當文字超過畫面可見範圍時，內容區會自動提供捲動，不會壓縮標題、頁碼或社群方形構圖。正式資料上線後，也可以加入段落分隔、重點語句與閱讀提示，讓讀者在點開書籍時，不只看到封面與簡短文案，還能完整理解本書特色、推薦理由、適讀對象及可延伸參與的書展活動。`],
+    ["書籍資料", "作者・出版社・ISBN", "正式作者、出版社、出版日期、書籍識別資訊、語言與裝訂方式，將於主辦單位確認書單後補充。"],
+    ["2026 線上書展", "完整書訊即將上線", "本頁為 1:1 社群圖文版型示意，正式封面、十頁內頁與選書資訊確認後可逐頁替換。"],
   ] as const : [];
 
   return (
@@ -472,7 +476,7 @@ export default function Home() {
           </div>
           <div className="book-grid" aria-label="線上書展24本主題選書">
             {bookShowcase.map(([title, category, description], index) => (
-              <button className="book-card" type="button" key={title} onClick={() => openBook(index)} aria-label={`開啟《${title}》8頁圖文介紹`}>
+              <button className="book-card" type="button" key={title} onClick={() => openBook(index)} aria-label={`開啟《${title}》10頁圖文介紹`}>
                 <div className="book-cover">
                   <span>示意選書 {String(index + 1).padStart(2, "0")}</span>
                   <img src={catalogAnimals[index % catalogAnimals.length]} alt="" />
@@ -482,7 +486,7 @@ export default function Home() {
                   <span>{category}</span>
                   <h3>{title}</h3>
                   <p>{description}</p>
-                  <strong>點選查看 8 頁介紹 →</strong>
+                  <strong>點選查看 10 頁介紹 →</strong>
                 </div>
               </button>
             ))}
@@ -500,8 +504,8 @@ export default function Home() {
                 </div>
 
                 <div className="book-detail-stage">
-                  <button type="button" className="book-page-arrow previous" onClick={() => setActiveBookPage((page) => (page + 7) % 8)} aria-label="上一頁">‹</button>
-                  <div className={`book-detail-page page-${activeBookPage + 1}`}>
+                  <button type="button" className="book-page-arrow previous" onClick={() => setActiveBookPage((page) => (page + BOOK_DETAIL_PAGE_COUNT - 1) % BOOK_DETAIL_PAGE_COUNT)} aria-label="上一頁">‹</button>
+                  <div className={`book-detail-page page-${activeBookPage + 1} ${activeBookPage > 0 && activeBookPage < 9 ? "text-focused" : ""}`}>
                     <span className="book-detail-number">{String(activeBookPage + 1).padStart(2, "0")}</span>
                     <img src={catalogAnimals[(activeBook + activeBookPage) % catalogAnimals.length]} alt="" />
                     <div className="book-detail-copy">
@@ -509,9 +513,9 @@ export default function Home() {
                       <h4>{bookDetailPages[activeBookPage][1]}</h4>
                       <p>{bookDetailPages[activeBookPage][2]}</p>
                     </div>
-                    <strong>{activeBookPage + 1} / 8</strong>
+                    <strong>{activeBookPage + 1} / {BOOK_DETAIL_PAGE_COUNT}</strong>
                   </div>
-                  <button type="button" className="book-page-arrow next" onClick={() => setActiveBookPage((page) => (page + 1) % 8)} aria-label="下一頁">›</button>
+                  <button type="button" className="book-page-arrow next" onClick={() => setActiveBookPage((page) => (page + 1) % BOOK_DETAIL_PAGE_COUNT)} aria-label="下一頁">›</button>
                 </div>
 
                 <div className="book-page-thumbnails" aria-label="介紹頁面選擇">
@@ -521,7 +525,7 @@ export default function Home() {
                     </button>
                   ))}
                 </div>
-                <p className="book-modal-note">使用左右方向鍵切換頁面，按 Esc 關閉；正式內頁圖可依相同比例逐張替換。</p>
+                <p className="book-modal-note">使用左右方向鍵切換頁面，按 Esc 關閉；長篇頁可放置 300–500 字並支援內容捲動。</p>
               </section>
             </div>
           )}

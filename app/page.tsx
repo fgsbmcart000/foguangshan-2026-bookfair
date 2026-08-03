@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navigation = [
   ["關於書展", "about"],
@@ -177,6 +177,7 @@ const catalogAnimals = [
 ] as const;
 
 const BOOK_DETAIL_PAGE_COUNT = 10;
+const FOOD_PHOTO_COUNT = 4;
 
 const activityOverview = [
   ["好好看", "書展", "精選環境教育、養生健康、品德生命、心靈成長與外文讀物，透過多元主題選書，讓親子以閱讀拓展視野、培養思考與良好品格。", "11/7（六）–11/13（五）", "09:00–18:00", "風雨長廊"],
@@ -215,6 +216,9 @@ export default function Home() {
   const [activeDay, setActiveDay] = useState(0);
   const [activeBook, setActiveBook] = useState<number | null>(null);
   const [activeBookPage, setActiveBookPage] = useState(0);
+  const [activeFood, setActiveFood] = useState<number | null>(null);
+  const [activeFoodPhoto, setActiveFoodPhoto] = useState(0);
+  const foodTouchStartX = useRef<number | null>(null);
 
   const closeMenu = () => setMenuOpen(false);
   const closeBook = () => setActiveBook(null);
@@ -222,6 +226,13 @@ export default function Home() {
     setActiveBook(index);
     setActiveBookPage(0);
   };
+  const closeFood = () => setActiveFood(null);
+  const openFood = (index: number) => {
+    setActiveFood(index);
+    setActiveFoodPhoto(0);
+  };
+  const showPreviousFoodPhoto = () => setActiveFoodPhoto((photo) => (photo + FOOD_PHOTO_COUNT - 1) % FOOD_PHOTO_COUNT);
+  const showNextFoodPhoto = () => setActiveFoodPhoto((photo) => (photo + 1) % FOOD_PHOTO_COUNT);
 
   useEffect(() => {
     if (activeBook === null) return;
@@ -242,7 +253,31 @@ export default function Home() {
     };
   }, [activeBook]);
 
+  useEffect(() => {
+    if (activeFood === null) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeFood();
+      if (event.key === "ArrowLeft") showPreviousFoodPhoto();
+      if (event.key === "ArrowRight") showNextFoodPhoto();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeFood]);
+
   const activeBookData = activeBook === null ? null : bookShowcase[activeBook];
+  const activeFoodData = activeFood === null ? null : boothShowcase[activeFood];
+  const activeFoodPhotos = activeFood === null ? [] : Array.from(
+    { length: FOOD_PHOTO_COUNT },
+    (_, photoIndex) => catalogAnimals[(activeFood + photoIndex + 3) % catalogAnimals.length],
+  );
   const bookDetailPages = activeBookData ? [
     ["BOOK COVER", activeBookData[0], activeBookData[1]],
     ["選書簡介", "這本書談什麼？", activeBookData[2]],
@@ -601,21 +636,65 @@ export default function Home() {
             </div>
             <div className="food-grid" aria-label="24家蔬食攤位推薦美食">
               {boothShowcase.map(([dish, category, description], index) => (
-                <article className="food-card" key={dish}>
+                <button className="food-card" type="button" key={dish} onClick={() => openFood(index)} aria-label={`查看${dish}四張餐點照片`}>
                   <div className="food-card-media">
                     <span>V{String(index + 1).padStart(2, "0")}</span>
-                    <img src={catalogAnimals[(index + 3) % catalogAnimals.length]} alt="" />
-                    <small>餐點圖片待更新</small>
+                    <img src={catalogAnimals[(index + 3) % catalogAnimals.length]} alt="" width="1080" height="1080" />
+                    <small>1080 × 1080 圖片</small>
                   </div>
                   <div className="food-card-copy">
                     <span>示意攤位 {String(index + 1).padStart(2, "0")}・{category}</span>
                     <h4>{dish}</h4>
                     <p>{description}</p>
-                    <strong>攤商資訊待公布</strong>
+                    <strong>點選查看 4 張照片 →</strong>
                   </div>
-                </article>
+                </button>
               ))}
             </div>
+
+            {activeFoodData && (
+              <div className="food-modal-backdrop" onMouseDown={(event) => event.target === event.currentTarget && closeFood()}>
+                <section className="food-modal" role="dialog" aria-modal="true" aria-labelledby="food-modal-title">
+                  <div className="food-modal-header">
+                    <div>
+                      <small>VEGGIE FOOD GALLERY・1080 × 1080</small>
+                      <h3 id="food-modal-title">{activeFoodData[0]}</h3>
+                      <p>{activeFoodData[1]}・示意攤位 {String(activeFood! + 1).padStart(2, "0")}</p>
+                    </div>
+                    <button type="button" className="food-modal-close" onClick={closeFood} aria-label="關閉餐點照片">×</button>
+                  </div>
+
+                  <div
+                    className="food-gallery-stage"
+                    onTouchStart={(event) => { foodTouchStartX.current = event.touches[0].clientX; }}
+                    onTouchEnd={(event) => {
+                      if (foodTouchStartX.current === null) return;
+                      const distance = event.changedTouches[0].clientX - foodTouchStartX.current;
+                      if (Math.abs(distance) > 45) distance > 0 ? showPreviousFoodPhoto() : showNextFoodPhoto();
+                      foodTouchStartX.current = null;
+                    }}
+                  >
+                    <button type="button" className="food-gallery-arrow previous" onClick={showPreviousFoodPhoto} aria-label="上一張照片">‹</button>
+                    <div className="food-gallery-photo">
+                      <img src={activeFoodPhotos[activeFoodPhoto]} alt={`${activeFoodData[0]}餐點照片 ${activeFoodPhoto + 1}`} width="1080" height="1080" />
+                      <span>{activeFoodPhoto + 1} / {FOOD_PHOTO_COUNT}</span>
+                      <small>正式 1080 × 1080 照片待更新</small>
+                    </div>
+                    <button type="button" className="food-gallery-arrow next" onClick={showNextFoodPhoto} aria-label="下一張照片">›</button>
+                  </div>
+
+                  <div className="food-gallery-thumbnails" aria-label="餐點照片選擇">
+                    {activeFoodPhotos.map((photo, index) => (
+                      <button type="button" className={activeFoodPhoto === index ? "active" : ""} onClick={() => setActiveFoodPhoto(index)} key={`${photo}-${index}`} aria-label={`查看第${index + 1}張照片`}>
+                        <img src={photo} alt="" width="1080" height="1080" />
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                      </button>
+                    ))}
+                  </div>
+                  <p className="food-modal-note">可使用左右方向鍵、畫面按鈕或在手機上左右滑動切換照片。</p>
+                </section>
+              </div>
+            )}
           </section>
         </section>
 

@@ -286,9 +286,9 @@ export default function Home() {
     ["適讀對象", "推薦給這樣的你", "適合親子共讀、學生延伸學習，以及關注生活、文化與生命議題的讀者。"],
     ["內容架構", "十頁圖文，循序認識一本書", "介紹頁可以依序安排封面、選書理由、內容摘要、閱讀亮點、核心主題、適讀對象、章節導讀、延伸閱讀、出版資訊與行動邀請。"],
     ["延伸閱讀", "讀完之後，繼續探索", "可搭配書展講座、主題展覽與教育體驗，從一本書延伸至更完整的學習旅程。"],
-    ["長篇介紹示意", "可容納 300–500 字的文字說明", `《${activeBookData[0]}》以「${activeBookData[1]}」為主要方向，透過清楚易讀的文字、具體生活情境與循序漸進的閱讀安排，協助讀者從認識主題開始，逐步連結自身經驗，並延伸至家庭、校園與社會環境中的實際行動。本頁特別設計為長篇內容版型，可放置約三百至五百字的選書說明、作者介紹、章節摘要、策展觀點或閱讀指南；當文字超過畫面可見範圍時，內容區會自動提供捲動，不會壓縮標題、頁碼或社群方形構圖。正式資料上線後，也可以加入段落分隔、重點語句與閱讀提示，讓讀者在點開書籍時，不只看到封面與簡短文案，還能完整理解本書特色、推薦理由、適讀對象及可延伸參與的書展活動。`],
+    ["長篇介紹示意", "可容納 300–500 字的文字說明", `《${activeBookData[0]}》以「${activeBookData[1]}」為主要方向，透過清楚易讀的文字、具體生活情境與循序漸進的閱讀安排，協助讀者從認識主題開始，逐步連結自身經驗，並延伸至家庭、校園與社會環境中的實際行動。本頁特別設計為長篇內容版型，可放置約三百至五百字的選書說明、作者介紹、章節摘要、策展觀點或閱讀指南；當文字超過畫面可見範圍時，內容區會自動提供捲動，不會壓縮標題、頁碼或 1080 × 1350 直式構圖。正式資料上線後，也可以加入段落分隔、重點語句與閱讀提示，讓讀者在點開書籍時，不只看到封面與簡短文案，還能完整理解本書特色、推薦理由、適讀對象及可延伸參與的書展活動。`],
     ["書籍資料", "作者・出版社・ISBN", "正式作者、出版社、出版日期、書籍識別資訊、語言與裝訂方式，將於主辦單位確認書單後補充。"],
-    ["2026 線上書展", "完整書訊即將上線", "本頁為 1:1 社群圖文版型示意，正式封面、十頁內頁與選書資訊確認後可逐頁替換。"],
+    ["2026 線上書展", "完整書訊即將上線", "本頁為 1080 × 1350 直式圖文版型示意，正式封面、十頁內頁與選書資訊確認後可逐頁替換。"],
   ] as const : [];
 
   return (
@@ -516,8 +516,8 @@ export default function Home() {
               <button className="book-card" type="button" key={title} onClick={() => openBook(index)} aria-label={`開啟《${title}》10頁圖文介紹`}>
                 <div className="book-cover">
                   <span>示意選書 {String(index + 1).padStart(2, "0")}</span>
-                  <img src={catalogAnimals[index % catalogAnimals.length]} alt="" />
-                  <small>2026<br />BOOK FAIR</small>
+                  <img src={catalogAnimals[index % catalogAnimals.length]} alt="" width="1080" height="1350" />
+                  <small>1080 × 1350<br />BOOK FAIR</small>
                 </div>
                 <div className="book-card-copy">
                   <span>{category}</span>
@@ -534,7 +534,7 @@ export default function Home() {
               <section className="book-modal" role="dialog" aria-modal="true" aria-labelledby="book-modal-title">
                 <div className="book-modal-header">
                   <div>
-                    <small>ONLINE BOOK FAIR・1:1 社群圖文</small>
+                    <small>ONLINE BOOK FAIR・1080 × 1350 直式圖文</small>
                     <h3 id="book-modal-title">{activeBookData[0]}</h3>
                   </div>
                   <button type="button" className="book-modal-close" onClick={closeBook} aria-label="關閉書籍介紹">×</button>
@@ -544,7 +544,7 @@ export default function Home() {
                   <button type="button" className="book-page-arrow previous" onClick={() => setActiveBookPage((page) => (page + BOOK_DETAIL_PAGE_COUNT - 1) % BOOK_DETAIL_PAGE_COUNT)} aria-label="上一頁">‹</button>
                   <div className={`book-detail-page page-${activeBookPage + 1} ${activeBookPage > 0 && activeBookPage < 9 ? "text-focused" : ""}`}>
                     <span className="book-detail-number">{String(activeBookPage + 1).padStart(2, "0")}</span>
-                    <img src={catalogAnimals[(activeBook + activeBookPage) % catalogAnimals.length]} alt="" />
+                    <img src={catalogAnimals[(activeBook + activeBookPage) % catalogAnimals.length]} alt="" width="1080" height="1350" />
                     <div className="book-detail-copy">
                       <small>{bookDetailPages[activeBookPage][0]}</small>
                       <h4>{bookDetailPages[activeBookPage][1]}</h4>

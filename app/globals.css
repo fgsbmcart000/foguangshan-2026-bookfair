@@ -21,6 +21,7 @@ body {
   background: #fffdf7;
   color: var(--ink);
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 20px;
 }
 button, a { font: inherit; }
 a { color: inherit; }
@@ -50,12 +51,13 @@ img { display: block; max-width: 100%; }
   border-radius: 13px;
 }
 .brand > span { max-width: 340px; }
-.brand strong { display: block; font-size: 15px; letter-spacing: .04em; }
-.brand small { display: block; margin-top: 2px; color: var(--teal); font-size: 12px; letter-spacing: .15em; }
-.brand .brand-en { font-size: 10px; line-height: 1.25; letter-spacing: .035em; }
-.brand .brand-theme { color: var(--orange); font-size: 10px; font-weight: 800; letter-spacing: .14em; }
+.brand strong { display: block; font-size: 19px; letter-spacing: .04em; }
+.brand small { display: block; margin-top: 2px; color: var(--teal); font-size: 16px; letter-spacing: .15em; }
+.brand .brand-en { font-size: 14px; line-height: 1.25; letter-spacing: .035em; }
+.brand .brand-theme { color: var(--orange); font-size: 14px; font-weight: 800; letter-spacing: .1em; }
+.brand .brand-theme span { margin-left: 4px; font-size: .82em; letter-spacing: .035em; }
 .main-nav { display: flex; align-items: center; gap: clamp(13px, 1.8vw, 28px); }
-.main-nav a { position: relative; font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.main-nav a { position: relative; font-size: 18px; font-weight: 700; text-decoration: none; white-space: nowrap; }
 .main-nav a::after { position: absolute; right: 0; bottom: -8px; left: 0; height: 3px; border-radius: 3px; background: var(--yellow); transform: scaleX(0); transition: transform .2s; content: ""; }
 .main-nav a:hover::after, .main-nav a:focus-visible::after { transform: scaleX(1); }
 .menu-button { display: none; border: 0; background: transparent; padding: 8px; }
@@ -308,7 +310,78 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
 .footer-animal { width: 64px; height: 64px; object-fit: contain; }
 .footer-orgs { max-width: 1220px; margin: 30px auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.72); font-size: 13px; }
 .footer-orgs p { margin: 7px 0; }
-.copyright { max-width: 1220px; margin: auto; color: rgba(255,255,255,.45); font-size: 12px; }
+.copyright { max-width: 1220px; margin: auto; color: rgba(255,255,255,.45); font-size: 16px; }
+
+/* 全站文字統一放大約兩級，保留既有網格、欄數與區塊結構。 */
+.hero-scroll { font-size: 17px; }
+.eyebrow,
+.info-card small,
+.free-badge span,
+.tag-list span,
+.activity-group-heading p,
+.activity-group-heading > strong,
+.overview-note,
+.date-tabs span,
+.schedule-note,
+.education-cards span,
+.booth-status span,
+.main-aisle span,
+.food-card-media > span { font-size: 16px; }
+.section-heading > p:last-child, .lead { font-size: clamp(20px, 1.5vw, 25px); }
+.story-card p { font-size: clamp(21px, 1.5vw, 25px); }
+.info-card strong { font-size: clamp(22px, 2vw, 29px); }
+.highlight-card h3 { font-size: 36px; }
+.highlight-card p,
+.activity-card-body > p,
+.education-cards p,
+.booth-status p,
+.subsection-heading p { font-size: 20px; }
+.activity-group-heading h3 { font-size: clamp(32px, 3vw, 46px); }
+.activity-media span,
+.book-cover > span,
+.book-cover small,
+.booth-cell span { font-size: 14px; }
+.activity-card-body h4 { font-size: clamp(28px, 2.2vw, 34px); }
+.activity-meta dt,
+.theme-pill,
+.catalog-intro span,
+.education-tags span,
+.footer-orgs { font-size: 17px; }
+.activity-meta dd { font-size: 18px; }
+.catalog-intro strong,
+.education-cards h3 { font-size: 23px; }
+.book-card-copy > span,
+.book-card-copy > strong,
+.book-modal-header small,
+.book-detail-copy small,
+.book-page-thumbnails span,
+.food-card-copy > span,
+.food-card-copy > strong,
+.subsection-heading small,
+.booth-categories span { font-size: 15px; }
+.book-card-copy h3 { font-size: 22px; }
+.book-card-copy p { font-size: 16px; }
+.book-modal-header h3 { font-size: clamp(29px, 3vw, 42px); }
+.book-detail-number { font-size: 17px; }
+.book-detail-copy h4 { font-size: clamp(31px, 4vw, 52px); }
+.book-detail-copy p { font-size: clamp(18px, 1.5vw, 23px); }
+.book-detail-page > strong { font-size: 16px; }
+.book-page-thumbnails small { font-size: 13px; }
+.book-modal-note { font-size: 15px; }
+.date-tabs strong { font-size: 24px; }
+.timeline-row strong { font-size: 22px; }
+.timeline-row small, .timeline-row time { font-size: 18px; }
+.education-copy > p:not(.eyebrow) { font-size: 22px; }
+.booth-categories strong { font-size: 28px; }
+.booth-status strong { font-size: clamp(31px, 3vw, 42px); }
+.subsection-heading h3 { font-size: clamp(34px, 4vw, 52px); }
+.booth-cell strong { font-size: 19px; }
+.food-card-media small { font-size: 13px; }
+.food-card-copy h4 { font-size: 26px; }
+.food-card-copy p { font-size: 17px; }
+.venue-card h3 { font-size: 32px; }
+.travel-cards h3 { font-size: 24px; }
+.footer-title strong { font-size: 23px; }
 
 @media (max-width: 1050px) {
   .menu-button { display: block; }
@@ -332,9 +405,10 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
   .site-header { min-height: 70px; padding: 9px 16px; }
   .brand-animal { width: 72px; height: 44px; border-radius: 10px; }
   .brand > span { max-width: 225px; }
-  .brand strong { max-width: 225px; font-size: 12px; }
-  .brand .brand-en { font-size: 8px; }
-  .brand .brand-theme { font-size: 8px; }
+  .brand strong { max-width: 225px; font-size: 16px; }
+  .brand .brand-en { font-size: 12px; }
+  .brand .brand-theme { font-size: 12px; }
+  .brand .brand-theme span { display: block; margin: 1px 0 0; }
   .main-nav { top: 70px; }
   .hero img { aspect-ratio: 2 / 3; object-fit: cover; }
   .hero-scroll { display: none; }
@@ -343,10 +417,10 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
   .section-heading { margin-bottom: 32px; }
   h1, h2 { font-size: 42px; }
   .story-card { min-height: 0; padding: 30px 24px; }
-  .story-card p { font-size: 16px; line-height: 1.85; }
+  .story-card p { font-size: 20px; line-height: 1.85; }
   .info-card { padding: 20px; }
   .highlight-card { padding: 28px; }
-  .highlight-card h3 { font-size: 29px; }
+  .highlight-card h3 { font-size: 33px; }
   .activity-groups { gap: 54px; }
   .activity-group-heading { grid-template-columns: 76px 1fr; gap: 15px; padding: 18px; }
   .activity-group-heading img { width: 76px; height: 70px; }
@@ -357,19 +431,19 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
   .catalog-intro { align-items: flex-start; flex-direction: column; }
   .book-grid, .food-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
   .book-card-copy { padding: 15px 13px; }
-  .book-card-copy h3 { font-size: 16px; }
+  .book-card-copy h3 { font-size: 20px; }
   .book-modal-backdrop { padding: 10px; }
   .book-modal { padding: 17px 14px; }
   .book-modal-header { margin-bottom: 13px; }
-  .book-modal-header h3 { font-size: 23px; }
+  .book-modal-header h3 { font-size: 27px; }
   .book-detail-stage { position: relative; display: block; }
   .book-detail-page { grid-template-columns: .68fr 1.32fr; gap: 13px; padding: 38px 28px; }
   .book-detail-page.text-focused { display: block; padding: 42px 31px; }
   .book-detail-page.text-focused > img { display: none; }
   .book-detail-page.text-focused .book-detail-copy { width: 100%; }
   .book-detail-page.text-focused .book-detail-copy p { max-height: 185px; padding-right: 8px; }
-  .book-detail-copy h4 { margin: 7px 0 9px; font-size: clamp(21px, 7vw, 29px); }
-  .book-detail-copy p { font-size: 12px; line-height: 1.55; }
+  .book-detail-copy h4 { margin: 7px 0 9px; font-size: clamp(25px, 7vw, 33px); }
+  .book-detail-copy p { font-size: 16px; line-height: 1.55; }
   .book-page-arrow { position: absolute; z-index: 3; top: 50%; width: 38px; height: 38px; transform: translateY(-50%); font-size: 28px; }
   .book-page-arrow.previous { left: 6px; }
   .book-page-arrow.next { right: 6px; }
@@ -377,7 +451,7 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
   .book-page-thumbnails button { flex: 0 0 62px; }
   .book-modal-note { display: none; }
   .food-card-copy { padding: 16px 14px; }
-  .food-card-copy h4 { font-size: 18px; }
+  .food-card-copy h4 { font-size: 22px; }
   .booth-map-section, .food-showcase { margin-top: 64px; }
   .date-tabs { display: flex; overflow-x: auto; border-radius: 12px; }
   .date-tabs button { flex: 0 0 82px; }
@@ -388,8 +462,8 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
   .timeline-row { grid-template-columns: 56px 12px 1fr; gap: 10px; }
   .education-cards, .booth-categories { grid-template-columns: 1fr; }
   .notice-bar { flex-direction: column; gap: 8px; }
-  .footer-title strong { font-size: 15px; }
-  .footer-title small { font-size: 11px; }
+  .footer-title strong { font-size: 19px; }
+  .footer-title small { font-size: 15px; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

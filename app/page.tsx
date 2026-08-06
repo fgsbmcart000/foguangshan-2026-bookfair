@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 const navigation = [
   ["關於書展", "about"],
   ["活動亮點", "highlights"],
-  ["每日行程", "schedule"],
+  ["每日活動表", "schedule"],
   ["線上書展", "online"],
   ["教育推廣", "education"],
   ["攤位一覽", "booths"],
@@ -463,7 +463,7 @@ export default function Home() {
         <section className="section schedule-section" id="schedule">
           <div className="section-heading centered light-heading">
             <p className="eyebrow">Daily program</p>
-            <h2>每日行程</h2>
+            <h2>每日活動表</h2>
             <p>選擇日期，快速掌握當天重點活動</p>
           </div>
           <div className="date-tabs" role="tablist" aria-label="活動日期">

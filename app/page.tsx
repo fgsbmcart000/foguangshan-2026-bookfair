@@ -639,8 +639,8 @@ export default function Home() {
                 <button className="food-card" type="button" key={dish} onClick={() => openFood(index)} aria-label={`查看${dish}四張餐點照片`}>
                   <div className="food-card-media">
                     <span>V{String(index + 1).padStart(2, "0")}</span>
-                    <img src={catalogAnimals[(index + 3) % catalogAnimals.length]} alt="" width="1080" height="1080" />
-                    <small>1080 × 1080 圖片</small>
+                    <img src={catalogAnimals[(index + 3) % catalogAnimals.length]} alt="" width="700" height="700" />
+                    <small>700 × 700 圖片</small>
                   </div>
                   <div className="food-card-copy">
                     <span>示意攤位 {String(index + 1).padStart(2, "0")}・{category}</span>
@@ -657,7 +657,7 @@ export default function Home() {
                 <section className="food-modal" role="dialog" aria-modal="true" aria-labelledby="food-modal-title">
                   <div className="food-modal-header">
                     <div>
-                      <small>VEGGIE FOOD GALLERY・1080 × 1080</small>
+                      <small>VEGGIE FOOD GALLERY・700 × 700</small>
                       <h3 id="food-modal-title">{activeFoodData[0]}</h3>
                       <p>{activeFoodData[1]}・示意攤位 {String(activeFood! + 1).padStart(2, "0")}</p>
                     </div>
@@ -676,9 +676,9 @@ export default function Home() {
                   >
                     <button type="button" className="food-gallery-arrow previous" onClick={showPreviousFoodPhoto} aria-label="上一張照片">‹</button>
                     <div className="food-gallery-photo">
-                      <img src={activeFoodPhotos[activeFoodPhoto]} alt={`${activeFoodData[0]}餐點照片 ${activeFoodPhoto + 1}`} width="1080" height="1080" />
+                      <img src={activeFoodPhotos[activeFoodPhoto]} alt={`${activeFoodData[0]}餐點照片 ${activeFoodPhoto + 1}`} width="700" height="700" />
                       <span>{activeFoodPhoto + 1} / {FOOD_PHOTO_COUNT}</span>
-                      <small>正式 1080 × 1080 照片待更新</small>
+                      <small>正式 700 × 700 照片待更新</small>
                     </div>
                     <button type="button" className="food-gallery-arrow next" onClick={showNextFoodPhoto} aria-label="下一張照片">›</button>
                   </div>
@@ -686,7 +686,7 @@ export default function Home() {
                   <div className="food-gallery-thumbnails" aria-label="餐點照片選擇">
                     {activeFoodPhotos.map((photo, index) => (
                       <button type="button" className={activeFoodPhoto === index ? "active" : ""} onClick={() => setActiveFoodPhoto(index)} key={`${photo}-${index}`} aria-label={`查看第${index + 1}張照片`}>
-                        <img src={photo} alt="" width="1080" height="1080" />
+                        <img src={photo} alt="" width="700" height="700" />
                         <span>{String(index + 1).padStart(2, "0")}</span>
                       </button>
                     ))}

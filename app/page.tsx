@@ -386,7 +386,7 @@ export default function Home() {
             <div className="info-stack">
               <div className="info-card teal-card">
                 <img className="info-animal" src="/assets/animal-icons/deer.png" alt="" />
-                <div><small>活動日期</small><strong>2026.11.07(六) — 11.13(五)</strong></div>
+                <div><small>活動日期／開幕式</small><strong>2026.11.07(六) — 11.13(五)<br />開幕式 11.07(六) 10:30</strong></div>
               </div>
               <div className="info-card cream-card">
                 <img className="info-animal" src="/assets/animal-icons/turtle.png" alt="" />

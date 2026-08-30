@@ -333,8 +333,10 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
 .footer-title strong { font-size: 19px; }
 .footer-title small { margin-top: 5px; color: rgba(255,255,255,.62); }
 .footer-animal { width: 64px; height: 64px; object-fit: contain; }
-.footer-orgs { max-width: 1220px; margin: 30px auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.72); font-size: 13px; }
-.footer-orgs p { margin: 7px 0; }
+.footer-orgs { display: grid; gap: 14px; max-width: 1220px; margin: 30px auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.82); font-size: 13px; }
+.footer-org-row { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 18px; align-items: start; }
+.footer-org-row strong { color: #fff; font-weight: 800; letter-spacing: .08em; white-space: nowrap; }
+.footer-org-row p { margin: 0; line-height: 1.85; }
 .copyright { max-width: 1220px; margin: auto; color: rgba(255,255,255,.45); font-size: 16px; }
 
 /* 全站文字統一放大約兩級，保留既有網格、欄數與區塊結構。 */
@@ -502,6 +504,7 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
   .notice-bar { flex-direction: column; gap: 8px; }
   .footer-title strong { font-size: 19px; }
   .footer-title small { font-size: 15px; }
+  .footer-org-row { grid-template-columns: 1fr; gap: 3px; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

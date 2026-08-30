@@ -386,7 +386,7 @@ export default function Home() {
             <div className="info-stack">
               <div className="info-card teal-card">
                 <img className="info-animal" src="/assets/animal-icons/deer.png" alt="" />
-                <div><small>活動日期／開幕式</small><strong>2026.11.07(六) — 11.13(五)<br />開幕式 11.07(六) 10:30</strong></div>
+                <div><small>活動日期／開幕式</small><strong>2026.11.07(六) — 11.13(五)<br />開幕式 11.07(六) 10:30<br />地點：本館大覺堂</strong></div>
               </div>
               <div className="info-card cream-card">
                 <img className="info-animal" src="/assets/animal-icons/turtle.png" alt="" />
@@ -745,7 +745,11 @@ export default function Home() {
 
       <footer>
         <div className="footer-title"><img className="footer-animal" src="/assets/animal-icons/bear.png" alt="" /><div><strong>佛光山 2026 年書展暨蔬食博覽會</strong><small>Fo Guang Shan 2026 Book Fair and Vegetarian Expo</small></div></div>
-        <div className="footer-orgs"><p>指導單位｜教育部</p><p>主辦單位｜環境部、高雄市政府、財團法人人間文教基金會</p></div>
+        <div className="footer-orgs" aria-label="活動指導、主辦及協辦單位">
+          <div className="footer-org-row"><strong>指導單位</strong><p>教育部</p></div>
+          <div className="footer-org-row"><strong>主辦單位</strong><p>環境部、高雄市政府、財團法人人間文教基金會</p></div>
+          <div className="footer-org-row"><strong>協辦單位</strong><p>國家圖書館、高雄市政府教育局、高雄市政府農業局、高雄市政府觀光局、高雄市政府環保局、臺南市政府教育局、屏東縣政府教育處、財團法人佛光山文教基金會、財團法人佛光山慈悲社會福利基金會、香雲國際股份有限公司、滴水坊股份有限公司、人間衛視、人間福報社</p></div>
+        </div>
         <p className="copyright">© 2026 Fo Guang Shan Book Fair & Vegetarian Expo</p>
       </footer>
     </main>

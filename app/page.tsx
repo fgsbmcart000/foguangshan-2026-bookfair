@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const navigation = [
-  ["關於書展", "about"],
+  ["活動主題和活動目的", "about"],
   ["活動亮點", "highlights"],
   ["每日活動表", "schedule"],
   ["線上書展", "online"],
@@ -345,8 +345,8 @@ export default function Home() {
         <section className="section about-section" id="about">
           <div className="section-heading split-heading">
             <div>
-              <p className="eyebrow">About the fair</p>
-              <h1>關於書展</h1>
+              <p className="eyebrow">Theme &amp; origin</p>
+              <h1>活動主題和活動緣起</h1>
             </div>
             <p className="lead">
               從閱讀延伸至蔬食探索，打造一場融合互動參與、沉浸體驗、文化藝術與環境教育的全感官生活之旅。
@@ -357,11 +357,13 @@ export default function Home() {
             <article className="story-card">
               <span className="paint-dot dot-yellow" />
               <span className="paint-dot dot-blue" />
-              <p>
-                佛光山長年秉持「以教育培養人才、以文化弘揚佛法」的宗旨，以「三好」與「四給」為核心價值，自 2013 年起舉辦書展暨蔬食博覽會，持續關懷偏鄉、推動人文教育與蔬食文化。
-              </p>
+              <h3>活動主題</h3>
               <p>
                 2026 年以「吉祥動物派對」為主題，透過台灣藝術家洪易充滿生命力的吉祥動物，傳遞和諧共生、圓滿祝福與美好生活的想像。
+              </p>
+              <h3>活動緣起</h3>
+              <p>
+                佛光山長年秉持「以教育培養人才、以文化弘揚佛法」的宗旨，以「三好」與「四給」為核心價值，自 2013 年起舉辦書展暨蔬食博覽會，持續關懷偏鄉、推動人文教育與蔬食文化。
               </p>
             </article>
             <div className="info-stack">

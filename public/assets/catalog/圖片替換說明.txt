@@ -1,0 +1,20 @@
+線上書展與線上蔬食展圖片替換說明
+
+所有正式圖片請使用 700 × 700 像素 JPG，直接以相同檔名覆蓋即可，不必修改網站版型。
+
+一、線上書展（24 本）
+資料夾：books
+封面：book-01-cover.jpg ～ book-24-cover.jpg
+第 2～10 頁介紹圖：book-01-page-02.jpg ～ book-24-page-10.jpg
+每本書點開後的第 1 頁會直接使用該書封面；尚未放入的內頁會自動顯示目前的象徵性示意圖。
+
+二、線上蔬食展（24 家）
+資料夾：food
+封面／第 1 張：booth-01-cover.jpg ～ booth-24-cover.jpg
+第 2～4 張照片：booth-01-photo-02.jpg ～ booth-24-photo-04.jpg
+每家攤位點開後的第 1 張會直接使用封面；尚未放入的照片會自動顯示目前的象徵性示意圖。
+
+三、示意圖母版
+資料夾：_templates
+book-01.jpg ～ book-04.jpg：閱讀主題示意插畫
+food-01.jpg ～ food-04.jpg：蔬食餐點與市集示意照片

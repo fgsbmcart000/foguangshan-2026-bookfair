@@ -176,6 +176,30 @@ const catalogAnimals = [
   "/assets/animal-icons/giraffe.png",
 ] as const;
 
+const bookPlaceholderImages = [
+  "/assets/catalog/_templates/book-01.jpg",
+  "/assets/catalog/_templates/book-02.jpg",
+  "/assets/catalog/_templates/book-03.jpg",
+  "/assets/catalog/_templates/book-04.jpg",
+] as const;
+
+const foodPlaceholderImages = [
+  "/assets/catalog/_templates/food-01.jpg",
+  "/assets/catalog/_templates/food-02.jpg",
+  "/assets/catalog/_templates/food-03.jpg",
+  "/assets/catalog/_templates/food-04.jpg",
+] as const;
+
+const itemNumber = (index: number) => String(index + 1).padStart(2, "0");
+const bookCoverAsset = (bookIndex: number) => `/assets/catalog/books/book-${itemNumber(bookIndex)}-cover.jpg`;
+const bookPageAsset = (bookIndex: number, pageIndex: number) => pageIndex === 0
+  ? bookCoverAsset(bookIndex)
+  : `/assets/catalog/books/book-${itemNumber(bookIndex)}-page-${itemNumber(pageIndex)}.jpg`;
+const foodCoverAsset = (foodIndex: number) => `/assets/catalog/food/booth-${itemNumber(foodIndex)}-cover.jpg`;
+const foodPhotoAsset = (foodIndex: number, photoIndex: number) => photoIndex === 0
+  ? foodCoverAsset(foodIndex)
+  : `/assets/catalog/food/booth-${itemNumber(foodIndex)}-photo-${itemNumber(photoIndex)}.jpg`;
+
 const BOOK_DETAIL_PAGE_COUNT = 10;
 const FOOD_PHOTO_COUNT = 4;
 
@@ -280,7 +304,7 @@ export default function Home() {
   const activeFoodData = activeFood === null ? null : boothShowcase[activeFood];
   const activeFoodPhotos = activeFood === null ? [] : Array.from(
     { length: FOOD_PHOTO_COUNT },
-    (_, photoIndex) => catalogAnimals[(activeFood + photoIndex + 3) % catalogAnimals.length],
+    (_, photoIndex) => foodPhotoAsset(activeFood, photoIndex),
   );
   const bookDetailPages = activeBookData ? [
     ["BOOK COVER", activeBookData[0], activeBookData[1]],
@@ -535,7 +559,7 @@ export default function Home() {
               <button className="book-card" type="button" key={title} onClick={() => openBook(index)} aria-label={`開啟《${title}》10頁圖文介紹`}>
                 <div className="book-cover">
                   <span>示意選書 {String(index + 1).padStart(2, "0")}</span>
-                  <img src={catalogAnimals[index % catalogAnimals.length]} alt="" width="700" height="700" />
+                  <img src={bookCoverAsset(index)} alt={`《${title}》示意封面`} width="700" height="700" />
                   <small>700 × 700<br />BOOK FAIR</small>
                 </div>
                 <div className="book-card-copy">
@@ -563,7 +587,16 @@ export default function Home() {
                   <button type="button" className="book-page-arrow previous" onClick={() => setActiveBookPage((page) => (page + BOOK_DETAIL_PAGE_COUNT - 1) % BOOK_DETAIL_PAGE_COUNT)} aria-label="上一頁">‹</button>
                   <div className={`book-detail-page page-${activeBookPage + 1} ${activeBookPage > 0 && activeBookPage < 9 ? "text-focused" : ""}`}>
                     <span className="book-detail-number">{String(activeBookPage + 1).padStart(2, "0")}</span>
-                    <img src={catalogAnimals[(activeBook + activeBookPage) % catalogAnimals.length]} alt="" width="700" height="700" />
+                    <img
+                      src={bookPageAsset(activeBook, activeBookPage)}
+                      alt={`《${activeBookData[0]}》第 ${activeBookPage + 1} 頁示意圖`}
+                      width="700"
+                      height="700"
+                      onError={(event) => {
+                        event.currentTarget.onerror = null;
+                        event.currentTarget.src = bookPlaceholderImages[(activeBook + activeBookPage) % bookPlaceholderImages.length];
+                      }}
+                    />
                     <div className="book-detail-copy">
                       <small>{bookDetailPages[activeBookPage][0]}</small>
                       <h4>{bookDetailPages[activeBookPage][1]}</h4>
@@ -658,7 +691,7 @@ export default function Home() {
                 <button className="food-card" type="button" key={dish} onClick={() => openFood(index)} aria-label={`查看${dish}四張餐點照片`}>
                   <div className="food-card-media">
                     <span>V{String(index + 1).padStart(2, "0")}</span>
-                    <img src={catalogAnimals[(index + 3) % catalogAnimals.length]} alt="" width="700" height="700" />
+                    <img src={foodCoverAsset(index)} alt={`${dish}示意餐點照片`} width="700" height="700" />
                     <small>700 × 700 圖片</small>
                   </div>
                   <div className="food-card-copy">
@@ -695,7 +728,16 @@ export default function Home() {
                   >
                     <button type="button" className="food-gallery-arrow previous" onClick={showPreviousFoodPhoto} aria-label="上一張照片">‹</button>
                     <div className="food-gallery-photo">
-                      <img src={activeFoodPhotos[activeFoodPhoto]} alt={`${activeFoodData[0]}餐點照片 ${activeFoodPhoto + 1}`} width="700" height="700" />
+                      <img
+                        src={activeFoodPhotos[activeFoodPhoto]}
+                        alt={`${activeFoodData[0]}餐點照片 ${activeFoodPhoto + 1}`}
+                        width="700"
+                        height="700"
+                        onError={(event) => {
+                          event.currentTarget.onerror = null;
+                          event.currentTarget.src = foodPlaceholderImages[(activeFood + activeFoodPhoto) % foodPlaceholderImages.length];
+                        }}
+                      />
                       <span>{activeFoodPhoto + 1} / {FOOD_PHOTO_COUNT}</span>
                       <small>正式 700 × 700 照片待更新</small>
                     </div>
@@ -705,7 +747,16 @@ export default function Home() {
                   <div className="food-gallery-thumbnails" aria-label="餐點照片選擇">
                     {activeFoodPhotos.map((photo, index) => (
                       <button type="button" className={activeFoodPhoto === index ? "active" : ""} onClick={() => setActiveFoodPhoto(index)} key={`${photo}-${index}`} aria-label={`查看第${index + 1}張照片`}>
-                        <img src={photo} alt="" width="700" height="700" />
+                        <img
+                          src={photo}
+                          alt=""
+                          width="700"
+                          height="700"
+                          onError={(event) => {
+                            event.currentTarget.onerror = null;
+                            event.currentTarget.src = foodPlaceholderImages[(activeFood + index) % foodPlaceholderImages.length];
+                          }}
+                        />
                         <span>{String(index + 1).padStart(2, "0")}</span>
                       </button>
                     ))}

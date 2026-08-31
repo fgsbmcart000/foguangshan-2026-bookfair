@@ -236,6 +236,8 @@ const activityThemes = [
   ["好好玩", "親子・體驗・共學", "以戲曲、故事、生態與遊園體驗陪伴親子，在互動參與中創造共同學習的吉祥記憶。", "/assets/animal-icons/rabbit.png"],
 ] as const;
 
+const activityFilters = ["全部", "好好看", "好好吃", "好好玩"] as const;
+
 // 活動一覽表採獨立檔名；取得正式海報後可直接以同檔名覆蓋，不必修改程式。
 const activityPhotoByTitle: Record<string, string> = {
   "書展": "/assets/activity-posters/activity-01-book-fair.jpg",
@@ -271,6 +273,10 @@ export default function Home() {
   const [activeBookPage, setActiveBookPage] = useState(0);
   const [activeFood, setActiveFood] = useState<number | null>(null);
   const [activeFoodPhoto, setActiveFoodPhoto] = useState(0);
+  const [activityQuery, setActivityQuery] = useState("");
+  const [activityFilter, setActivityFilter] = useState<(typeof activityFilters)[number]>("全部");
+  const [savedActivities, setSavedActivities] = useState<string[]>([]);
+  const [itineraryReady, setItineraryReady] = useState(false);
   const foodTouchStartX = useRef<number | null>(null);
 
   const closeMenu = () => setMenuOpen(false);
@@ -286,6 +292,35 @@ export default function Home() {
   };
   const showPreviousFoodPhoto = () => setActiveFoodPhoto((photo) => (photo + FOOD_PHOTO_COUNT - 1) % FOOD_PHOTO_COUNT);
   const showNextFoodPhoto = () => setActiveFoodPhoto((photo) => (photo + 1) % FOOD_PHOTO_COUNT);
+
+  const toggleSavedActivity = (title: string) => {
+    setSavedActivities((current) => current.includes(title)
+      ? current.filter((item) => item !== title)
+      : [...current, title]);
+  };
+
+  useEffect(() => {
+    try {
+      const stored = window.localStorage.getItem("bookfair-2026-itinerary");
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) setSavedActivities(parsed.filter((item): item is string => typeof item === "string"));
+      }
+    } catch {
+      // 瀏覽器停用儲存功能時，行程仍可在本次瀏覽期間使用。
+    } finally {
+      setItineraryReady(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!itineraryReady) return;
+    try {
+      window.localStorage.setItem("bookfair-2026-itinerary", JSON.stringify(savedActivities));
+    } catch {
+      // 儲存空間不可用時不影響主要活動查詢功能。
+    }
+  }, [itineraryReady, savedActivities]);
 
   useEffect(() => {
     if (activeBook === null) return;
@@ -331,6 +366,16 @@ export default function Home() {
     { length: FOOD_PHOTO_COUNT },
     (_, photoIndex) => foodPhotoAsset(activeFood, photoIndex),
   );
+  const normalizedActivityQuery = activityQuery.trim().toLowerCase();
+  const filteredActivities = activityOverview.filter(([theme, title, description, date, time, place]) => {
+    const matchesFilter = activityFilter === "全部" || theme === activityFilter;
+    const matchesQuery = !normalizedActivityQuery || [title, description, date, time, place]
+      .some((value) => value.toLowerCase().includes(normalizedActivityQuery));
+    return matchesFilter && matchesQuery;
+  });
+  const savedActivityDetails = savedActivities
+    .map((savedTitle) => activityOverview.find(([, title]) => title === savedTitle))
+    .filter((activity): activity is (typeof activityOverview)[number] => Boolean(activity));
   const bookDetailPages = activeBookData ? [
     ["BOOK COVER", activeBookData[0], activeBookData[1]],
     ["選書簡介", "這本書談什麼？", activeBookData[2]],
@@ -816,6 +861,104 @@ export default function Home() {
             </div>
           </div>
           <div className="notice-bar"><strong>參觀提醒</strong><span>戶外活動建議準備防曬、防雨用品與環保水瓶；最新交通及活動異動以主辦單位公告為準。</span></div>
+        </section>
+
+        <section className="section visitor-tools-section" id="visitor-tools" aria-labelledby="visitor-tools-title">
+          <div className="visitor-tools-heading">
+            <div>
+              <p className="eyebrow">Plan your festival day</p>
+              <h2 id="visitor-tools-title">參觀小幫手</h2>
+              <p>搜尋想參加的活動，加入自己的參觀行程；不需要登入，行程會保留在目前使用的裝置中。</p>
+            </div>
+            <img src="/assets/animal-icons/rabbit.png" alt="" />
+          </div>
+
+          <div className="visitor-tools-layout">
+            <section className="activity-finder" aria-labelledby="activity-finder-title">
+              <div className="tool-panel-heading">
+                <div><small>ACTIVITY FINDER</small><h3 id="activity-finder-title">尋找活動</h3></div>
+                <strong aria-live="polite">找到 {filteredActivities.length} 項</strong>
+              </div>
+              <label className="activity-search">
+                <span>搜尋活動</span>
+                <input
+                  type="search"
+                  value={activityQuery}
+                  onChange={(event) => setActivityQuery(event.target.value)}
+                  placeholder="輸入活動、地點或關鍵字"
+                />
+              </label>
+              <div className="activity-filter-buttons" aria-label="活動分類篩選">
+                {activityFilters.map((filter) => (
+                  <button
+                    type="button"
+                    className={activityFilter === filter ? "active" : ""}
+                    aria-pressed={activityFilter === filter}
+                    onClick={() => setActivityFilter(filter)}
+                    key={filter}
+                  >{filter}</button>
+                ))}
+              </div>
+
+              <div className="activity-search-results" aria-live="polite">
+                {filteredActivities.length > 0 ? filteredActivities.map(([theme, title, , date, time, place]) => {
+                  const isSaved = savedActivities.includes(title);
+                  return (
+                    <article className="activity-search-item" key={title}>
+                      <div>
+                        <span className={`finder-theme theme-${theme}`}>{theme}</span>
+                        <h4>{title}</h4>
+                        <p>{date}・{time}</p>
+                        <small>{place}</small>
+                      </div>
+                      <button
+                        type="button"
+                        className={isSaved ? "saved" : ""}
+                        aria-pressed={isSaved}
+                        onClick={() => toggleSavedActivity(title)}
+                      >{isSaved ? "已加入行程" : "加入我的行程"}</button>
+                    </article>
+                  );
+                }) : (
+                  <div className="activity-search-empty">
+                    <strong>目前找不到符合條件的活動</strong>
+                    <p>可以縮短關鍵字，或切換回「全部」再試一次。</p>
+                  </div>
+                )}
+              </div>
+            </section>
+
+            <aside className="my-itinerary" aria-labelledby="my-itinerary-title">
+              <div className="tool-panel-heading">
+                <div><small>MY ITINERARY</small><h3 id="my-itinerary-title">我的行程</h3></div>
+                <strong>{savedActivityDetails.length} 項</strong>
+              </div>
+              {savedActivityDetails.length > 0 ? (
+                <>
+                  <div className="saved-activity-list">
+                    {savedActivityDetails.map(([, title, , date, time, place], index) => (
+                      <article key={title}>
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        <div><h4>{title}</h4><p>{date}・{time}</p><small>{place}</small></div>
+                        <button type="button" onClick={() => toggleSavedActivity(title)} aria-label={`從我的行程移除${title}`}>移除</button>
+                      </article>
+                    ))}
+                  </div>
+                  <div className="itinerary-actions">
+                    <a href="#schedule">查看每日活動表</a>
+                    <button type="button" onClick={() => setSavedActivities([])}>清除全部</button>
+                  </div>
+                </>
+              ) : (
+                <div className="itinerary-empty">
+                  <img src="/assets/animal-icons/owl.png" alt="" />
+                  <strong>行程還是空的</strong>
+                  <p>從左側挑選活動，按下「加入我的行程」就能開始安排。</p>
+                </div>
+              )}
+              <p className="itinerary-storage-note">行程只儲存在此裝置，不會上傳個人資料。</p>
+            </aside>
+          </div>
         </section>
       </div>
 

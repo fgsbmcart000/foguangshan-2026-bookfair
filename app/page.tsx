@@ -3,11 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 
 const navigation = [
-  ["活動主題和活動目的", "about"],
+  ["關於書展", "about"],
   ["活動亮點", "highlights"],
   ["每日活動表", "schedule"],
-  ["線上書展", "online"],
   ["教育推廣", "education"],
+  ["線上書展", "online"],
   ["攤位一覽", "booths"],
   ["參觀資訊", "visit"],
 ] as const;
@@ -374,7 +374,7 @@ export default function Home() {
           <div className="section-heading split-heading">
             <div>
               <p className="eyebrow">Theme &amp; origin</p>
-              <h1>活動主題和活動緣起</h1>
+              <h1>關於書展</h1>
             </div>
             <p className="lead">
               從閱讀延伸至蔬食探索，打造一場融合互動參與、沉浸體驗、文化藝術與環境教育的全感官生活之旅。
@@ -542,6 +542,28 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section education-section" id="education">
+          <div className="education-layout">
+            <div className="education-copy">
+              <p className="eyebrow">Education outreach</p>
+              <h2>教育推廣</h2>
+              <p>
+                結合校外教學與十二年國教核心素養，從語文、品德、生活、健康到環境教育，讓學生在互動中學習、在體驗中感悟，實踐「三好四給」。
+              </p>
+              <div className="education-tags">
+                <span>品德教育</span><span>環境教育</span><span>閱讀教育</span><span>健康促進</span><span>多元文化</span>
+              </div>
+              <button className="outline-button" type="button" disabled>校外教學報名・即將開放</button>
+            </div>
+            <div className="education-cards">
+              <article><span>01</span><h3>主題闖關</h3><p>以吉祥動物與三好四給為線索，在任務中建立品德與社會參與。</p></article>
+              <article><span>02</span><h3>生命教育</h3><p>從故事、生態與動物共生議題，學習尊重生命、珍惜資源。</p></article>
+              <article><span>03</span><h3>環教體驗</h3><p>串連環保行動、植物生態與蔬食推廣，讓永續落實於日常。</p></article>
+              <article><span>04</span><h3>閱讀推廣</h3><p>透過主題選書、故事屋與行動書車，讓閱讀成為探索世界的起點。</p></article>
+            </div>
+          </div>
+        </section>
+
         <section className="section online-section" id="online">
           <div className="section-heading split-heading">
             <div>
@@ -618,28 +640,6 @@ export default function Home() {
               </section>
             </div>
           )}
-        </section>
-
-        <section className="section education-section" id="education">
-          <div className="education-layout">
-            <div className="education-copy">
-              <p className="eyebrow">Education outreach</p>
-              <h2>教育推廣</h2>
-              <p>
-                結合校外教學與十二年國教核心素養，從語文、品德、生活、健康到環境教育，讓學生在互動中學習、在體驗中感悟，實踐「三好四給」。
-              </p>
-              <div className="education-tags">
-                <span>品德教育</span><span>環境教育</span><span>閱讀教育</span><span>健康促進</span><span>多元文化</span>
-              </div>
-              <button className="outline-button" type="button" disabled>校外教學報名・即將開放</button>
-            </div>
-            <div className="education-cards">
-              <article><span>01</span><h3>主題闖關</h3><p>以吉祥動物與三好四給為線索，在任務中建立品德與社會參與。</p></article>
-              <article><span>02</span><h3>生命教育</h3><p>從故事、生態與動物共生議題，學習尊重生命、珍惜資源。</p></article>
-              <article><span>03</span><h3>環教體驗</h3><p>串連環保行動、植物生態與蔬食推廣，讓永續落實於日常。</p></article>
-              <article><span>04</span><h3>閱讀推廣</h3><p>透過主題選書、故事屋與行動書車，讓閱讀成為探索世界的起點。</p></article>
-            </div>
-          </div>
         </section>
 
         <section className="section booth-section" id="booths">

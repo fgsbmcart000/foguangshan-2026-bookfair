@@ -1,0 +1,33 @@
+活動一覽表圖片替換說明
+
+1. 本資料夾共有 24 張活動示意圖，每張均為 1920 × 1080 px，比例為 16:9 橫式。
+2. 日後取得正式活動海報或照片時，請裁切為相同比例並以相同檔名覆蓋。
+3. 不需要修改網頁程式；重新發布網站後就會自動顯示新圖片。
+4. 建議使用 JPG、RGB 色彩模式，單張檔案控制在 500 KB 以內，以兼顧清晰度與載入速度。
+5. 請勿變更檔名或副檔名，否則網頁將找不到圖片。
+
+檔名依序為：
+activity-01-book-fair.jpg
+activity-02-reading-outreach.jpg
+activity-03-mobile-library.jpg
+activity-04-outdoor-sculpture.jpg
+activity-05-history-museum.jpg
+activity-06-ocean-future.jpg
+activity-07-buddhist-sculpture.jpg
+activity-08-maritime-silk-road.jpg
+activity-09-blue-white-porcelain.jpg
+activity-10-health-lecture.jpg
+activity-11-sutra-copying.jpg
+activity-12-vegetarian-expo.jpg
+activity-13-farmers-market.jpg
+activity-14-green-dining.jpg
+activity-15-tea-meditation.jpg
+activity-16-online-book-fair.jpg
+activity-17-nine-colored-deer.jpg
+activity-18-black-bear-conservation.jpg
+activity-19-embroidery-workshop.jpg
+activity-20-childrens-center.jpg
+activity-21-story-house.jpg
+activity-22-train-carriage.jpg
+activity-23-environment-train.jpg
+activity-24-botanical-garden.jpg

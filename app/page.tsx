@@ -236,8 +236,33 @@ const activityThemes = [
   ["好好玩", "親子・體驗・共學", "以戲曲、故事、生態與遊園體驗陪伴親子，在互動參與中創造共同學習的吉祥記憶。", "/assets/animal-icons/rabbit.png"],
 ] as const;
 
-// 後續取得活動照片時，只要以活動名稱設定圖片路徑，就會自動取代目前的動物示意圖。
-const activityPhotoByTitle: Record<string, string> = {};
+// 活動一覽表採獨立檔名；取得正式海報後可直接以同檔名覆蓋，不必修改程式。
+const activityPhotoByTitle: Record<string, string> = {
+  "書展": "/assets/activity-posters/activity-01-book-fair.jpg",
+  "文化深耕 書香生活 閱讀閱有趣": "/assets/activity-posters/activity-02-reading-outreach.jpg",
+  "雲水書坊－行動圖書館": "/assets/activity-posters/activity-03-mobile-library.jpg",
+  "洪易－戶外雕塑展": "/assets/activity-posters/activity-04-outdoor-sculpture.jpg",
+  "佛光山宗史館常設展更陳": "/assets/activity-posters/activity-05-history-museum.jpg",
+  "國立海洋科學博物館：海洋未來式巡迴特展": "/assets/activity-posters/activity-06-ocean-future.jpg",
+  "菩提心起－國立歷史博物館典藏佛像特展": "/assets/activity-posters/activity-07-buddhist-sculpture.jpg",
+  "佛教海線絲綢之路藝術特展": "/assets/activity-posters/activity-08-maritime-silk-road.jpg",
+  "鈷藍猶珍－震旦典藏元青花瓷特展": "/assets/activity-posters/activity-09-blue-white-porcelain.jpg",
+  "名家講座": "/assets/activity-posters/activity-10-health-lecture.jpg",
+  "千人抄經": "/assets/activity-posters/activity-11-sutra-copying.jpg",
+  "蔬食博覽會": "/assets/activity-posters/activity-12-vegetarian-expo.jpg",
+  "在地小農市集": "/assets/activity-posters/activity-13-farmers-market.jpg",
+  "綠色飲食": "/assets/activity-posters/activity-14-green-dining.jpg",
+  "千人茶禪": "/assets/activity-posters/activity-15-tea-meditation.jpg",
+  "數位主題場館－線上書展": "/assets/activity-posters/activity-16-online-book-fair.jpg",
+  "台北新劇團之戲曲好好玩《九色鹿》": "/assets/activity-posters/activity-17-nine-colored-deer.jpg",
+  "走進有熊國－臺灣國家公園黑熊保育特展教育推廣活動": "/assets/activity-posters/activity-18-black-bear-conservation.jpg",
+  "粘碧華刺繡工藝研習教育推廣": "/assets/activity-posters/activity-19-embroidery-workshop.jpg",
+  "三好兒童體驗館": "/assets/activity-posters/activity-20-childrens-center.jpg",
+  "大樹下故事屋": "/assets/activity-posters/activity-21-story-house.jpg",
+  "龍火車與馬車": "/assets/activity-posters/activity-22-train-carriage.jpg",
+  "佛光環教列車": "/assets/activity-posters/activity-23-environment-train.jpg",
+  "佛教植物園區": "/assets/activity-posters/activity-24-botanical-garden.jpg",
+};
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);

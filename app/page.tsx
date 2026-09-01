@@ -207,14 +207,14 @@ const activityOverview = [
   ["好好看", "書展", "內容涵蓋環境教育、養生、品德、心靈成長、外文類，從閱讀的力量療癒心靈、培養世界觀、增進自信、強化思考。透過閱讀的共同話題，讓親子間的互動更緊密，讓孩子從小養成良好的閱讀習慣，進而潛移默化成為有品德的人。", "11/7（六）–11/13（五）", "09:00–18:00", "風雨長廊"],
   ["好好看", "文化深耕 書香生活 閱讀閱有趣", "佛光山慈悲社會福利基金會效法愛讀書的星雲大師，連續推動「文化深耕 書香生活 閱讀閱有趣」活動。於書展期間，每年都有來自偏鄉的千位弱勢孩童受惠，期望透過全民閱讀風氣，帶動孩童習慣閱讀，翱翔在廣闊的知識海裡。", "11/7（六）", "配合書展開幕式", "大覺堂"],
   ["好好看", "雲水書坊－行動圖書館", "星雲大師讓「雲水書坊－行動圖書館」從想像變成真實，以願力慈光照耀偏鄉孩子，讓他們藉著閱讀的光明邁向未來。會飛的書車象徵人們只要有願力，就能飛翔；只要經過「改裝」讀了書、明了理，就能獲得心靈的自由。", "11/7（六）–11/13（五）", "09:00–18:00", "成佛大道"],
-  ["好好看", "洪易－戶外雕塑展", "延續洪易繽紛鮮明的創作風格與富含文化寓意的藝術語彙，作品色彩飽滿、造形奔放，融合民間美學、吉祥象徵與生活感知。觀眾可近距離感受藝術家如何將傳統文化轉化為充滿時代感的視覺表現，體會圓滿、祝福與共融的美好意象。", "11/7（六）–11/13（五）", "09:00–18:00", "萬人照相台及館內戶外草地"],
-  ["好好看", "佛光山宗史館常設展更陳", "依企劃書活動項目規劃為常設展更新內容，帶領觀眾透過展陳脈絡認識佛光山的人文精神、教育理念與弘法歷程。詳細展品、動線與展覽說明，可待主辦單位提供正式資料後補入。", "11/7（六）–11/13（五）", "依現場公告", "佛光山宗史館"],
+  ["好好看", "三羊和順－洪易藝術創作特展", "延續洪易繽紛鮮明的創作風格與富含文化寓意的藝術語彙，作品色彩飽滿、造形奔放，融合民間美學、吉祥象徵與生活感知。觀眾可近距離感受藝術家如何將傳統文化轉化為充滿時代感的視覺表現，體會圓滿、祝福與共融的美好意象。", "11/7（六）–11/13（五）", "09:00–18:00", "萬人照相台及館內戶外草地"],
+  ["好好看", "佛光山宗史館常設展－佛光山開山祖師星雲大師", "依企劃書活動項目規劃為常設展更新內容，帶領觀眾透過展陳脈絡認識佛光山的人文精神、教育理念與弘法歷程。詳細展品、動線與展覽說明，可待主辦單位提供正式資料後補入。", "11/7（六）–11/13（五）", "依現場公告", "佛光山宗史館"],
   ["好好看", "國立海洋科學博物館：海洋未來式巡迴特展", "海洋孕育生命，也承受人類活動與氣候變遷帶來的壓力。「海洋未來式」以海洋為核心、以未來為視角，聚焦地球氣候觀測、海洋生物多樣性、海洋能源未來應用，以及淨零碳排與綠生活實踐，啟發觀眾重新想像永續共生的未來。", "11/7（六）–11/13（五）", "09:00–18:00", "本館二樓佛光藝廊"],
   ["好好看", "菩提心起－國立歷史博物館典藏佛像特展", "佛教造像凝聚宗教精神、藝術表現與時代風貌。本展精選國立歷史博物館典藏佛像作品，透過不同時代、材質與造形語彙，呈現佛教藝術在歷史流轉中的多元樣貌，讓觀者於靜觀凝視之間感受莊嚴氣韻與審美意境。", "11/7（六）–11/13（五）", "09:00–18:00", "本館二樓第二展廳"],
-  ["好好看", "佛教海線絲綢之路藝術特展", "依企劃書活動項目規劃為佛教藝術特展，從海線絲綢之路的文化交流視角，呈現佛教藝術、信仰傳播與生活美學的流動關係。詳細展件與策展內容，可待正式資料確認後補入。", "11/7（六）–11/13（五）", "依現場公告", "本館展廳"],
+  ["好好看", "佛教海線絲綢之路－新媒體藝術特展", "依企劃書活動項目規劃為佛教藝術特展，從海線絲綢之路的文化交流視角，呈現佛教藝術、信仰傳播與生活美學的流動關係。詳細展件與策展內容，可待正式資料確認後補入。", "11/7（六）–11/13（五）", "依現場公告", "本館展廳"],
   ["好好看", "鈷藍猶珍－震旦典藏元青花瓷特展", "青花，是白瓷與鈷藍的相遇，是火焰與時間共同淬鍊的藝術傑作。元代青花瓷以磅礴氣勢、精緻紋飾與深邃藍白色調，在陶瓷史上樹立美學高峰；展品涵蓋梅瓶、大罐、玉壺春瓶等器型，邀請觀眾感受七百年前的偉大時代。", "11/7（六）–11/13（五）", "09:00–18:00", "本館二樓第一展廳"],
-  ["好好看", "名家講座", "特別邀請高雄長庚醫院骨科部運動醫學科周文毅醫師主講，從日常生活角度深入淺出說明骨質疏鬆、關節炎與肌少症的成因、常見症狀、預防方法與居家保健重點，並安排現場問答，協助民眾建立正確健康觀念。", "11/8（日）–11/12（四）", "14:00–15:30", "禮敬大廳五觀堂"],
   ["好好看", "千人抄經", "抄經，可說是心保的良方。在專注寧靜的抄寫中，心神專一、氣息平和，能讓心靈安定，祥和人我關係，進而愛護生活環境與大地。願大家在抄經與十修歌的體驗中，覺察身心寧靜，種下善根，以善念護持生活與大地。", "11/7（六）–11/13（五）", "10:00–17:00", "大佛平台抄經堂"],
+  ["好好看", "名家講座", "特別邀請高雄長庚醫院骨科部運動醫學科周文毅醫師主講，從日常生活角度深入淺出說明骨質疏鬆、關節炎與肌少症的成因、常見症狀、預防方法與居家保健重點，並安排現場問答，協助民眾建立正確健康觀念。", "11/8（日）–11/12（四）", "14:00–15:30", "禮敬大廳五觀堂"],
   ["好好吃", "蔬食博覽會", "現場規劃台灣在地特色食品、在地蔬果、農特產加工品、茶藝、精緻生活用品、保健商品等項目，讓民眾體驗「蔬福生活」。", "11/7（六）–11/13（五）", "09:00–18:00", "風雨長廊"],
   ["好好吃", "在地小農市集", "依企劃書活動項目規劃在地小農市集，串連友善農產、在地食材與綠色生活選物，讓參觀民眾從產地風味認識土地，也支持低碳、安心、可持續的日常飲食。詳細攤位名單可待正式招商資料後補入。", "11/7（六）–11/13（五）", "依現場公告", "依現場公告"],
   ["好好吃", "綠色飲食", "全館滴水坊全面供應素食，優先選用在地食材，推動綠色低碳飲食，落實健康環保理念，長養慈悲護生之心，積極宣導飲食生活轉型，帶動綠色生活風氣，響應蔬食愛地球，促進全球健康與福祉。", "11/7（六）–11/13（五）", "依各滴水坊用餐時間", "各滴水坊"],
@@ -243,11 +243,11 @@ const activityPhotoByTitle: Record<string, string> = {
   "書展": "/assets/activity-posters/activity-01-book-fair.jpg",
   "文化深耕 書香生活 閱讀閱有趣": "/assets/activity-posters/activity-02-reading-outreach.jpg",
   "雲水書坊－行動圖書館": "/assets/activity-posters/activity-03-mobile-library.jpg",
-  "洪易－戶外雕塑展": "/assets/activity-posters/activity-04-outdoor-sculpture.jpg",
-  "佛光山宗史館常設展更陳": "/assets/activity-posters/activity-05-history-museum.jpg",
+  "三羊和順－洪易藝術創作特展": "/assets/activity-posters/activity-04-outdoor-sculpture.jpg",
+  "佛光山宗史館常設展－佛光山開山祖師星雲大師": "/assets/activity-posters/activity-05-history-museum.jpg",
   "國立海洋科學博物館：海洋未來式巡迴特展": "/assets/activity-posters/activity-06-ocean-future.jpg",
   "菩提心起－國立歷史博物館典藏佛像特展": "/assets/activity-posters/activity-07-buddhist-sculpture.jpg",
-  "佛教海線絲綢之路藝術特展": "/assets/activity-posters/activity-08-maritime-silk-road.jpg",
+  "佛教海線絲綢之路－新媒體藝術特展": "/assets/activity-posters/activity-08-maritime-silk-road.jpg",
   "鈷藍猶珍－震旦典藏元青花瓷特展": "/assets/activity-posters/activity-09-blue-white-porcelain.jpg",
   "名家講座": "/assets/activity-posters/activity-10-health-lecture.jpg",
   "千人抄經": "/assets/activity-posters/activity-11-sutra-copying.jpg",
@@ -573,6 +573,34 @@ export default function Home() {
           <p className="overview-note">※ 活動內容、場次與地點如有調整，以主辦單位最新公告為準。</p>
         </section>
 
+        <section className="section lecture-section" id="lecture" aria-labelledby="lecture-title">
+          <div className="lecture-layout">
+            <div className="lecture-visual">
+              <img src="/assets/activity-posters/activity-10-health-lecture.jpg" alt="健康名家講座講師陣容" width="1920" height="1080" />
+              <span>健康專題・現場問答</span>
+            </div>
+            <div className="lecture-content">
+              <p className="eyebrow">Featured lecture</p>
+              <h2 id="lecture-title">名家講座</h2>
+              <div className="lecture-speaker">
+                <small>主講人</small>
+                <strong>周文毅 醫師</strong>
+                <span>高雄長庚醫院骨科部運動醫學科</span>
+              </div>
+              <p className="lecture-introduction">從日常生活角度深入淺出說明骨質疏鬆、關節炎與肌少症的成因、常見症狀、預防方法與居家保健重點，並安排現場問答，協助民眾建立正確健康觀念。</p>
+              <div className="lecture-topics" aria-label="講座主題">
+                <span>骨質疏鬆</span><span>關節保健</span><span>肌少症</span><span>居家保健</span>
+              </div>
+              <dl className="lecture-details">
+                <div><dt>日期</dt><dd>11/8（日）–11/12（四）</dd></div>
+                <div><dt>時間</dt><dd>14:00–15:30</dd></div>
+                <div><dt>地點</dt><dd>禮敬大廳五觀堂</dd></div>
+              </dl>
+              <p className="lecture-note">※ 各日講題、場次及入場方式，以主辦單位最新公告為準。</p>
+            </div>
+          </div>
+        </section>
+
         <section className="section schedule-section" id="schedule">
           <div className="section-heading centered light-heading">
             <p className="eyebrow">Daily program</p>
@@ -612,6 +640,104 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section visitor-tools-section" id="visitor-tools" aria-labelledby="visitor-tools-title">
+          <div className="visitor-tools-heading">
+            <div>
+              <p className="eyebrow">Plan your festival day</p>
+              <h2 id="visitor-tools-title">參觀小幫手</h2>
+              <p>搜尋想參加的活動，加入自己的參觀行程；不需要登入，行程會保留在目前使用的裝置中。</p>
+            </div>
+            <img src="/assets/animal-icons/rabbit.png" alt="" />
+          </div>
+
+          <div className="visitor-tools-layout">
+            <section className="activity-finder" aria-labelledby="activity-finder-title">
+              <div className="tool-panel-heading">
+                <div><small>ACTIVITY FINDER</small><h3 id="activity-finder-title">尋找活動</h3></div>
+                <strong aria-live="polite">找到 {filteredActivities.length} 項</strong>
+              </div>
+              <label className="activity-search">
+                <span>搜尋活動</span>
+                <input
+                  type="search"
+                  value={activityQuery}
+                  onChange={(event) => setActivityQuery(event.target.value)}
+                  placeholder="輸入活動、地點或關鍵字"
+                />
+              </label>
+              <div className="activity-filter-buttons" aria-label="活動分類篩選">
+                {activityFilters.map((filter) => (
+                  <button
+                    type="button"
+                    className={activityFilter === filter ? "active" : ""}
+                    aria-pressed={activityFilter === filter}
+                    onClick={() => setActivityFilter(filter)}
+                    key={filter}
+                  >{filter}</button>
+                ))}
+              </div>
+
+              <div className="activity-search-results" aria-live="polite">
+                {filteredActivities.length > 0 ? filteredActivities.map(([theme, title, , date, time, place]) => {
+                  const isSaved = savedActivities.includes(title);
+                  return (
+                    <article className="activity-search-item" key={title}>
+                      <div>
+                        <span className={`finder-theme theme-${theme}`}>{theme}</span>
+                        <h4>{title}</h4>
+                        <p>{date}・{time}</p>
+                        <small>{place}</small>
+                      </div>
+                      <button
+                        type="button"
+                        className={isSaved ? "saved" : ""}
+                        aria-pressed={isSaved}
+                        onClick={() => toggleSavedActivity(title)}
+                      >{isSaved ? "已加入行程" : "加入我的行程"}</button>
+                    </article>
+                  );
+                }) : (
+                  <div className="activity-search-empty">
+                    <strong>目前找不到符合條件的活動</strong>
+                    <p>可以縮短關鍵字，或切換回「全部」再試一次。</p>
+                  </div>
+                )}
+              </div>
+            </section>
+
+            <aside className="my-itinerary" aria-labelledby="my-itinerary-title">
+              <div className="tool-panel-heading">
+                <div><small>MY ITINERARY</small><h3 id="my-itinerary-title">我的行程</h3></div>
+                <strong>{savedActivityDetails.length} 項</strong>
+              </div>
+              {savedActivityDetails.length > 0 ? (
+                <>
+                  <div className="saved-activity-list">
+                    {savedActivityDetails.map(([, title, , date, time, place], index) => (
+                      <article key={title}>
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        <div><h4>{title}</h4><p>{date}・{time}</p><small>{place}</small></div>
+                        <button type="button" onClick={() => toggleSavedActivity(title)} aria-label={`從我的行程移除${title}`}>移除</button>
+                      </article>
+                    ))}
+                  </div>
+                  <div className="itinerary-actions">
+                    <a href="#schedule">查看每日活動表</a>
+                    <button type="button" onClick={() => setSavedActivities([])}>清除全部</button>
+                  </div>
+                </>
+              ) : (
+                <div className="itinerary-empty">
+                  <img src="/assets/animal-icons/owl.png" alt="" />
+                  <strong>行程還是空的</strong>
+                  <p>從左側挑選活動，按下「加入我的行程」就能開始安排。</p>
+                </div>
+              )}
+              <p className="itinerary-storage-note">行程只儲存在此裝置，不會上傳個人資料。</p>
+            </aside>
+          </div>
+        </section>
+
         <section className="section education-section" id="education">
           <div className="education-layout">
             <div className="education-copy">
@@ -630,34 +756,6 @@ export default function Home() {
               <article><span>02</span><h3>生命教育</h3><p>從故事、生態與動物共生議題，學習尊重生命、珍惜資源。</p></article>
               <article><span>03</span><h3>環教體驗</h3><p>串連環保行動、植物生態與蔬食推廣，讓永續落實於日常。</p></article>
               <article><span>04</span><h3>閱讀推廣</h3><p>透過主題選書、故事屋與行動書車，讓閱讀成為探索世界的起點。</p></article>
-            </div>
-          </div>
-        </section>
-
-        <section className="section lecture-section" id="lecture" aria-labelledby="lecture-title">
-          <div className="lecture-layout">
-            <div className="lecture-visual">
-              <img src="/assets/activity-posters/activity-10-health-lecture.jpg" alt="健康名家講座示意圖，醫師向現場聽眾分享骨骼與關節保健知識" width="1920" height="1080" />
-              <span>健康專題・現場問答</span>
-            </div>
-            <div className="lecture-content">
-              <p className="eyebrow">Featured lecture</p>
-              <h2 id="lecture-title">名家講座</h2>
-              <div className="lecture-speaker">
-                <small>主講人</small>
-                <strong>周文毅 醫師</strong>
-                <span>高雄長庚醫院骨科部運動醫學科</span>
-              </div>
-              <p className="lecture-introduction">從日常生活角度深入淺出說明骨質疏鬆、關節炎與肌少症的成因、常見症狀、預防方法與居家保健重點，並安排現場問答，協助民眾建立正確健康觀念。</p>
-              <div className="lecture-topics" aria-label="講座主題">
-                <span>骨質疏鬆</span><span>關節保健</span><span>肌少症</span><span>居家保健</span>
-              </div>
-              <dl className="lecture-details">
-                <div><dt>日期</dt><dd>11/8（日）–11/12（四）</dd></div>
-                <div><dt>時間</dt><dd>14:00–15:30</dd></div>
-                <div><dt>地點</dt><dd>禮敬大廳五觀堂</dd></div>
-              </dl>
-              <p className="lecture-note">※ 各日講題、場次及入場方式，以主辦單位最新公告為準。</p>
             </div>
           </div>
         </section>
@@ -708,13 +806,13 @@ export default function Home() {
                   <div className={`book-detail-page page-${activeBookPage + 1} ${activeBookPage > 0 && activeBookPage < 9 ? "text-focused" : ""}`}>
                     <span className="book-detail-number">{String(activeBookPage + 1).padStart(2, "0")}</span>
                     <img
-                      src={bookPageAsset(activeBook, activeBookPage)}
+                      src={bookPageAsset(activeBook!, activeBookPage)}
                       alt={`《${activeBookData[0]}》第 ${activeBookPage + 1} 頁示意圖`}
                       width="700"
                       height="700"
                       onError={(event) => {
                         event.currentTarget.onerror = null;
-                        event.currentTarget.src = bookPlaceholderImages[(activeBook + activeBookPage) % bookPlaceholderImages.length];
+                        event.currentTarget.src = bookPlaceholderImages[(activeBook! + activeBookPage) % bookPlaceholderImages.length];
                       }}
                     />
                     <div className="book-detail-copy">
@@ -833,7 +931,7 @@ export default function Home() {
                         height="700"
                         onError={(event) => {
                           event.currentTarget.onerror = null;
-                          event.currentTarget.src = foodPlaceholderImages[(activeFood + activeFoodPhoto) % foodPlaceholderImages.length];
+                          event.currentTarget.src = foodPlaceholderImages[(activeFood! + activeFoodPhoto) % foodPlaceholderImages.length];
                         }}
                       />
                       <span>{activeFoodPhoto + 1} / {FOOD_PHOTO_COUNT}</span>
@@ -852,7 +950,7 @@ export default function Home() {
                           height="700"
                           onError={(event) => {
                             event.currentTarget.onerror = null;
-                            event.currentTarget.src = foodPlaceholderImages[(activeFood + index) % foodPlaceholderImages.length];
+                            event.currentTarget.src = foodPlaceholderImages[(activeFood! + index) % foodPlaceholderImages.length];
                           }}
                         />
                         <span>{String(index + 1).padStart(2, "0")}</span>
@@ -891,103 +989,6 @@ export default function Home() {
           <div className="notice-bar"><strong>參觀提醒</strong><span>戶外活動建議準備防曬、防雨用品與環保水瓶；最新交通及活動異動以主辦單位公告為準。</span></div>
         </section>
 
-        <section className="section visitor-tools-section" id="visitor-tools" aria-labelledby="visitor-tools-title">
-          <div className="visitor-tools-heading">
-            <div>
-              <p className="eyebrow">Plan your festival day</p>
-              <h2 id="visitor-tools-title">參觀小幫手</h2>
-              <p>搜尋想參加的活動，加入自己的參觀行程；不需要登入，行程會保留在目前使用的裝置中。</p>
-            </div>
-            <img src="/assets/animal-icons/rabbit.png" alt="" />
-          </div>
-
-          <div className="visitor-tools-layout">
-            <section className="activity-finder" aria-labelledby="activity-finder-title">
-              <div className="tool-panel-heading">
-                <div><small>ACTIVITY FINDER</small><h3 id="activity-finder-title">尋找活動</h3></div>
-                <strong aria-live="polite">找到 {filteredActivities.length} 項</strong>
-              </div>
-              <label className="activity-search">
-                <span>搜尋活動</span>
-                <input
-                  type="search"
-                  value={activityQuery}
-                  onChange={(event) => setActivityQuery(event.target.value)}
-                  placeholder="輸入活動、地點或關鍵字"
-                />
-              </label>
-              <div className="activity-filter-buttons" aria-label="活動分類篩選">
-                {activityFilters.map((filter) => (
-                  <button
-                    type="button"
-                    className={activityFilter === filter ? "active" : ""}
-                    aria-pressed={activityFilter === filter}
-                    onClick={() => setActivityFilter(filter)}
-                    key={filter}
-                  >{filter}</button>
-                ))}
-              </div>
-
-              <div className="activity-search-results" aria-live="polite">
-                {filteredActivities.length > 0 ? filteredActivities.map(([theme, title, , date, time, place]) => {
-                  const isSaved = savedActivities.includes(title);
-                  return (
-                    <article className="activity-search-item" key={title}>
-                      <div>
-                        <span className={`finder-theme theme-${theme}`}>{theme}</span>
-                        <h4>{title}</h4>
-                        <p>{date}・{time}</p>
-                        <small>{place}</small>
-                      </div>
-                      <button
-                        type="button"
-                        className={isSaved ? "saved" : ""}
-                        aria-pressed={isSaved}
-                        onClick={() => toggleSavedActivity(title)}
-                      >{isSaved ? "已加入行程" : "加入我的行程"}</button>
-                    </article>
-                  );
-                }) : (
-                  <div className="activity-search-empty">
-                    <strong>目前找不到符合條件的活動</strong>
-                    <p>可以縮短關鍵字，或切換回「全部」再試一次。</p>
-                  </div>
-                )}
-              </div>
-            </section>
-
-            <aside className="my-itinerary" aria-labelledby="my-itinerary-title">
-              <div className="tool-panel-heading">
-                <div><small>MY ITINERARY</small><h3 id="my-itinerary-title">我的行程</h3></div>
-                <strong>{savedActivityDetails.length} 項</strong>
-              </div>
-              {savedActivityDetails.length > 0 ? (
-                <>
-                  <div className="saved-activity-list">
-                    {savedActivityDetails.map(([, title, , date, time, place], index) => (
-                      <article key={title}>
-                        <span>{String(index + 1).padStart(2, "0")}</span>
-                        <div><h4>{title}</h4><p>{date}・{time}</p><small>{place}</small></div>
-                        <button type="button" onClick={() => toggleSavedActivity(title)} aria-label={`從我的行程移除${title}`}>移除</button>
-                      </article>
-                    ))}
-                  </div>
-                  <div className="itinerary-actions">
-                    <a href="#schedule">查看每日活動表</a>
-                    <button type="button" onClick={() => setSavedActivities([])}>清除全部</button>
-                  </div>
-                </>
-              ) : (
-                <div className="itinerary-empty">
-                  <img src="/assets/animal-icons/owl.png" alt="" />
-                  <strong>行程還是空的</strong>
-                  <p>從左側挑選活動，按下「加入我的行程」就能開始安排。</p>
-                </div>
-              )}
-              <p className="itinerary-storage-note">行程只儲存在此裝置，不會上傳個人資料。</p>
-            </aside>
-          </div>
-        </section>
       </div>
 
       <footer>

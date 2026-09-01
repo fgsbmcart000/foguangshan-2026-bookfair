@@ -634,6 +634,34 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section lecture-section" id="lecture" aria-labelledby="lecture-title">
+          <div className="lecture-layout">
+            <div className="lecture-visual">
+              <img src="/assets/activity-posters/activity-10-health-lecture.jpg" alt="健康名家講座示意圖，醫師向現場聽眾分享骨骼與關節保健知識" width="1920" height="1080" />
+              <span>健康專題・現場問答</span>
+            </div>
+            <div className="lecture-content">
+              <p className="eyebrow">Featured lecture</p>
+              <h2 id="lecture-title">名家講座</h2>
+              <div className="lecture-speaker">
+                <small>主講人</small>
+                <strong>周文毅 醫師</strong>
+                <span>高雄長庚醫院骨科部運動醫學科</span>
+              </div>
+              <p className="lecture-introduction">從日常生活角度深入淺出說明骨質疏鬆、關節炎與肌少症的成因、常見症狀、預防方法與居家保健重點，並安排現場問答，協助民眾建立正確健康觀念。</p>
+              <div className="lecture-topics" aria-label="講座主題">
+                <span>骨質疏鬆</span><span>關節保健</span><span>肌少症</span><span>居家保健</span>
+              </div>
+              <dl className="lecture-details">
+                <div><dt>日期</dt><dd>11/8（日）–11/12（四）</dd></div>
+                <div><dt>時間</dt><dd>14:00–15:30</dd></div>
+                <div><dt>地點</dt><dd>禮敬大廳五觀堂</dd></div>
+              </dl>
+              <p className="lecture-note">※ 各日講題、場次及入場方式，以主辦單位最新公告為準。</p>
+            </div>
+          </div>
+        </section>
+
         <section className="section online-section" id="online">
           <div className="section-heading split-heading">
             <div>

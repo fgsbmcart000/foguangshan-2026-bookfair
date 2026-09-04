@@ -39,7 +39,7 @@ if (styles.length !== 1) throw new Error('Run the current vinext build before st
 fs.copyFileSync(path.join(builtAssets, styles[0]), path.join(out, 'styles.css'));
 fs.copyFileSync(path.join(root, 'public/favicon.svg'), path.join(out, 'favicon.svg'));
 fs.writeFileSync(path.join(out, 'index.html'), '\ufeff' + html, 'utf8');
-const assetPaths = [...new Set([...html.matchAll(/(?:src|href)="\.\/(assets\/[^"<>]+)"/g)].map(m => m[1]))];
+const assetPaths = [...new Set([...html.matchAll(/(?:src|srcset|href)="\.\/(assets\/[^"<>]+)"/gi)].map(m => m[1]))];
 for (const relative of assetPaths) {
   const source = path.join(root, 'public', relative);
   assert(fs.existsSync(source), `Missing asset: ${relative}`);

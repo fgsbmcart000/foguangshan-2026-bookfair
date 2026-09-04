@@ -570,6 +570,7 @@ export default function Home() {
                         <article className="activity-card" key={title}>
                           <div className={`activity-media ${photo ? "has-photo" : "is-placeholder"} ${title === "粘碧華刺繡工藝研習教育推廣" ? "has-portrait" : ""}`}>
                             <img src={photo || animalFallbacks[index % animalFallbacks.length]} alt={photo ? `${title}活動照片` : ""} />
+                            {title === "蔬食博覽會" && <img className="expo-brand-logo" src="/assets/activity-posters/fo-guang-market-logo.png" alt="佛光好事集" width="618" height="462" />}
                             {!photo && <span>活動影像可更新</span>}
                           </div>
                           <div className="activity-card-body">

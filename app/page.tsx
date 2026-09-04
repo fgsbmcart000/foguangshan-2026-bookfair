@@ -568,7 +568,7 @@ export default function Home() {
 
                       return (
                         <article className="activity-card" key={title}>
-                          <div className={`activity-media ${photo ? "has-photo" : "is-placeholder"}`}>
+                          <div className={`activity-media ${photo ? "has-photo" : "is-placeholder"} ${title === "粘碧華刺繡工藝研習教育推廣" ? "has-portrait" : ""}`}>
                             <img src={photo || animalFallbacks[index % animalFallbacks.length]} alt={photo ? `${title}活動照片` : ""} />
                             {!photo && <span>活動影像可更新</span>}
                           </div>

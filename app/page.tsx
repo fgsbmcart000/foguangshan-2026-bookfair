@@ -400,9 +400,8 @@ export default function Home() {
           />
           <span>
             <strong>佛光山 2026 書展暨蔬食博覽會</strong>
-            <small className="brand-en">Fo Guang Shan 2026 Book Fair and Vegetarian Expo</small>
             <small className="brand-theme">
-              吉祥動物派對 <span lang="en">Auspicious Animal Festival</span>
+              吉祥動物派對
             </small>
           </span>
         </a>

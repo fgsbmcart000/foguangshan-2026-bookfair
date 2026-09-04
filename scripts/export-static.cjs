@@ -14,7 +14,7 @@ fs.mkdirSync(out, { recursive: true });
 let page = fs.readFileSync(path.join(root, 'app/page.tsx'), 'utf8').replace(/\r\n/g, '\n');
 const excluded = ['schedule', 'online', 'booths', 'visitor-tools'];
 for (const id of excluded) {
-  const start = page.indexOf(`        <section className="section ${id === 'online' ? 'online' : id === 'booths' ? 'booth' : id === 'visitor-tools' ? 'visitor-tools' : 'schedule'}-section" id="${id}">`);
+  const start = page.indexOf(`        <section className="section ${id === 'online' ? 'online' : id === 'booths' ? 'booth' : id === 'visitor-tools' ? 'visitor-tools' : 'schedule'}-section" id="${id}"`);
   if (start < 0) throw new Error(`Missing expected section: ${id}`);
   const end = page.indexOf('        <section className="section ', start + 1);
   if (end < 0) throw new Error(`Missing following section: ${id}`);

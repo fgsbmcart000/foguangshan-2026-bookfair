@@ -214,20 +214,20 @@ const activityOverview = [
   ["好好看", "佛教海線絲綢之路－新媒體藝術特展", "依企劃書活動項目規劃為佛教藝術特展，從海線絲綢之路的文化交流視角，呈現佛教藝術、信仰傳播與生活美學的流動關係。詳細展件與策展內容，可待正式資料確認後補入。", "11/7（六）–11/13（五）", "依現場公告", "本館展廳"],
   ["好好看", "鈷藍猶珍－震旦典藏元青花瓷特展", "青花，是白瓷與鈷藍的相遇，是火焰與時間共同淬鍊的藝術傑作。元代青花瓷以磅礴氣勢、精緻紋飾與深邃藍白色調，在陶瓷史上樹立美學高峰；展品涵蓋梅瓶、大罐、玉壺春瓶等器型，邀請觀眾感受七百年前的偉大時代。", "11/7（六）–11/13（五）", "09:00–18:00", "本館二樓第一展廳"],
   ["好好看", "千人抄經", "抄經，可說是心保的良方。在專注寧靜的抄寫中，心神專一、氣息平和，能讓心靈安定，祥和人我關係，進而愛護生活環境與大地。願大家在抄經與十修歌的體驗中，覺察身心寧靜，種下善根，以善念護持生活與大地。", "11/7（六）–11/13（五）", "10:00–17:00", "大佛平台抄經堂"],
-  ["好好看", "名家講座", "特別邀請高雄長庚醫院骨科部運動醫學科周文毅醫師主講，從日常生活角度深入淺出說明骨質疏鬆、關節炎與肌少症的成因、常見症狀、預防方法與居家保健重點，並安排現場問答，協助民眾建立正確健康觀念。", "11/8（日）–11/12（四）", "14:00–15:30", "禮敬大廳五觀堂"],
+  ["好好看", "名家講座", "六場名家講座，涵蓋健康保健、佛教藝術、藍染工藝、食農教育、黑熊保育與自然生態。各場講題、講者、地點及報名資訊詳見海報。", "11/8（日）–11/13（五）", "14:00–15:30", "一教塔、禮敬大廳五觀堂（依場次）"],
   ["好好吃", "蔬食博覽會", "現場規劃台灣在地特色食品、在地蔬果、農特產加工品、茶藝、精緻生活用品、保健商品等項目，讓民眾體驗「蔬福生活」。", "11/7（六）–11/13（五）", "09:00–18:00", "風雨長廊"],
-  ["好好吃", "在地小農市集", "依企劃書活動項目規劃在地小農市集，串連友善農產、在地食材與綠色生活選物，讓參觀民眾從產地風味認識土地，也支持低碳、安心、可持續的日常飲食。詳細攤位名單可待正式招商資料後補入。", "11/7（六）–11/13（五）", "依現場公告", "依現場公告"],
+  ["好好吃", "在地小農市集", "依企劃書活動項目規劃在地小農市集，串連友善農產、在地食材與綠色生活選物，讓參觀民眾從產地風味認識土地，也支持低碳、安心、可持續的日常飲食。詳細攤位名單可待正式招商資料後補入。", "11/7（六）–11/13（五）", "09:00–18:00", "風雨長廊"],
   ["好好吃", "綠色飲食", "全館滴水坊全面供應素食，優先選用在地食材，推動綠色低碳飲食，落實健康環保理念，長養慈悲護生之心，積極宣導飲食生活轉型，帶動綠色生活風氣，響應蔬食愛地球，促進全球健康與福祉。", "11/7（六）–11/13（五）", "依各滴水坊用餐時間", "各滴水坊"],
   ["好好吃", "千人茶禪", "以茶會友的「千人茶禪」活動共分三輪：奉茶、奉茶點與茶飯禪。小茶師們以專注恭敬之心泡茶供眾，引導大眾在奉茶與品茗中體悟茶與禪皆源自生活；千人茶禪不僅是品茗，更是一次身心合一的修持。", "11/7（六）", "16:00–17:30", "菩提廣場"],
-  ["好好玩", "數位主題場館－線上書展", "今年特別設置數位主題場館，擴大書展的數位化，讓好書不設限。透過線上與線下整合，串連書展、蔬食文化、戶外雕塑、藝術展覽、環境教育及三好等主軸，讓各年齡層觀眾皆能參與、共感、共享。", "11/7（六）–11/13（五）", "網站全日開放", "數位主題網站"],
+  ["好好玩", "大會主題場館 線上VS線下", "今年大會主題場館，擴大書展的數位化，讓好書不設限。透過線上與線下整合，串連書展、蔬食文化、戶外雕塑、藝術展覽、環境教育及三好等主軸，讓各年齡層觀眾皆能參與、共感、共享。", "11/7（六）–11/13（五）", "網站全日開放", "數位主題網站"],
   ["好好玩", "台北新劇團之戲曲好好玩《九色鹿》", "台北新劇團以經典故事〈九色鹿〉為主題，透過生動有趣的戲曲表演，帶領兒童走進誠信與善良的寓言世界。演出結合戲曲身段、音樂與角色互動，讓孩子在欣賞表演的同時，自然理解誠實守信的重要價值。", "11/9（一）–11/13（五）", "平日10:30–11:00、13:30–14:00，共8場", "本館大覺堂"],
   ["好好玩", "走進有熊國－臺灣國家公園黑熊保育特展教育推廣活動", "由三大國家公園管理處聯合主辦，攜手農業部生物多樣性研究所與台灣黑熊保育協會共同呈現。展出涵蓋臺灣黑熊生態知識、最新研究成果、黑熊與原住民族文化連結及保育成果，並設互動教具區、視聽區與印章體驗區。", "11/7（六）–11/13（五）", "09:00–18:00", "禮敬大廳二樓迴廊"],
   ["好好玩", "粘碧華刺繡工藝研習教育推廣", "依企劃書活動項目規劃刺繡工藝研習教育推廣，透過手作體驗與工藝導覽，引導民眾認識刺繡藝術的細緻技法、文化記憶與美感養成。詳細課程場次、報名方式與作品主題可待正式資料後補入。", "11/7（六）–11/13（五）", "依現場公告", "依現場公告"],
   ["好好玩", "三好兒童體驗館", "專為兒童設計的「三好兒童館」，以星雲大師提倡的三好運動「做好事、說好話、存好心」為中心思想。跟隨人間衛視卡通主角小沙彌「歡喜」，在三好轉盤、3D電影「三好劇院」和多媒體感應互動「三好學園」中體驗三好內涵。", "11/7（六）–11/13（五）", "09:00–18:00", "二眾塔"],
   ["好好玩", "大樹下故事屋", "佛陀紀念館邀請各國中小校長、老師在犀牛區為孩子說故事，透過故事啟發心靈，引導孩子種下三好的品格種子。活動結合生態解說、綠色消費、資源回收教育與親子環保手作 DIY，讓孩子從做中學、玩中悟。", "11/7（六）–11/13（五）", "09:00–16:00", "犀牛區"],
-  ["好好玩", "龍火車與馬車", "佛光山2026年書展暨蔬食博覽會僅有7天，邀請民眾把握機會體驗乘坐歐式馬車，漫步於佛館菩提廣場，感受悠然閒適的氛圍；也可搭乘龍火車行駛在成佛大道上，與家人一同回味快樂童年時光。", "11/7（六）–11/13（五）", "龍火車：11/7–11/8 10:00–16:00、11/9–11/13 09:00–15:00；馬車：11/9–11/10 09:30–16:00；騎警隊：11/12–11/13 10:00–12:00", "成佛大道"],
+  ["好好玩", "龍火車與馬車", "佛光山2026年書展暨蔬食博覽會僅有7天，邀請民眾把握機會體驗乘坐歐式馬車，漫步於佛館菩提廣場，感受悠然閒適的氛圍；也可搭乘龍火車行駛在成佛大道上，與家人一同回味快樂童年時光。", "11/7（六）–11/13（五）", "龍火車：11/7–11/8 10:00–16:00、11/9–11/13 09:00–15:00；馬車：11/9–11/10 09:30–16:00", "成佛大道"],
   ["好好玩", "佛光環教列車", "佛陀紀念館環境教育長期透過環保行動、生命尊重、植物生態、蔬食推廣四大教案，引領大眾反思人與自然的關係。期盼啟發每位參與者從「心的環保」化為「身的行動」，落實惜水、惜物、護生的永續承諾。", "11/7（六）–11/13（五）", "09:00–17:00", "二眾塔、四給塔、七誡塔"],
-  ["好好玩", "佛教植物園區", "依企劃書活動項目規劃佛教植物園區，結合植物觀察、生命教育與佛教文化，引導參觀者從自然中理解護生、惜物與永續共存的精神。詳細導覽內容與體驗方式可待正式資料後補入。", "11/7（六）–11/13（五）", "09:00–18:00", "佛教植物園區"],
+  ["好好玩", "佛教植物園區", "在館內佛教植物園區，結合植物觀察、生命教育與佛教文化，引導參觀者從自然中理解護生、惜物與永續共存的精神。", "11/7（六）–11/13（五）", "09:00–18:00", "佛教植物園區"],
 ] as const;
 
 const activityThemes = [
@@ -249,13 +249,12 @@ const activityPhotoByTitle: Record<string, string> = {
   "菩提心起－國立歷史博物館典藏佛像特展": "/assets/activity-posters/activity-07-buddhist-sculpture.jpg",
   "佛教海線絲綢之路－新媒體藝術特展": "/assets/activity-posters/activity-08-maritime-silk-road.jpg",
   "鈷藍猶珍－震旦典藏元青花瓷特展": "/assets/activity-posters/activity-09-blue-white-porcelain.jpg",
-  "名家講座": "/assets/activity-posters/activity-10-health-lecture.jpg",
   "千人抄經": "/assets/activity-posters/activity-11-sutra-copying.jpg",
   "蔬食博覽會": "/assets/activity-posters/activity-12-vegetarian-expo.jpg",
   "在地小農市集": "/assets/activity-posters/activity-13-farmers-market.jpg",
   "綠色飲食": "/assets/activity-posters/activity-14-green-dining.jpg",
   "千人茶禪": "/assets/activity-posters/activity-15-tea-meditation.jpg",
-  "數位主題場館－線上書展": "/assets/activity-posters/activity-16-online-book-fair.jpg",
+  "大會主題場館 線上VS線下": "/assets/activity-posters/activity-16-online-book-fair.jpg",
   "台北新劇團之戲曲好好玩《九色鹿》": "/assets/activity-posters/activity-17-nine-colored-deer.jpg",
   "走進有熊國－臺灣國家公園黑熊保育特展教育推廣活動": "/assets/activity-posters/activity-18-black-bear-conservation.jpg",
   "粘碧華刺繡工藝研習教育推廣": "/assets/activity-posters/activity-19-embroidery-workshop.jpg",
@@ -538,13 +537,34 @@ export default function Home() {
                       <h3 id={`theme-${theme}`}>吉祥{theme}</h3>
                       <span>{introduction}</span>
                     </div>
-                    <strong>{activities.length} 項活動</strong>
+                    {theme === "好好吃" && <strong>{activities.length} 項活動</strong>}
                   </div>
 
                   <div className="activity-card-grid">
                     {activities.map(([, title, description, date, time, place], index) => {
                       const photo = activityPhotoByTitle[title];
                       const animalFallbacks = [fallbackImage, "/assets/animal-icons/bear.png", "/assets/animal-icons/deer.png", "/assets/animal-icons/whale.png", "/assets/animal-icons/rhino.png", "/assets/animal-icons/giraffe.png"];
+
+                      if (title === "名家講座") {
+                        return (
+                          <article className="activity-card lecture-card" id="lecture" key={title} aria-labelledby="lecture-title">
+                            <div className="activity-card-body">
+                              <span className={"theme-pill " + theme}>{theme}</span>
+                              <h4 id="lecture-title">{title}</h4>
+                              <p>{description}</p>
+                              <dl className="activity-meta">
+                                <div><dt>日期</dt><dd>{date}</dd></div>
+                                <div><dt>時間</dt><dd>{time}</dd></div>
+                                <div><dt>地點</dt><dd>{place}</dd></div>
+                              </dl>
+                            </div>
+                            <div className="lecture-poster-grid">
+                              <img src="/assets/activity-posters/lecture-1108-1110.jpeg" alt="11月8日至10日名家講座：周文毅博士、蔡耀慶博士、王一帆老師；時間14:00–15:30，場地與報名QR碼詳見海報" width="800" height="1000" />
+                              <img src="/assets/activity-posters/lecture-1111-1113.jpeg" alt="11月11日至13日名家講座：霍柏任老師、黃美秀教授、舒夢蘭導演；時間14:00–15:30，場地與報名QR碼詳見海報" width="800" height="1000" />
+                            </div>
+                          </article>
+                        );
+                      }
 
                       return (
                         <article className="activity-card" key={title}>
@@ -571,34 +591,6 @@ export default function Home() {
             })}
           </div>
           <p className="overview-note">※ 活動內容、場次與地點如有調整，以主辦單位最新公告為準。</p>
-        </section>
-
-        <section className="section lecture-section" id="lecture" aria-labelledby="lecture-title">
-          <div className="lecture-layout">
-            <div className="lecture-visual">
-              <img src="/assets/activity-posters/activity-10-health-lecture.jpg" alt="健康名家講座講師陣容" width="1920" height="1080" />
-              <span>健康專題・現場問答</span>
-            </div>
-            <div className="lecture-content">
-              <p className="eyebrow">Featured lecture</p>
-              <h2 id="lecture-title">名家講座</h2>
-              <div className="lecture-speaker">
-                <small>主講人</small>
-                <strong>周文毅 醫師</strong>
-                <span>高雄長庚醫院骨科部運動醫學科</span>
-              </div>
-              <p className="lecture-introduction">從日常生活角度深入淺出說明骨質疏鬆、關節炎與肌少症的成因、常見症狀、預防方法與居家保健重點，並安排現場問答，協助民眾建立正確健康觀念。</p>
-              <div className="lecture-topics" aria-label="講座主題">
-                <span>骨質疏鬆</span><span>關節保健</span><span>肌少症</span><span>居家保健</span>
-              </div>
-              <dl className="lecture-details">
-                <div><dt>日期</dt><dd>11/8（日）–11/12（四）</dd></div>
-                <div><dt>時間</dt><dd>14:00–15:30</dd></div>
-                <div><dt>地點</dt><dd>禮敬大廳五觀堂</dd></div>
-              </dl>
-              <p className="lecture-note">※ 各日講題、場次及入場方式，以主辦單位最新公告為準。</p>
-            </div>
-          </div>
         </section>
 
         <section className="section schedule-section" id="schedule">

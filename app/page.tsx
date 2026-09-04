@@ -537,7 +537,6 @@ export default function Home() {
                       <h3 id={`theme-${theme}`}>吉祥{theme}</h3>
                       <span>{introduction}</span>
                     </div>
-                    {theme === "好好吃" && <strong>{activities.length} 項活動</strong>}
                   </div>
 
                   <div className="activity-card-grid">

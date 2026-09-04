@@ -594,6 +594,8 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 /* 名家講座：完整直式海報，置於吉祥好好看最後。 */
+.activity-registration-link { display: inline-block; margin-left: .4em; padding: .2em 0; color: var(--teal); font-size: 18px; font-weight: 700; text-decoration: underline; text-underline-offset: .2em; }
+.activity-registration-link:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 .lecture-card { grid-column: 1 / -1; scroll-margin-top: 100px; }
 .lecture-poster-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: 0 22px 22px; }
 .lecture-poster-grid img { display: block; width: 100%; height: auto; }

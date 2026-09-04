@@ -550,7 +550,7 @@ export default function Home() {
                           <article className="activity-card lecture-card" id="lecture" key={title} aria-labelledby="lecture-title">
                             <div className="activity-card-body">
                               <span className={"theme-pill " + theme}>{theme}</span>
-                              <h4 id="lecture-title">{title}</h4>
+                              <h4 id="lecture-title">{title}{" "}<a className="activity-registration-link" href="https://docs.google.com/forms/d/e/1FAIpQLScfDWD1I8NE7Ngs-WUogfWZnurtUvn_0dYXnzvABAkXLI1xXg/viewform" target="_blank" rel="noopener noreferrer" aria-label="名家講座報名連結（另開分頁）">報名連結</a></h4>
                               <p>{description}</p>
                               <dl className="activity-meta">
                                 <div><dt>日期</dt><dd>{date}</dd></div>
@@ -574,7 +574,7 @@ export default function Home() {
                           </div>
                           <div className="activity-card-body">
                             <span className={`theme-pill ${theme}`}>{theme}</span>
-                            <h4>{title}</h4>
+                            <h4>{title}{title === "台北新劇團之戲曲好好玩《九色鹿》" && <>{" "}<a className="activity-registration-link" href="http://lnago.com/ADR15" target="_blank" rel="noopener noreferrer" aria-label="九色鹿報名連結（另開分頁）">報名連結</a></>}</h4>
                             <p>{description}</p>
                             <dl className="activity-meta">
                               <div><dt>日期</dt><dd>{date}</dd></div>

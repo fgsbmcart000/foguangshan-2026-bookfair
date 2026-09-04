@@ -978,6 +978,13 @@ export default function Home() {
             </div>
           </div>
           <div className="notice-bar"><strong>參觀提醒</strong><span>戶外活動建議準備防曬、防雨用品與環保水瓶；最新交通及活動異動以主辦單位公告為準。</span></div>
+          <section className="book-voucher-plan" aria-labelledby="book-voucher-title">
+            <h3 id="book-voucher-title">圖書推廣計劃</h3>
+            <p>為提升觀眾購買書籍及圖書禮券之意願，推出圖書禮券，藉由滿額抽獎促進並鼓勵參與的民眾購書、護持偏鄉孩童閱讀，並讓大眾看見閱讀的力量，帶動閱讀風氣。</p>
+            <p>圖書禮券現已開放預購，可於佛光山及佛館各項活動期間購買。</p>
+            <p><strong>憑票根有好康：</strong>書展期間，購圖書禮券滿千者，憑票根即可參加現場抽獎。</p>
+            <img src="/assets/book-voucher-2026.jpg" alt="佛光山2026書展暨蔬食博覽會圖書禮券票面與使用說明" width="2479" height="1057" />
+          </section>
         </section>
 
       </div>

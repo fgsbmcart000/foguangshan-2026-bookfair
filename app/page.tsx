@@ -104,6 +104,7 @@ const boothShowcase = [
 ] as const;
 
 const catalogAnimals = [
+  "/assets/animal-icons/sheep.png",
   "/assets/animal-icons/owl.png",
   "/assets/animal-icons/bear.png",
   "/assets/animal-icons/deer.png",
@@ -149,7 +150,7 @@ const activityOverview = [
   ["好好看", "佛光山宗史館常設展－佛光山開山祖師星雲大師", "佛陀紀念館策畫長達五年之久的「佛光山宗史館常設展—佛光山開山祖師星雲大師」更新。此次新增2011年至大師2023年圓寂前，15年來推動人間佛教各項活動的創見作法與最後的叮嚀，皆於展覽中呈現。帶領觀眾透過展陳脈絡認識佛光山的人文精神、教育理念與弘法歷程。詳細展品、動線與展覽說明", "11/7（六）–11/13（五）", "09:00–18:00", "本館一樓"],
   ["好好看", "國立海洋科學博物館：海洋未來式巡迴特展", "海洋孕育生命，也承受人類活動與氣候變遷帶來的壓力。「海洋未來式」以海洋為核心、以未來為視角，聚焦地球氣候觀測、海洋生物多樣性、海洋能源未來應用，以及淨零碳排與綠生活實踐，啟發觀眾重新想像永續共生的未來。", "11/7（六）–11/13（五）", "09:00–18:00", "本館二樓佛光藝廊"],
   ["好好看", "菩提心起－國立歷史博物館典藏佛像特展", "佛教造像凝聚宗教精神、藝術表現與時代風貌。本展精選國立歷史博物館典藏佛像作品，透過不同時代、材質與造形語彙，呈現佛教藝術在歷史流轉中的多元樣貌，讓觀者於靜觀凝視之間感受莊嚴氣韻與審美意境。", "11/7（六）–11/13（五）", "09:00–18:00", "本館二樓第二展廳"],
-  ["好好看", "佛教海線絲綢之路－新媒體藝術特展", "依企劃書活動項目規劃為佛教藝術特展，從海線絲綢之路的文化交流視角，呈現佛教藝術、信仰傳播與生活美學的流動關係。詳細展件與策展內容，可待正式資料確認後補入。", "11/7（六）–11/13（五）", "09:00–18:00", "本館二樓第三展廳"],
+  ["好好看", "佛教海線絲綢之路－新媒體藝術特展", "佛教藝術特展，從海線絲綢之路的文化交流視角，呈現佛教藝術、信仰傳播與生活美學的流動關係。", "11/7（六）–11/13（五）", "09:00–18:00", "本館二樓第三展廳"],
   ["好好看", "鈷藍猶珍－震旦典藏元青花瓷特展", "青花，是白瓷與鈷藍的相遇，是火焰與時間共同淬鍊的藝術傑作。元代青花瓷以磅礴氣勢、精緻紋飾與深邃藍白色調，在陶瓷史上樹立美學高峰；展品涵蓋梅瓶、大罐、玉壺春瓶等器型，邀請觀眾感受七百年前的偉大時代。", "11/7（六）–11/13（五）", "09:00–18:00", "本館二樓第一展廳"],
   ["好好看", "千人抄經", "抄經，可說是心保的良方。在專注寧靜的抄寫中，心神專一、氣息平和，能讓心靈安定，祥和人我關係，進而愛護生活環境與大地。願大家在抄經與十修歌的體驗中，覺察身心寧靜，種下善根，以善念護持生活與大地。", "11/7（六）–11/13（五）", "10:00–17:00", "大佛平台抄經堂"],
   ["好好看", "名家講座", "六場名家講座，涵蓋健康保健、佛教藝術、藍染工藝、食農教育、黑熊保育與自然生態。各場講題、講者、地點及報名資訊詳見海報。", "11/8（日）–11/13（五）", "14:00–15:30", "一教塔、禮敬大廳五觀堂（依場次）"],
@@ -465,7 +466,7 @@ export default function Home() {
             </article>
             <div className="info-stack">
               <div className="info-card teal-card">
-                <img className="info-animal" src="/assets/animal-icons/deer.png" alt="" />
+                <img className="info-animal" src="/assets/animal-icons/sheep.png" alt="" />
                 <div><small>活動日期／開幕式</small><strong>2026.11.07(六) — 11.13(五)<br />開幕式 11.07(六) 10:30<br />地點：本館大覺堂</strong></div>
               </div>
               <div className="info-card cream-card">
@@ -528,7 +529,7 @@ export default function Home() {
                   <div className="activity-card-grid">
                     {activities.map(([, title, description, date, time, place], index) => {
                       const photo = activityPhotoByTitle[title];
-                      const animalFallbacks = [fallbackImage, "/assets/animal-icons/bear.png", "/assets/animal-icons/deer.png", "/assets/animal-icons/whale.png", "/assets/animal-icons/rhino.png", "/assets/animal-icons/giraffe.png"];
+                      const animalFallbacks = [fallbackImage, "/assets/animal-icons/sheep.png", "/assets/animal-icons/bear.png", "/assets/animal-icons/deer.png", "/assets/animal-icons/whale.png", "/assets/animal-icons/rhino.png", "/assets/animal-icons/giraffe.png"];
 
                       if (title === "名家講座") {
                         return (
@@ -553,7 +554,7 @@ export default function Home() {
 
                       return (
                         <article className="activity-card" key={title}>
-                          <div className={`activity-media ${photo ? "has-photo" : "is-placeholder"} ${title === "粘碧華刺繡工藝研習教育推廣" ? "has-portrait" : ""}`}>
+                          <div className={`activity-media ${photo ? "has-photo" : "is-placeholder"} ${title === "粘碧華刺繡工藝研習教育推廣" ? "has-portrait" : ""} ${title === "雲水書坊－行動圖書館" ? "align-top" : ""}`}>
                             <img src={photo || animalFallbacks[index % animalFallbacks.length]} alt={photo ? `${title}活動照片` : ""} />
                             {title === "蔬食博覽會" && <img className="expo-brand-logo" src="/assets/activity-posters/fo-guang-market-logo.png" alt="佛光好事集" width="618" height="462" />}
                             {!photo && <span>活動影像可更新</span>}
@@ -729,7 +730,7 @@ export default function Home() {
               {allDayActivities.length > 0 && (
                 <section className="all-day-schedule" aria-labelledby="all-day-title">
                   <div className="schedule-group-heading">
-                    <img src="/assets/animal-icons/owl.png" alt="" />
+                    <img src="/assets/animal-icons/sheep.png" alt="" />
                     <div>
                       <span>ALL-DAY HIGHLIGHTS</span>
                       <h3 id="all-day-title">全天活動</h3>

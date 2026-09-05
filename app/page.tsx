@@ -170,12 +170,12 @@ const activityOverview = [
 ] as const;
 
 const lectureSchedule = [
-  { day: 8, date: "11/8（日）", time: "14:00–15:30", speaker: "周文毅博士", topic: "越活越有力—預防疏鬆、顧關節、增肌力" },
-  { day: 9, date: "11/9（一）", time: "14:00–15:30", speaker: "蔡耀慶博士", topic: "菩提心起—國立歷史博物館典藏佛像特展" },
-  { day: 10, date: "11/10（二）", time: "14:00–15:30", speaker: "王一帆老師", topic: "一檳榔一世界—用不同角度看事物" },
-  { day: 11, date: "11/11（三）", time: "14:00–15:30", speaker: "霍柏任老師", topic: "「食物的最後一哩路」" },
-  { day: 12, date: "11/12（四）", time: "14:00–15:30", speaker: "黃美秀教授", topic: "走進有熊國" },
-  { day: 13, date: "11/13（五）", time: "14:00–15:30", speaker: "舒夢蘭導演", topic: "守護地球的幸福" },
+  { day: 8, date: "11/8（日）", time: "14:00–15:30", speaker: "周文毅博士", topic: "越活越有力—預防疏鬆、顧關節、增肌力", place: "禮敬大廳五觀堂" },
+  { day: 9, date: "11/9（一）", time: "14:00–15:30", speaker: "蔡耀慶博士", topic: "菩提心起—國立歷史博物館典藏佛像特展", place: "一教塔" },
+  { day: 10, date: "11/10（二）", time: "14:00–15:30", speaker: "王一帆老師", topic: "一檳榔一世界—用不同角度看事物", place: "一教塔" },
+  { day: 11, date: "11/11（三）", time: "14:00–15:30", speaker: "霍柏任老師", topic: "「食物的最後一哩路」", place: "一教塔" },
+  { day: 12, date: "11/12（四）", time: "14:00–15:30", speaker: "黃美秀教授", topic: "走進有熊國", place: "禮敬大廳五觀堂" },
+  { day: 13, date: "11/13（五）", time: "14:00–15:30", speaker: "舒夢蘭導演", topic: "守護地球的幸福", place: "禮敬大廳五觀堂" },
 ] as const;
 
 type ScheduleItem = [time: string, title: string, place: string];
@@ -210,7 +210,7 @@ const schedule = scheduleDays.map(({ date, day }) => {
     if (title === "名家講座") {
       const lecture = lectureSchedule.find((item) => item.day === dayNumber);
       if (lecture) {
-        items.push([lecture.time, `名家講座｜${lecture.speaker}：${lecture.topic}`, place]);
+        items.push([lecture.time, `名家講座｜${lecture.speaker}：${lecture.topic}`, lecture.place]);
       }
       return;
     }
@@ -564,7 +564,7 @@ export default function Home() {
                                 <table className="lecture-table">
                                   <caption>2026 名家講座場次表</caption>
                                   <thead>
-                                    <tr><th scope="col">日期</th><th scope="col">時間</th><th scope="col">講者</th><th scope="col">講題</th></tr>
+                                    <tr><th scope="col">日期</th><th scope="col">時間</th><th scope="col">講者</th><th scope="col">講題</th><th scope="col">地點</th></tr>
                                   </thead>
                                   <tbody>
                                     {lectureSchedule.map((lecture) => (
@@ -573,6 +573,7 @@ export default function Home() {
                                         <td>{lecture.time}</td>
                                         <td>{lecture.speaker}</td>
                                         <td>{lecture.topic}</td>
+                                        <td>{lecture.place}</td>
                                       </tr>
                                     ))}
                                   </tbody>

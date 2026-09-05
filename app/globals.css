@@ -637,7 +637,7 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
 .lecture-card { grid-column: 1 / -1; scroll-margin-top: 100px; }
 .lecture-card .activity-meta { margin-top: 0; }
 .lecture-table-wrap { width: 100%; margin-top: 28px; overflow-x: auto; border: 1px solid rgba(19,110,106,.18); border-radius: 18px 6px 18px 6px; background: #fffdf8; box-shadow: 0 10px 28px rgba(20,59,76,.07); }
-.lecture-table { width: 100%; min-width: 780px; border-collapse: collapse; text-align: left; }
+.lecture-table { width: 100%; min-width: 940px; border-collapse: collapse; text-align: left; }
 .lecture-table caption { padding: 17px 20px; color: #fff; background: var(--teal); font-size: 20px; font-weight: 900; text-align: left; }
 .lecture-table th { padding: 13px 16px; border-bottom: 2px solid rgba(19,110,106,.18); color: var(--teal); background: #edf7f3; font-size: 14px; letter-spacing: .05em; }
 .lecture-table td { padding: 15px 16px; border-bottom: 1px solid rgba(19,110,106,.12); color: var(--ink); font-size: 15px; line-height: 1.55; vertical-align: top; }
@@ -645,6 +645,7 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
 .lecture-table tbody tr:last-child td { border-bottom: 0; }
 .lecture-table td:nth-child(-n+3) { font-weight: 850; white-space: nowrap; }
 .lecture-table td:nth-child(3) { color: var(--orange); }
+.lecture-table td:last-child { color: var(--teal); font-weight: 850; white-space: nowrap; }
 .lecture-poster-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: 0 22px 22px; }
 .lecture-poster-grid img { display: block; width: 100%; height: auto; }
 @media (max-width: 720px) {

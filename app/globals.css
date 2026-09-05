@@ -222,19 +222,37 @@ h1, h2 { margin: 0; font-size: clamp(38px, 5vw, 68px); line-height: 1.06; letter
 .date-tabs strong, .date-tabs span { display: block; }
 .date-tabs strong { font-size: 20px; }
 .date-tabs span { margin-top: 4px; font-size: 12px; opacity: .8; }
-.timeline { display: grid; grid-template-columns: 220px 1fr; max-width: 1000px; margin: auto; padding: clamp(24px, 4vw, 52px); border-radius: 30px; color: var(--ink); background: #fffaf0; }
-.timeline-date { display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid var(--line); }
+.timeline { display: grid; grid-template-columns: 220px 1fr; max-width: 1120px; margin: auto; overflow: hidden; border: 1px solid rgba(255,255,255,.25); border-radius: 32px; color: var(--ink); background: #fffaf0; box-shadow: 0 28px 70px rgba(0,45,49,.28); }
+.timeline-date { position: relative; display: flex; min-height: 380px; flex-direction: column; justify-content: flex-start; align-items: center; padding: 58px 28px; border-right: 1px solid rgba(19,110,106,.16); background: linear-gradient(160deg, #fff4d3 0%, #f7ead7 100%); }
+.timeline-date::after { position: absolute; right: -7px; top: 78px; width: 14px; height: 66px; border-radius: 8px; background: var(--yellow); content: ""; }
 .timeline-date small { color: var(--teal); font-weight: 900; letter-spacing: .2em; }
 .timeline-date strong { color: var(--orange); font-size: 100px; line-height: 1; }
 .timeline-date span { font-weight: 900; }
-.timeline-items { padding-left: clamp(24px, 4vw, 55px); }
-.timeline-row { display: grid; grid-template-columns: 62px 14px 1fr; gap: 16px; align-items: start; padding: 15px 0; }
-.timeline-row time { color: var(--teal); font-weight: 900; }
-.timeline-dot { width: 12px; height: 12px; margin-top: 5px; border: 3px solid var(--yellow); border-radius: 50%; background: #fff; box-shadow: 0 0 0 4px #fffaf0; }
+.timeline-date p { margin: 24px 0 0; padding: 8px 13px; border: 1px solid rgba(19,110,106,.18); border-radius: 999px; color: var(--teal); background: rgba(255,255,255,.62); font-size: 13px; font-weight: 900; }
+.timeline-items { padding: clamp(28px, 4vw, 48px); }
+.schedule-group-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.schedule-group-heading img { width: 54px; height: 54px; object-fit: contain; }
+.schedule-group-heading > div { flex: 1; }
+.schedule-group-heading span { display: block; color: var(--teal); font-size: 11px; font-weight: 900; letter-spacing: .15em; }
+.schedule-group-heading h3 { margin: 2px 0 0; color: var(--ink); font-size: 25px; line-height: 1.2; }
+.schedule-group-heading > time { padding: 9px 13px; border-radius: 10px; color: #fff; background: var(--teal); font-size: 14px; font-weight: 900; }
+.schedule-group-heading.compact { margin: 34px 0 8px; padding-top: 26px; border-top: 1px dashed rgba(19,110,106,.25); }
+.schedule-group-heading.compact > small { padding: 6px 10px; border-radius: 999px; color: var(--muted); background: #f0e8da; font-weight: 900; }
+.all-day-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.all-day-card { position: relative; min-height: 92px; padding: 17px 16px 15px 20px; overflow: hidden; border: 1px solid rgba(19,110,106,.15); border-radius: 15px; background: rgba(255,255,255,.72); box-shadow: 0 7px 20px rgba(35,78,76,.07); }
+.all-day-card::before { position: absolute; inset: 0 auto 0 0; width: 5px; background: linear-gradient(var(--yellow), var(--orange)); content: ""; }
+.all-day-card strong, .all-day-card small { display: block; }
+.all-day-card strong { color: var(--ink); font-size: 17px; line-height: 1.4; }
+.all-day-card small { margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+.timed-activity-list { --timeline-rail-x: 84px; position: relative; }
+.timed-activity-list::before { position: absolute; top: 21px; bottom: 21px; left: var(--timeline-rail-x); width: 2px; background: linear-gradient(var(--yellow), rgba(19,110,106,.18)); content: ""; }
+.timeline-row { position: relative; display: grid; grid-template-columns: 62px 14px 1fr; gap: 16px; align-items: start; padding: 16px 0; }
+.timeline-row time { color: var(--teal); font-weight: 900; line-height: 1.35; }
+.timeline-dot { z-index: 1; width: 12px; height: 12px; margin-top: 5px; border: 3px solid var(--yellow); border-radius: 50%; background: #fff; box-shadow: 0 0 0 4px #fffaf0; }
 .timeline-row strong, .timeline-row small { display: block; }
 .timeline-row strong { font-size: 18px; }
 .timeline-row small { margin-top: 5px; color: var(--muted); }
-.schedule-note { margin: 22px 0 0; color: var(--muted); font-size: 12px; }
+.schedule-note { margin: 28px 0 0; padding-top: 18px; border-top: 1px solid rgba(19,110,106,.12); color: var(--muted); font-size: 12px; }
 
 .education-section { background: #f5ead8; }
 .education-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(36px, 7vw, 100px); max-width: 1220px; margin: auto; }
@@ -578,9 +596,17 @@ footer { padding: 50px clamp(22px, 6vw, 100px) 28px; color: #fff; background: #0
   .date-tabs { display: flex; overflow-x: auto; border-radius: 12px; }
   .date-tabs button { flex: 0 0 82px; }
   .timeline { grid-template-columns: 1fr; padding: 26px 18px; }
-  .timeline-date { padding-bottom: 22px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .timeline { overflow: visible; padding: 0; }
+  .timeline-date { min-height: 0; padding: 26px 18px 22px; border-right: 0; border-bottom: 1px solid var(--line); border-radius: 22px 22px 0 0; }
+  .timeline-date::after { top: auto; right: 50%; bottom: -6px; width: 66px; height: 12px; transform: translateX(50%); }
   .timeline-date strong { font-size: 72px; }
-  .timeline-items { padding: 18px 0 0; }
+  .timeline-date p { margin-top: 14px; }
+  .timeline-items { padding: 28px 18px 22px; }
+  .all-day-grid { grid-template-columns: 1fr; }
+  .schedule-group-heading { align-items: flex-start; }
+  .schedule-group-heading img { width: 46px; height: 46px; }
+  .schedule-group-heading > time { white-space: nowrap; }
+  .timed-activity-list { --timeline-rail-x: 72px; }
   .timeline-row { grid-template-columns: 56px 12px 1fr; gap: 10px; }
   .education-cards, .booth-categories { grid-template-columns: 1fr; }
   .lecture-layout { grid-template-columns: 1fr; }

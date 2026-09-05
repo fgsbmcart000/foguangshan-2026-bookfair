@@ -183,6 +183,8 @@ const scheduleSortValue = (time: string) => {
   return match ? Number(match[1]) * 60 + Number(match[2]) : 24 * 60 + 1;
 };
 
+const isAllDayScheduleTime = (time: string) => /^09:00[–-]18:00/.test(time.replaceAll(" ", ""));
+
 // 每日活動表直接由活動一覽表彙整，後續更新活動卡片時不必重複維護兩份資料。
 const schedule = scheduleDays.map(({ date, day }) => {
   const dayNumber = Number(date.split("/")[1]);
@@ -357,6 +359,9 @@ export default function Home() {
   const savedActivityDetails = savedActivities
     .map((savedTitle) => activityOverview.find(([, title]) => title === savedTitle))
     .filter((activity): activity is (typeof activityOverview)[number] => Boolean(activity));
+  const activeSchedule = schedule[activeDay];
+  const allDayActivities = activeSchedule.items.filter(([time]) => isAllDayScheduleTime(time));
+  const timedActivities = activeSchedule.items.filter(([time]) => !isAllDayScheduleTime(time));
   const bookDetailPages = activeBookData ? [
     ["BOOK COVER", activeBookData[0], activeBookData[1]],
     ["選書簡介", "這本書談什麼？", activeBookData[2]],
@@ -713,20 +718,53 @@ export default function Home() {
               </button>
             ))}
           </div>
-          <div className="timeline" role="tabpanel">
+          <div className="timeline" role="tabpanel" aria-label={`${activeSchedule.date} 星期${activeSchedule.day}活動`}>
             <div className="timeline-date">
               <small>2026 NOV.</small>
-              <strong>{schedule[activeDay].date.split("/")[1]}</strong>
-              <span>星期{schedule[activeDay].day}</span>
+              <strong>{activeSchedule.date.split("/")[1]}</strong>
+              <span>星期{activeSchedule.day}</span>
+              <p>共 {activeSchedule.items.length} 項活動</p>
             </div>
             <div className="timeline-items">
-              {schedule[activeDay].items.map(([time, title, place]) => (
-                <div className="timeline-row" key={`${time}-${title}`}>
-                  <time>{time}</time>
-                  <span className="timeline-dot" />
-                  <div><strong>{title}</strong><small>⌖ {place}</small></div>
+              {allDayActivities.length > 0 && (
+                <section className="all-day-schedule" aria-labelledby="all-day-title">
+                  <div className="schedule-group-heading">
+                    <img src="/assets/animal-icons/owl.png" alt="" />
+                    <div>
+                      <span>ALL-DAY HIGHLIGHTS</span>
+                      <h3 id="all-day-title">全天活動</h3>
+                    </div>
+                    <time>09:00–18:00</time>
+                  </div>
+                  <div className="all-day-grid">
+                    {allDayActivities.map(([, title, place]) => (
+                      <article className="all-day-card" key={title}>
+                        <strong>{title}</strong>
+                        <small><span aria-hidden="true">⌖</span> {place}</small>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              <section className="timed-schedule" aria-labelledby="timed-title">
+                <div className="schedule-group-heading compact">
+                  <div>
+                    <span>PROGRAM BY TIME</span>
+                    <h3 id="timed-title">定時活動</h3>
+                  </div>
+                  <small>{timedActivities.length} 項</small>
                 </div>
-              ))}
+                <div className="timed-activity-list">
+                  {timedActivities.map(([time, title, place]) => (
+                    <div className="timeline-row" key={`${time}-${title}`}>
+                      <time>{time}</time>
+                      <span className="timeline-dot" />
+                      <div><strong>{title}</strong><small><span aria-hidden="true">⌖</span> {place}</small></div>
+                    </div>
+                  ))}
+                </div>
+              </section>
               <p className="schedule-note">※ 完整場次與講者資訊將依主辦單位最新公告更新。</p>
             </div>
           </div>

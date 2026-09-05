@@ -403,7 +403,6 @@ export default function Home() {
             <small className="brand-theme">
               吉祥動物派對
             </small>
-            <span className="update-badge">持續更新中</span>
           </span>
         </a>
         <button
@@ -418,6 +417,7 @@ export default function Home() {
           <span />
         </button>
         <nav className={menuOpen ? "main-nav open" : "main-nav"} aria-label="主要選單">
+          <span className="update-badge" role="status">持續更新中</span>
           {navigation.map(([label, id]) => (
             <a href={`#${id}`} key={id} onClick={closeMenu}>{label}</a>
           ))}

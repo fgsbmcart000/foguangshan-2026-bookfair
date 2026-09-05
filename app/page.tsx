@@ -104,6 +104,7 @@ const boothShowcase = [
 ] as const;
 
 const catalogAnimals = [
+  "/assets/animal-icons/sheep.png",
   "/assets/animal-icons/owl.png",
   "/assets/animal-icons/bear.png",
   "/assets/animal-icons/deer.png",
@@ -465,7 +466,7 @@ export default function Home() {
             </article>
             <div className="info-stack">
               <div className="info-card teal-card">
-                <img className="info-animal" src="/assets/animal-icons/deer.png" alt="" />
+                <img className="info-animal" src="/assets/animal-icons/sheep.png" alt="" />
                 <div><small>活動日期／開幕式</small><strong>2026.11.07(六) — 11.13(五)<br />開幕式 11.07(六) 10:30<br />地點：本館大覺堂</strong></div>
               </div>
               <div className="info-card cream-card">
@@ -528,7 +529,7 @@ export default function Home() {
                   <div className="activity-card-grid">
                     {activities.map(([, title, description, date, time, place], index) => {
                       const photo = activityPhotoByTitle[title];
-                      const animalFallbacks = [fallbackImage, "/assets/animal-icons/bear.png", "/assets/animal-icons/deer.png", "/assets/animal-icons/whale.png", "/assets/animal-icons/rhino.png", "/assets/animal-icons/giraffe.png"];
+                      const animalFallbacks = [fallbackImage, "/assets/animal-icons/sheep.png", "/assets/animal-icons/bear.png", "/assets/animal-icons/deer.png", "/assets/animal-icons/whale.png", "/assets/animal-icons/rhino.png", "/assets/animal-icons/giraffe.png"];
 
                       if (title === "名家講座") {
                         return (
@@ -553,7 +554,7 @@ export default function Home() {
 
                       return (
                         <article className="activity-card" key={title}>
-                          <div className={`activity-media ${photo ? "has-photo" : "is-placeholder"} ${title === "粘碧華刺繡工藝研習教育推廣" ? "has-portrait" : ""}`}>
+                          <div className={`activity-media ${photo ? "has-photo" : "is-placeholder"} ${title === "粘碧華刺繡工藝研習教育推廣" ? "has-portrait" : ""} ${title === "雲水書坊－行動圖書館" ? "align-top" : ""}`}>
                             <img src={photo || animalFallbacks[index % animalFallbacks.length]} alt={photo ? `${title}活動照片` : ""} />
                             {title === "蔬食博覽會" && <img className="expo-brand-logo" src="/assets/activity-posters/fo-guang-market-logo.png" alt="佛光好事集" width="618" height="462" />}
                             {!photo && <span>活動影像可更新</span>}
@@ -729,7 +730,7 @@ export default function Home() {
               {allDayActivities.length > 0 && (
                 <section className="all-day-schedule" aria-labelledby="all-day-title">
                   <div className="schedule-group-heading">
-                    <img src="/assets/animal-icons/owl.png" alt="" />
+                    <img src="/assets/animal-icons/sheep.png" alt="" />
                     <div>
                       <span>ALL-DAY HIGHLIGHTS</span>
                       <h3 id="all-day-title">全天活動</h3>

@@ -590,7 +590,7 @@ export default function Home() {
 
                       return (
                         <article className="activity-card" key={title}>
-                          <div className={`activity-media ${photo ? "has-photo" : "is-placeholder"} ${title === "粘碧華刺繡工藝研習教育推廣" ? "has-portrait" : ""} ${title === "雲水書坊－行動圖書館" ? "align-top" : ""}`}>
+                          <div className={`activity-media ${photo ? "has-photo" : "is-placeholder"} ${title === "粘碧華刺繡工藝研習教育推廣" ? "has-portrait" : ""} ${title === "雲水書坊－行動圖書館" || title === "龍火車與馬車" ? "align-top" : ""}`}>
                             <img src={photo || animalFallbacks[index % animalFallbacks.length]} alt={photo ? `${title}活動照片` : ""} />
                             {title === "蔬食博覽會" && <img className="expo-brand-logo" src="/assets/activity-posters/fo-guang-market-logo.png" alt="佛光好事集" width="618" height="462" />}
                             {!photo && <span>活動影像可更新</span>}

@@ -1039,6 +1039,7 @@ export default function Home() {
             <p>為提升觀眾購買書籍及圖書禮券之意願，推出圖書禮券，藉由滿額抽獎促進並鼓勵參與的民眾購書、護持偏鄉孩童閱讀，並讓大眾看見閱讀的力量，帶動閱讀風氣。</p>
             <p>圖書禮券現已開放預購，可於佛光山及佛館各項活動期間購買。</p>
             <p><strong>憑票根有好康：</strong>書展期間，購圖書禮券滿千者，憑票根即可參加現場抽獎。</p>
+            <img className="book-voucher-sponsor-banner" src="/assets/book-voucher-sponsor-banner.jpg" alt="贊助圖書禮券，偏鄉購書讓愛發光" width="1170" height="390" />
             <img src="/assets/book-voucher-2026.jpg" alt="佛光山2026書展暨蔬食博覽會圖書禮券票面與使用說明" width="2479" height="1057" />
           </section>
         </section>

@@ -1051,7 +1051,7 @@ export default function Home() {
         <div className="footer-orgs" aria-label="活動指導、主辦及協辦單位">
           <div className="footer-org-row"><strong>指導單位</strong><p>教育部</p></div>
           <div className="footer-org-row"><strong>主辦單位</strong><p>環境部、高雄市政府、財團法人人間文教基金會</p></div>
-          <div className="footer-org-row"><strong>協辦單位</strong><p>國家圖書館、高雄市政府教育局、高雄市政府農業局、高雄市政府觀光局、高雄市政府環保局、臺南市政府教育局、屏東縣政府教育處、財團法人佛光山文教基金會、財團法人佛光山慈悲社會福利基金會、香雲國際股份有限公司、滴水坊股份有限公司、人間衛視、人間福報社</p></div>
+          <div className="footer-org-row"><strong>協辦單位</strong><p>國家圖書館、高雄市政府教育局、高雄市政府農業局、高雄市政府觀光局、高雄市政府環保局、臺南市政府教育局、屏東縣政府教育處、高雄市立圖書館、國立海洋科技博物館、財團法人佛光山文教基金會、財團法人佛光山慈悲社會福利基金會、香雲國際股份有限公司、滴水坊股份有限公司、人間衛視、人間福報社</p></div>
         </div>
         <p className="copyright">© Fo Guang Shan 2026 Book Fair & Vegetarian Expo</p>
       </footer>

@@ -76,7 +76,7 @@ const bookShowcase = [
   ["外文圖畫書精選", "外文精選", "以優美圖像陪伴孩子跨語言閱讀。"],
 ] as const;
 
-const boothShowcase = [
+const boothMapShowcase = [
   ["植感漢堡", "西式蔬食", "植物排、鮮蔬與特製醬料組成的飽足人氣餐點。"],
   ["酥香蔬食小點", "台式點心", "外酥內嫩的經典小吃，適合全家一起分享。"],
   ["香麻蔬食燙", "暖心料理", "多種蔬菜、豆製品與菇類自由搭配。"],
@@ -101,6 +101,139 @@ const boothShowcase = [
   ["自然果乾", "在地好物", "低度加工保留水果風味與自然甜香。"],
   ["友善在地農產", "產地直送", "從產地認識當季蔬果與支持友善耕作。"],
   ["蔬食特色伴手禮", "精選好物", "將健康、環保與地方風味一起帶回家。"],
+] as const;
+
+const foodVendors = [
+  {
+    booth: "V04",
+    name: "佛光大學・佛大好物",
+    description: "佛大好物，從校園出發，將蔬食創意融入日常，以健康、美味與永續，分享生活中的美好滋味。",
+    images: [
+      "/assets/catalog/food/vendors/v04/01-main.png",
+      "/assets/catalog/food/vendors/v04/02.png",
+      "/assets/catalog/food/vendors/v04/03.png",
+    ],
+  },
+  {
+    booth: "V13",
+    name: "AMH古今人文",
+    description: "古今人文，共創健康未來。在古今人文，我們承諾以健康為本，為每一位客戶提供高品質的健康商品。我們深信身心健康是生活的基石，因此致力於創造能夠提升生活品質的產品和服務。",
+    images: [
+      "/assets/catalog/food/vendors/v13/01-main.webp",
+      "/assets/catalog/food/vendors/v13/02.webp",
+      "/assets/catalog/food/vendors/v13/03.webp",
+      "/assets/catalog/food/vendors/v13/04.webp",
+    ],
+  },
+  {
+    booth: "V43",
+    name: "味榮食品工業股份有限公司",
+    description: "嚐見八十年釀造底蘊，味榮以有機釀造、安心食材與台灣風味，為全素餐桌帶來醇厚多層次的好滋味。",
+    images: [
+      "/assets/catalog/food/vendors/v43/01-main.jpg",
+      "/assets/catalog/food/vendors/v43/02.png",
+      "/assets/catalog/food/vendors/v43/03.jpg",
+      "/assets/catalog/food/vendors/v43/04.jpg",
+    ],
+  },
+  {
+    booth: "V33",
+    name: "優源好食",
+    description: "優源好食獨家引進德國奈米研磨工藝，將杏仁、黑芝麻等亞洲經典食材細緻研磨，結合現代食品技術，打造質地滑順、天然美味，適合天天享用的植物奶！",
+    images: [
+      "/assets/catalog/food/vendors/v33/01-main.png",
+      "/assets/catalog/food/vendors/v33/02.png",
+      "/assets/catalog/food/vendors/v33/03.png",
+    ],
+  },
+  {
+    booth: "V10",
+    name: "李董偶貴",
+    description: "李董手工製作各式芋頭相關客家傳統美食，並持續研發不同新口味。餐點於出攤前新鮮製作，嚴選屏東在地小農食材，以少鹽少糖的簡單料理方式，讓更多人重新喜歡上古早味。",
+    images: [
+      "/assets/catalog/food/vendors/v10/01-main.jpg",
+      "/assets/catalog/food/vendors/v10/02.jpg",
+      "/assets/catalog/food/vendors/v10/03.jpg",
+      "/assets/catalog/food/vendors/v10/04.jpg",
+    ],
+  },
+  {
+    booth: "V37",
+    name: "檳皇堅果",
+    description: "20多年堅果烘焙專業，檳皇以紅外線真空低溫乾燥烘焙，守住堅果自然風味；從原味到真松露蕈菇類，呈現純粹而豐富的蔬食滋味。",
+    images: [
+      "/assets/catalog/food/vendors/v37/01-main.jpg",
+      "/assets/catalog/food/vendors/v37/02.jpg",
+      "/assets/catalog/food/vendors/v37/03.jpg",
+      "/assets/catalog/food/vendors/v37/04.jpg",
+      "/assets/catalog/food/vendors/v37/05.jpg",
+    ],
+  },
+  {
+    booth: "V67",
+    name: "樸作農場",
+    description: "樸作農場栽種新鮮羅勒，並以義大利橄欖油製成無添加羅勒醬，搭配無咖啡因聖羅勒花茶。榮獲2026百大伴手禮獎，送禮更有品味。",
+    images: ["/assets/catalog/food/vendors/v67/01-main.png"],
+  },
+  {
+    booth: "V68",
+    name: "虎哥農場",
+    description: "bio-Hygge 虎哥農場結合益生菌與蔬果，推出藍莓、枸杞纖酵蔬果昔與豆漿優格，100%全素，對體內與環境友善。",
+    images: [
+      "/assets/catalog/food/vendors/v68/01-main.jpg",
+      "/assets/catalog/food/vendors/v68/02.jpg",
+      "/assets/catalog/food/vendors/v68/03.jpg",
+      "/assets/catalog/food/vendors/v68/04.jpg",
+    ],
+  },
+  {
+    booth: "V70",
+    name: "大丘園養蜂場",
+    description: "全國蜂蜜評鑑連年得獎。養蜂是順應天候的修行，大丘園把源自南投山林的生命力，化作最真實的甜蜜。",
+    images: [
+      "/assets/catalog/food/vendors/v70/01-main.jpg",
+      "/assets/catalog/food/vendors/v70/02.jpg",
+    ],
+  },
+  {
+    booth: "V21",
+    name: "西埔坊澳洲茶樹莊園",
+    description: "西埔坊源於對品質的堅持，是位於台南市南化區西埔里的樂活小農。從澳洲茶樹種植、精油提煉到產品開發與銷售皆全程把關，讓消費者用得安心。",
+    images: ["/assets/catalog/food/vendors/v21/01-main.jpg"],
+  },
+  {
+    booth: "V15",
+    name: "薇酵莊園Y.Smiles",
+    description: "薇酵莊園Y.Smiles以「來自天然草本、創新蔬食風味」為主要訴求，結合在地小農農產品與自然生態，創新蔬食養生風味，並以酵素系列商品提供用心把關的品質服務。",
+    images: [
+      "/assets/catalog/food/vendors/v15/01-main.jpg",
+      "/assets/catalog/food/vendors/v15/02.jpg",
+      "/assets/catalog/food/vendors/v15/03.jpg",
+      "/assets/catalog/food/vendors/v15/04.jpg",
+    ],
+  },
+  {
+    booth: "V14",
+    name: "丞羽莊園",
+    description: "丞羽莊園以四代製茶工藝結合友善耕作可可，從土地到風味，呈現茶與可可交融的自然滋味。",
+    images: [
+      "/assets/catalog/food/vendors/v14/01-main.jpg",
+      "/assets/catalog/food/vendors/v14/02.jpg",
+      "/assets/catalog/food/vendors/v14/03.jpg",
+      "/assets/catalog/food/vendors/v14/04.jpg",
+    ],
+  },
+  {
+    booth: "V31",
+    name: "陳家庄居仁米",
+    description: "位於宜蘭五結的陳家庄農園，傳承三代稻作精神，以父親「居仁」為名，象徵職農初心與對土地的情感。嚴選純種不混米的米種，堅持友善環境耕作，展現宜蘭米的自然原味。",
+    images: [
+      "/assets/catalog/food/vendors/v31/01-main.jpg",
+      "/assets/catalog/food/vendors/v31/02.jpg",
+      "/assets/catalog/food/vendors/v31/03.jpg",
+      "/assets/catalog/food/vendors/v31/04.jpg",
+    ],
+  },
 ] as const;
 
 const catalogAnimals = [
@@ -134,13 +267,7 @@ const bookCoverAsset = (bookIndex: number) => `/assets/catalog/books/book-${item
 const bookPageAsset = (bookIndex: number, pageIndex: number) => pageIndex === 0
   ? bookCoverAsset(bookIndex)
   : `/assets/catalog/books/book-${itemNumber(bookIndex)}-page-${itemNumber(pageIndex)}.jpg`;
-const foodCoverAsset = (foodIndex: number) => `/assets/catalog/food/booth-${itemNumber(foodIndex)}-cover.jpg`;
-const foodPhotoAsset = (foodIndex: number, photoIndex: number) => photoIndex === 0
-  ? foodCoverAsset(foodIndex)
-  : `/assets/catalog/food/booth-${itemNumber(foodIndex)}-photo-${itemNumber(photoIndex)}.jpg`;
-
 const BOOK_DETAIL_PAGE_COUNT = 10;
-const FOOD_PHOTO_COUNT = 4;
 
 const activityOverview = [
   ["好好看", "書展", "內容涵蓋環境教育、養生、品德、心靈成長、外文類，從閱讀的力量療癒心靈、培養世界觀、增進自信、強化思考。透過閱讀的共同話題，讓親子間的互動更緊密，讓孩子從小養成良好的閱讀習慣，進而潛移默化成為有品德的人。", "11/7（六）–11/13（五）", "09:00–18:00", "風雨長廊"],
@@ -291,8 +418,14 @@ export default function Home() {
     setActiveFood(index);
     setActiveFoodPhoto(0);
   };
-  const showPreviousFoodPhoto = () => setActiveFoodPhoto((photo) => (photo + FOOD_PHOTO_COUNT - 1) % FOOD_PHOTO_COUNT);
-  const showNextFoodPhoto = () => setActiveFoodPhoto((photo) => (photo + 1) % FOOD_PHOTO_COUNT);
+  const showPreviousFoodPhoto = () => setActiveFoodPhoto((photo) => {
+    const photoCount = activeFood === null ? 0 : foodVendors[activeFood].images.length;
+    return photoCount ? (photo + photoCount - 1) % photoCount : 0;
+  });
+  const showNextFoodPhoto = () => setActiveFoodPhoto((photo) => {
+    const photoCount = activeFood === null ? 0 : foodVendors[activeFood].images.length;
+    return photoCount ? (photo + 1) % photoCount : 0;
+  });
 
   const toggleSavedActivity = (title: string) => {
     setSavedActivities((current) => current.includes(title)
@@ -362,11 +495,8 @@ export default function Home() {
   }, [activeFood]);
 
   const activeBookData = activeBook === null ? null : bookShowcase[activeBook];
-  const activeFoodData = activeFood === null ? null : boothShowcase[activeFood];
-  const activeFoodPhotos = activeFood === null ? [] : Array.from(
-    { length: FOOD_PHOTO_COUNT },
-    (_, photoIndex) => foodPhotoAsset(activeFood, photoIndex),
-  );
+  const activeFoodData = activeFood === null ? null : foodVendors[activeFood];
+  const activeFoodPhotos = activeFoodData?.images ?? [];
   const normalizedActivityQuery = activityQuery.trim().toLowerCase();
   const filteredActivities = activityOverview.filter(([theme, title, description, date, time, place]) => {
     const matchesFilter = activityFilter === "全部" || theme === activityFilter;
@@ -910,13 +1040,13 @@ export default function Home() {
             </div>
             <div className="booth-map" aria-label="24個蔬食攤位模擬配置">
               <div className="booth-map-row">
-                {boothShowcase.slice(0, 12).map(([dish], index) => (
+                {boothMapShowcase.slice(0, 12).map(([dish], index) => (
                   <div className="booth-cell" key={dish}><strong>V{String(index + 1).padStart(2, "0")}</strong><span>{dish}</span></div>
                 ))}
               </div>
               <div className="main-aisle"><span>入口</span><strong>風雨長廊・主要參觀動線</strong><span>出口</span></div>
               <div className="booth-map-row">
-                {boothShowcase.slice(12).map(([dish], index) => (
+                {boothMapShowcase.slice(12).map(([dish], index) => (
                   <div className="booth-cell" key={dish}><strong>V{String(index + 13).padStart(2, "0")}</strong><span>{dish}</span></div>
                 ))}
               </div>
@@ -926,22 +1056,22 @@ export default function Home() {
 
           <section className="food-showcase" aria-labelledby="food-showcase-title">
             <div className="subsection-heading">
-              <div><small>VEGGIE FOOD PICKS</small><h3 id="food-showcase-title">24 家蔬食攤位・推薦美食</h3></div>
-              <p>以線上商店卡片方式呈現攤位招牌料理，不顯示價格；正式攤商名單與餐點照片可逐項替換。</p>
+              <div><small>VEGETARIAN EXPO</small><h3 id="food-showcase-title">蔬食博覽會</h3></div>
+              <p>依攤位提供資料呈現品牌與特色商品；點選卡片即可瀏覽各攤位照片。</p>
             </div>
-            <div className="food-grid" aria-label="24家蔬食攤位推薦美食">
-              {boothShowcase.map(([dish, category, description], index) => (
-                <button className="food-card" type="button" key={dish} onClick={() => openFood(index)} aria-label={`查看${dish}四張餐點照片`}>
+            <div className="food-grid" aria-label="蔬食博覽會攤位介紹">
+              {foodVendors.map(({ booth, name, description, images }, index) => (
+                <button className="food-card" type="button" key={booth} onClick={() => openFood(index)} aria-label={`查看${name}${images.length}張攤位照片`}>
                   <div className="food-card-media">
-                    <span>V{String(index + 1).padStart(2, "0")}</span>
-                    <img src={foodCoverAsset(index)} alt={`${dish}示意餐點照片`} width="700" height="700" />
-                    <small>700 × 700 圖片</small>
+                    <span>{booth}</span>
+                    <img src={images[0]} alt={`${name}主圖`} width="700" height="700" />
+                    <small>{images.length} 張圖片</small>
                   </div>
                   <div className="food-card-copy">
-                    <span>示意攤位 {String(index + 1).padStart(2, "0")}・{category}</span>
-                    <h4>{dish}</h4>
+                    <span>{booth}・蔬食博覽會</span>
+                    <h4>{name}</h4>
                     <p>{description}</p>
-                    <strong>點選查看 4 張照片 →</strong>
+                    <strong>點選查看 {images.length} 張照片 →</strong>
                   </div>
                 </button>
               ))}
@@ -952,9 +1082,9 @@ export default function Home() {
                 <section className="food-modal" role="dialog" aria-modal="true" aria-labelledby="food-modal-title">
                   <div className="food-modal-header">
                     <div>
-                      <small>VEGGIE FOOD GALLERY・700 × 700</small>
-                      <h3 id="food-modal-title">{activeFoodData[0]}</h3>
-                      <p>{activeFoodData[1]}・示意攤位 {String(activeFood! + 1).padStart(2, "0")}</p>
+                      <small>VEGETARIAN EXPO GALLERY・700 × 700</small>
+                      <h3 id="food-modal-title">{activeFoodData.name}</h3>
+                      <p>{activeFoodData.booth}・蔬食博覽會</p>
                     </div>
                     <button type="button" className="food-modal-close" onClick={closeFood} aria-label="關閉餐點照片">×</button>
                   </div>
@@ -973,7 +1103,7 @@ export default function Home() {
                     <div className="food-gallery-photo">
                       <img
                         src={activeFoodPhotos[activeFoodPhoto]}
-                        alt={`${activeFoodData[0]}餐點照片 ${activeFoodPhoto + 1}`}
+                        alt={`${activeFoodData.name}攤位照片 ${activeFoodPhoto + 1}`}
                         width="700"
                         height="700"
                         onError={(event) => {
@@ -981,8 +1111,8 @@ export default function Home() {
                           event.currentTarget.src = foodPlaceholderImages[(activeFood! + activeFoodPhoto) % foodPlaceholderImages.length];
                         }}
                       />
-                      <span>{activeFoodPhoto + 1} / {FOOD_PHOTO_COUNT}</span>
-                      <small>正式 700 × 700 照片待更新</small>
+                      <span>{activeFoodPhoto + 1} / {activeFoodPhotos.length}</span>
+                      <small>攤位提供圖片</small>
                     </div>
                     <button type="button" className="food-gallery-arrow next" onClick={showNextFoodPhoto} aria-label="下一張照片">›</button>
                   </div>

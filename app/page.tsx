@@ -708,7 +708,7 @@ export default function Home() {
         <button
           className="menu-button"
           type="button"
-          aria-label="開啟網站選單"
+          aria-label={menuOpen ? "關閉網站選單" : "開啟網站選單"}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((value) => !value)}
         >

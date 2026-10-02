@@ -299,12 +299,34 @@ const foodVendors = [
   {
     booth: "V13",
     name: "AMH古今人文",
-    description: "古今人文，共創健康未來。在古今人文，我們承諾以健康為本，為每一位客戶提供高品質的健康商品。我們深信身心健康是生活的基石，因此致力於創造能夠提升生活品質的產品和服務。",
+    description: "古今人文，共創健康未來。在古今人文，我們承諾以健康為本，為每一位客戶提供高品質的健康商品。我們深信身心健康是生活的基石，因此我們致力於創造能夠提升生活品質的產品和服務。",
     images: [
       "/assets/catalog/food/vendors/v13/01-main.webp",
       "/assets/catalog/food/vendors/v13/02.webp",
       "/assets/catalog/food/vendors/v13/03.webp",
       "/assets/catalog/food/vendors/v13/04.webp",
+    ],
+  },
+  {
+    booth: "V18",
+    name: "健飽卡豌豆分離蛋白",
+    description: "素食者常擔心蛋白質攝取不足，外食又難找到方便又營養的選擇。健飽卡以植物性蛋白打造，簡單沖泡就能補充蛋白質，讓素食也能吃得方便、吃得飽足。",
+    images: [
+      "/assets/catalog/food/vendors/v18/01-main.png",
+      "/assets/catalog/food/vendors/v18/02.png",
+      "/assets/catalog/food/vendors/v18/03.png",
+      "/assets/catalog/food/vendors/v18/04.png",
+    ],
+  },
+  {
+    booth: "V05",
+    name: "威聚蔬食餐飲股份有限公司",
+    description: "從選油開始，講究每一口。威聚蔬蔬嚴選苦茶油與印加果油，延伸至黑松露燒賣、養身五穀粽，讓健康與美味自然相遇。",
+    images: [
+      "/assets/catalog/food/vendors/v05/01-main.png",
+      "/assets/catalog/food/vendors/v05/02.jpg",
+      "/assets/catalog/food/vendors/v05/03.jpg",
+      "/assets/catalog/food/vendors/v05/04.jpg",
     ],
   },
   {
@@ -331,7 +353,7 @@ const foodVendors = [
   {
     booth: "V10",
     name: "李董偶貴",
-    description: "李董手工製作各式芋頭相關客家傳統美食，並持續研發不同新口味。餐點於出攤前新鮮製作，嚴選屏東在地小農食材，以少鹽少糖的簡單料理方式，讓更多人重新喜歡上古早味。",
+    description: "李董手工製作各式芋頭相關客家傳統美食，且不斷創新研發各種不同的新口味，都是當日出攤前鮮作。我們嚴選屏東在地小農的新鮮食材，僅採用簡單的方式去料理，少鹽少糖相當符合現代人的健康理念，為的就是讓更多人重新喜歡上古早味。",
     images: [
       "/assets/catalog/food/vendors/v10/01-main.jpg",
       "/assets/catalog/food/vendors/v10/02.jpg",
@@ -371,7 +393,7 @@ const foodVendors = [
   {
     booth: "V70",
     name: "大丘園養蜂場",
-    description: "全國蜂蜜評鑑連年得獎。養蜂是順應天候的修行，大丘園把源自南投山林的生命力，化作最真實的甜蜜。",
+    description: "全國蜂蜜評鑑連年得獎。從農後才深知，養蜂是順應天候的修行。大丘園想把這份源自南投山林的生命力，化作最真實的甜蜜。",
     images: [
       "/assets/catalog/food/vendors/v70/01-main.jpg",
       "/assets/catalog/food/vendors/v70/02.jpg",
@@ -380,13 +402,13 @@ const foodVendors = [
   {
     booth: "V21",
     name: "西埔坊澳洲茶樹莊園",
-    description: "西埔坊源於對品質的堅持，是位於台南市南化區西埔里的樂活小農。從澳洲茶樹種植、精油提煉到產品開發與銷售皆全程把關，讓消費者用得安心。",
+    description: "西埔坊，源於一份對品質的堅持，位在台南市南化區西埔里的樂活小農，運用專業技術種植澳洲茶樹，從種植到精油提煉過程、產品開發、銷售，全不假手他人，讓消費者用得安心。",
     images: ["/assets/catalog/food/vendors/v21/01-main.jpg"],
   },
   {
     booth: "V15",
     name: "薇酵莊園Y.Smiles",
-    description: "薇酵莊園Y.Smiles以「來自天然草本、創新蔬食風味」為主要訴求，結合在地小農農產品與自然生態，創新蔬食養生風味，並以酵素系列商品提供用心把關的品質服務。",
+    description: "薇酵莊園Y.Smiles以「來自天然草本、創新蔬食風味」為主要訴求。以在地小農種植農產品的自然生態，創新蔬食養生的風味；以酵素相關系列商品，為消費者層層把關，提供消費食品的品質服務。",
     images: [
       "/assets/catalog/food/vendors/v15/01-main.jpg",
       "/assets/catalog/food/vendors/v15/02.jpg",
@@ -408,12 +430,53 @@ const foodVendors = [
   {
     booth: "V31",
     name: "陳家庄居仁米",
-    description: "位於宜蘭五結的陳家庄農園，傳承三代稻作精神，以父親「居仁」為名，象徵職農初心與對土地的情感。嚴選純種不混米的米種，堅持友善環境耕作，展現宜蘭米的自然原味。",
+    description: "陳家庄．居仁米位於宜蘭五結的陳家庄農園，傳承三代稻作精神，以父親「居仁」為命名，象徵職農初心與對土地的情感。嚴選純種不混米的米種，堅持友善環境耕作，展現宜蘭米的自然原味。",
     images: [
       "/assets/catalog/food/vendors/v31/01-main.jpg",
       "/assets/catalog/food/vendors/v31/02.jpg",
       "/assets/catalog/food/vendors/v31/03.jpg",
       "/assets/catalog/food/vendors/v31/04.jpg",
+    ],
+  },
+  {
+    booth: "V03",
+    name: "吉鄉好粽",
+    description: "1977年起，吉鄉以職人之心分享來自花蓮純淨山海的美麗台灣味。2018年外銷日本；2021年榮獲全國點心粽冠軍；2022年外銷澳洲；2023年外銷新加坡並完成ESG評估證書；2024年獲外交部駐加拿大指定為國宴伴手禮；2025年外銷美國並榮獲FDA認證；2026年成為端午節7-ELEVEN暖心專案指定伴手禮。",
+    images: [
+      "/assets/catalog/food/vendors/v03/01-main.jpg",
+      "/assets/catalog/food/vendors/v03/02.png",
+      "/assets/catalog/food/vendors/v03/03.jpg",
+      "/assets/catalog/food/vendors/v03/04.jpg",
+    ],
+  },
+  {
+    booth: "V30",
+    name: "周周花生糖",
+    description: "周周花生糖傳承三代手工製糖，以神明系列新包裝傳遞祈福心意，將台灣茶香融入酥糖，讓傳統滋味成為有故事的伴手禮。",
+    images: [
+      "/assets/catalog/food/vendors/v30/01-main.png",
+      "/assets/catalog/food/vendors/v30/02.jpg",
+      "/assets/catalog/food/vendors/v30/03.jpg",
+    ],
+  },
+  {
+    booth: "V32",
+    name: "品滋畔新鮮堅果",
+    description: "新鮮採收堅果由農場產地直達台灣，嚴選每種堅果，以獨家淺溫烘焙方式品嚐美好滋味。",
+    images: [
+      "/assets/catalog/food/vendors/v32/01-main.jpg",
+      "/assets/catalog/food/vendors/v32/02.jpg",
+      "/assets/catalog/food/vendors/v32/03.jpg",
+      "/assets/catalog/food/vendors/v32/04.jpg",
+    ],
+  },
+  {
+    booth: "V44",
+    name: "大樹麻油行",
+    description: "大樹麻油行創立於1909年，傳承四代上百年的製油經驗，至今仍堅持硬柴軟火炒麻製油。從原料的挑選、成品的製作與包裝，至最後的販售，完全不假於他人之手；自產自銷也自用，大樹麻油行只賣自己也吃的油。",
+    images: [
+      "/assets/catalog/food/vendors/v44/01-main.jpg",
+      "/assets/catalog/food/vendors/v44/02.jpg",
     ],
   },
 ] as const;

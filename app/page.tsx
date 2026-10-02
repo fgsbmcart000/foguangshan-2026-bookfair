@@ -1244,7 +1244,6 @@ export default function Home() {
               {foodVendors.map(({ booth, name, description, images }, index) => (
                 <button className="food-card" type="button" key={booth} onClick={() => openFood(index)} aria-label={`查看${name}${images.length}張攤位照片`}>
                   <div className="food-card-media">
-                    <span>{booth}</span>
                     <img src={images[0]} alt={`${name}主圖`} width="700" height="700" />
                     <small>{images.length} 張圖片</small>
                   </div>
@@ -1263,7 +1262,6 @@ export default function Home() {
                 <section className="food-modal" role="dialog" aria-modal="true" aria-labelledby="food-modal-title">
                   <div className="food-modal-header">
                     <div>
-                      <small>VEGETARIAN EXPO GALLERY・700 × 700</small>
                       <h3 id="food-modal-title">{activeFoodData.name}</h3>
                       <p>{activeFoodData.booth}・蔬食博覽會</p>
                     </div>

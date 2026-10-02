@@ -258,33 +258,6 @@ const bookShowcase = [
   },
 ] as const;
 
-const boothMapShowcase = [
-  ["植感漢堡", "西式蔬食", "植物排、鮮蔬與特製醬料組成的飽足人氣餐點。"],
-  ["酥香蔬食小點", "台式點心", "外酥內嫩的經典小吃，適合全家一起分享。"],
-  ["香麻蔬食燙", "暖心料理", "多種蔬菜、豆製品與菇類自由搭配。"],
-  ["手作蔬食水餃", "麵食點心", "新鮮時蔬入餡，呈現清甜扎實口感。"],
-  ["古早味拌麵", "台式麵食", "香氣濃郁的拌醬與彈牙麵條簡單耐吃。"],
-  ["椰香蔬食咖哩", "異國料理", "溫潤香料與根莖蔬菜熬煮出豐富層次。"],
-  ["五穀能量飯糰", "輕食料理", "穀物、蔬菜與植物蛋白的便利組合。"],
-  ["彩蔬薄餅披薩", "西式蔬食", "薄脆餅皮搭配繽紛蔬菜與香草。"],
-  ["元氣蔬食便當", "健康餐盒", "兼顧蛋白質、蔬菜與全穀的均衡餐盒。"],
-  ["植物肉串燒", "創意料理", "醬香炙烤風味，展現植物料理新口感。"],
-  ["香煎蘿蔔糕", "台式點心", "外層微酥、內裡柔軟的熟悉好滋味。"],
-  ["鮮蔬手作春捲", "輕食料理", "以當季蔬菜包入清爽口感與自然甜味。"],
-  ["濃醇豆乳飲", "植物飲品", "豆香溫潤，適合搭配各式蔬食餐點。"],
-  ["繽紛鮮果飲", "天然飲品", "以新鮮水果調和出清爽自然風味。"],
-  ["台灣好茶", "茶飲", "精選茶葉沖泡，感受甘醇回韻與土地香氣。"],
-  ["植感咖啡", "咖啡飲品", "咖啡搭配植物奶，呈現柔和滑順口感。"],
-  ["古早味豆花", "傳統甜品", "細緻豆花搭配配料，清爽而不甜膩。"],
-  ["季節水果冰品", "清涼甜品", "用當季水果帶來自然酸甜與沁涼口感。"],
-  ["純植物甜點", "烘焙甜品", "不使用蛋奶也能呈現細膩香甜風味。"],
-  ["手作蔬食烘焙", "烘焙點心", "麵包與小點以單純食材展現溫暖香氣。"],
-  ["原味堅果小舖", "健康零食", "保留堅果原味與營養，方便隨身補充。"],
-  ["自然果乾", "在地好物", "低度加工保留水果風味與自然甜香。"],
-  ["友善在地農產", "產地直送", "從產地認識當季蔬果與支持友善耕作。"],
-  ["蔬食特色伴手禮", "精選好物", "將健康、環保與地方風味一起帶回家。"],
-] as const;
-
 const foodVendors = [
   {
     booth: "V04",
@@ -1262,27 +1235,6 @@ export default function Home() {
             </div>
             <div className="booth-status"><span>名單整理中</span><strong>完整攤位圖即將公開</strong><p>主辦單位將於參展商與位置確認後更新此頁。</p></div>
           </div>
-
-          <section className="booth-map-section" aria-labelledby="booth-map-title">
-            <div className="subsection-heading">
-              <div><small>SIMULATED FLOOR PLAN</small><h3 id="booth-map-title">模擬攤位配置表</h3></div>
-              <p>以 24 個蔬食攤位模擬風雨長廊動線，正式攤號與位置確認後可直接更新。</p>
-            </div>
-            <div className="booth-map" aria-label="24個蔬食攤位模擬配置">
-              <div className="booth-map-row">
-                {boothMapShowcase.slice(0, 12).map(([dish], index) => (
-                  <div className="booth-cell" key={dish}><strong>V{String(index + 1).padStart(2, "0")}</strong><span>{dish}</span></div>
-                ))}
-              </div>
-              <div className="main-aisle"><span>入口</span><strong>風雨長廊・主要參觀動線</strong><span>出口</span></div>
-              <div className="booth-map-row">
-                {boothMapShowcase.slice(12).map(([dish], index) => (
-                  <div className="booth-cell" key={dish}><strong>V{String(index + 13).padStart(2, "0")}</strong><span>{dish}</span></div>
-                ))}
-              </div>
-            </div>
-            <p className="overview-note">※ 此圖為版面與動線模擬，不代表正式攤位位置。</p>
-          </section>
 
           <section className="food-showcase" aria-labelledby="food-showcase-title">
             <div className="subsection-heading">

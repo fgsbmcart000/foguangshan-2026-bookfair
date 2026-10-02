@@ -1224,7 +1224,6 @@ export default function Home() {
               <p className="eyebrow">Exhibitor directory</p>
               <h2>攤位一覽</h2>
             </div>
-            <p className="lead">書展、蔬食與友善生活品牌齊聚風雨長廊，完整名單與攤位圖將於核定後公布。</p>
           </div>
           <div className="booth-board">
             <div className="booth-categories">

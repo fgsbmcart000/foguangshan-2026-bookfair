@@ -52,31 +52,210 @@ const scheduleDays = [
   { date: "11/13", day: "五" },
 ];
 
+const recommendedBookImages = (bookNumber: number, pageCount: number) => Array.from(
+  { length: pageCount },
+  (_, pageIndex) => `/assets/catalog/recommended-books/book-${String(bookNumber).padStart(2, "0")}/${String(pageIndex + 1).padStart(2, "0")}.jpg`,
+);
+
 const bookShowcase = [
-  ["與自然一起閱讀", "環境教育", "從日常觀察認識土地、生態與萬物共生。"],
-  ["小小生態觀察家", "環境教育", "陪孩子發現植物、昆蟲與四季變化。"],
-  ["海洋的未來式", "環境教育", "理解海洋環境，從閱讀開始守護藍色星球。"],
-  ["低碳生活練習", "環境教育", "把惜物、減塑與節能化為每日行動。"],
-  ["一日好食光", "養生健康", "從均衡飲食與規律生活照顧自己。"],
-  ["身心安住的日常", "養生健康", "在忙碌生活中找回呼吸與安定。"],
-  ["四季養生提案", "養生健康", "跟著節氣調整飲食、作息與身體感受。"],
-  ["樂活蔬食餐桌", "養生健康", "用豐富植物食材創造健康美味。"],
-  ["做好事的力量", "品德生命", "從小小善行開始，為身邊帶來溫暖。"],
-  ["說好話的練習", "品德生命", "學習傾聽、表達與真誠溝通。"],
-  ["存好心的故事", "品德生命", "用善念理解自己，也關懷他人。"],
-  ["勇敢與善良", "品德生命", "陪伴孩子面對選擇、責任與成長。"],
-  ["親子共讀時光", "品德生命", "在故事與對話中累積家庭記憶。"],
-  ["和情緒做朋友", "品德生命", "認識感受，練習溫柔地照顧內心。"],
-  ["生命中的好故事", "品德生命", "從真實故事體會珍惜、感恩與希望。"],
-  ["成長路上的光", "品德生命", "在挫折與改變中發現自己的力量。"],
-  ["靜心閱讀課", "心靈成長", "以閱讀沉澱思緒，重新看見內在。"],
-  ["日常裡的禪意", "心靈成長", "在吃飯、行走與工作中練習專注。"],
-  ["慈悲的力量", "心靈成長", "從理解與包容出發，建立溫柔關係。"],
-  ["書寫自己的心", "心靈成長", "透過閱讀與書寫整理生命經驗。"],
-  ["世界故事選讀", "外文精選", "從不同文化的故事打開國際視野。"],
-  ["雙語自然探索", "外文精選", "用雙語閱讀認識動物與自然環境。"],
-  ["文化旅行讀本", "外文精選", "在文字與圖像中走訪多元世界。"],
-  ["外文圖畫書精選", "外文精選", "以優美圖像陪伴孩子跨語言閱讀。"],
+  {
+    title: "必讀經典30系列",
+    author: "總策劃 依空法師",
+    publisher: "佛光文化",
+    booth: "A02",
+    category: "佛教經典・生命智慧",
+    description: "精選30部涵蓋阿含、般若、涅槃等佛教重要經典，以深入淺出的詮釋，將深奧佛理化為貼近日常的生命智慧。",
+    images: recommendedBookImages(1, 6),
+  },
+  {
+    title: "星雲大師一筆字的雲水家風",
+    author: "覺具法師",
+    publisher: "佛光文化",
+    booth: "A02",
+    category: "人物紀實・心靈成長",
+    description: "記錄星雲大師憑藉「心眼」一氣呵成一筆字的歷程；每一幅墨寶都是祝福，也展現如雲水般隨緣化世的廣大胸懷。",
+    images: recommendedBookImages(2, 7),
+  },
+  {
+    title: "佛光傳燈錄",
+    author: "總策劃 度魯",
+    publisher: "佛光文化",
+    booth: "A02",
+    category: "人間佛教・生活禪",
+    description: "以生動漫畫分鏡呈現星雲大師與弟子間的日常對答，在饒富禪機的生活故事中，感受活潑自在的生活禪。",
+    images: recommendedBookImages(3, 7),
+  },
+  {
+    title: "不知迷路為花開",
+    author: "歐銀釧",
+    publisher: "香海文化",
+    booth: "A03",
+    category: "自然書寫・生命散文",
+    description: "以自然為語言、時間為經緯、慈悲為底色，在花開葉落之間，帶領讀者重新遇見自然、他人，也遇見自己。",
+    images: recommendedBookImages(4, 7),
+  },
+  {
+    title: "歸靜，在喵人間",
+    author: "戴曉楓",
+    publisher: "香海文化",
+    booth: "A03",
+    category: "動物書寫・心靈療癒",
+    description: "從貓咪安靜而敏銳的視角，看見人間的相遇、陪伴與離別，也重新思考如何去愛、面對失去與學習告別。",
+    images: recommendedBookImages(5, 8),
+  },
+  {
+    title: "我的同學是一頭豬（全套3冊）",
+    author: "王文華",
+    publisher: "小兵出版社",
+    booth: "C03",
+    category: "校園生活・思辨成長",
+    description: "一隻不懂人類規則的豬來到教室，帶孩子勇於提問、突破框架，重新理解那些習以為常的生活規則。",
+    images: recommendedBookImages(6, 8),
+  },
+  {
+    title: "安心國小13：老師不公平",
+    author: "岑澎維",
+    publisher: "未來出版",
+    booth: "B05",
+    category: "校園生活・公平思辨",
+    description: "從掃地工作的調動，引發孩子對公平的疑問；透過貼近校園的故事，學習看見每個人的不同需要。",
+    images: recommendedBookImages(7, 3),
+  },
+  {
+    title: "好好當小孩，成為自己未來會喜歡的人",
+    author: "芳索瓦茲‧布雪",
+    publisher: "未來出版",
+    booth: "B05",
+    category: "自我成長・親子共讀",
+    description: "童年不是長大的過渡期，而是充滿好奇、想像與可能的珍貴階段；跟著爆笑提案，一起發現當小孩的美好。",
+    images: recommendedBookImages(8, 4),
+  },
+  {
+    title: "溫美玉SEL小學堂",
+    author: "溫美玉、魏瑛娟",
+    publisher: "時報出版",
+    booth: "B02",
+    category: "情緒教育・人際互動",
+    description: "從真實校園情境出發，結合閱讀、遊戲、思考與寫作，陪孩子認識自我、覺察情緒，培養SEL成長軟實力。",
+    images: recommendedBookImages(9, 7),
+  },
+  {
+    title: "我才不做大笨蛋！",
+    author: "梁雅怡",
+    publisher: "東方出版社",
+    booth: "B08",
+    category: "互助合作・責任思辨",
+    description: "森林動物因一句「才不要當大笨蛋」而動搖信任，帶孩子思考未雨綢繆、互助合作與為群體付出的意義。",
+    images: recommendedBookImages(10, 7),
+  },
+  {
+    title: "阿德蝸的爬蟲探索1：大頭掉了一顆牙",
+    author: "阿德蝸",
+    publisher: "幼獅文化",
+    booth: "C02",
+    category: "爬蟲生態・生命教育",
+    description: "從爬蟲生態出發，帶孩子思考偏見、謠言、霸凌與棲地破壞，並透過科普百科走進真實的動物世界。",
+    images: recommendedBookImages(11, 7),
+  },
+  {
+    title: "益智尋寶圖：野生動物",
+    author: "Highlights for Children",
+    publisher: "書林書店",
+    booth: "B10",
+    category: "益智遊戲・雙語學習",
+    description: "透過尋找、配對與著色，在紙上遊戲中訓練觀察力與專注力，同時連結動物圖像與英文單字。",
+    images: recommendedBookImages(12, 7),
+  },
+  {
+    title: "紅衣亞可 不讀會危險的科學常識書1：日常生活中的危機",
+    author: "紅衣亞可",
+    publisher: "遠流出版",
+    booth: "B06",
+    category: "科學漫畫・生活安全",
+    description: "以可愛角色與有趣情境，帶孩子認識日常生活中的危機，在歡笑中學習科學常識與自我保護能力。",
+    images: recommendedBookImages(13, 8),
+  },
+  {
+    title: "工作細胞圖鑑系列（共2冊）",
+    author: "清水茜",
+    publisher: "小熊出版",
+    booth: "",
+    category: "人體科學・免疫知識",
+    description: "從人體細胞到病毒、細菌與寄生蟲，以生動圖像和淺顯解說，認識細胞功能、免疫機制與身體如何對抗疾病。",
+    images: recommendedBookImages(14, 1),
+  },
+  {
+    title: "烏龍貓（3）：披薩小隊",
+    author: "スケラッコ（sukeracko）",
+    publisher: "三采文化",
+    booth: "B04",
+    category: "橋梁書・友情合作",
+    description: "三隻貓只有合體才能做出世界第一好吃的披薩；溫暖幽默的故事，陪孩子看見友情、合作與和好的珍貴。",
+    images: recommendedBookImages(15, 5),
+  },
+  {
+    title: "月亮媽媽",
+    author: "培根君",
+    publisher: "青林國際出版",
+    booth: "B09",
+    category: "親情繪本・家庭記憶",
+    description: "從孩子視角描繪媽媽忙碌的身影，以及長大離家後仍不曾改變的牽掛；媽媽的愛就像月亮，一直都在。",
+    images: recommendedBookImages(16, 5),
+  },
+  {
+    title: "中秋就是要吃阿舅的綠豆椪和阿姨的蛋黃酥",
+    author: "許智偉",
+    publisher: "青林國際出版",
+    booth: "B09",
+    category: "節慶文化・家庭記憶",
+    description: "透過跨越世代的故事，品味糕餅、烤肉與家人團聚的中秋記憶；時代或許不同，相聚的心始終不變。",
+    images: recommendedBookImages(17, 6),
+  },
+  {
+    title: "歡迎光臨！寶可夢咖啡店組套（共4冊）",
+    author: "鈴木早苗",
+    publisher: "小熊出版",
+    booth: "",
+    category: "童趣故事・親子共讀",
+    description: "皮卡丘、伊布與寶可夢夥伴一起登場，在輕鬆有趣的故事中感受友情、料理與日常生活的歡樂。",
+    images: recommendedBookImages(18, 1),
+  },
+  {
+    title: "星雲大師的願行",
+    author: "國際佛光會團隊口述、曾蘭淑採訪整理",
+    publisher: "天下文化",
+    booth: "B05",
+    category: "願力實踐・人間佛教",
+    description: "記錄國際佛光會的發展與實踐，看見人間佛教如何以文化、教育、慈善與共修，將慈悲與智慧落實在人間。",
+    images: recommendedBookImages(19, 5),
+  },
+  {
+    title: "尋找內心的他者：榮格觀點的親密關係與心靈覺醒",
+    author: "詹姆斯．霍利斯",
+    publisher: "楓樹林出版",
+    booth: "B07",
+    category: "心理成長・親密關係",
+    description: "以榮格心理學探討關係中的投射、依賴與期待，引導讀者從認識自己開始，為自己的生命與幸福負責。",
+    images: recommendedBookImages(20, 8),
+  },
+  {
+    title: "今天是沒錢的一天",
+    author: "凱特・米爾納",
+    publisher: "采實文化",
+    booth: "B09",
+    category: "生活關懷・同理教育",
+    description: "透過小女孩視角走進物質不充裕、卻充滿愛與希望的家庭，學習同理、尊重、分享與勇敢尋求幫助。",
+    images: recommendedBookImages(21, 5),
+  },
+  {
+    title: "從小開始懂安全",
+    author: "高濱正伸",
+    publisher: "信誼基金會",
+    booth: "B01",
+    category: "兒童安全・自我保護",
+    description: "透過生活情境與42個安全守則，陪孩子辨識危險、保護身體，並在害怕或不舒服時勇敢向可信任的大人求助。",
+    images: recommendedBookImages(22, 8),
+  },
 ] as const;
 
 const boothMapShowcase = [
@@ -251,26 +430,12 @@ const catalogAnimals = [
   "/assets/animal-icons/giraffe.png",
 ] as const;
 
-const bookPlaceholderImages = [
-  "/assets/catalog/_templates/book-01.jpg",
-  "/assets/catalog/_templates/book-02.jpg",
-  "/assets/catalog/_templates/book-03.jpg",
-  "/assets/catalog/_templates/book-04.jpg",
-] as const;
-
 const foodPlaceholderImages = [
   "/assets/catalog/_templates/food-01.jpg",
   "/assets/catalog/_templates/food-02.jpg",
   "/assets/catalog/_templates/food-03.jpg",
   "/assets/catalog/_templates/food-04.jpg",
 ] as const;
-
-const itemNumber = (index: number) => String(index + 1).padStart(2, "0");
-const bookCoverAsset = (bookIndex: number) => `/assets/catalog/books/book-${itemNumber(bookIndex)}-cover.jpg`;
-const bookPageAsset = (bookIndex: number, pageIndex: number) => pageIndex === 0
-  ? bookCoverAsset(bookIndex)
-  : `/assets/catalog/books/book-${itemNumber(bookIndex)}-page-${itemNumber(pageIndex)}.jpg`;
-const BOOK_DETAIL_PAGE_COUNT = 10;
 
 const activityOverview = [
   ["好好看", "書展", "內容涵蓋環境教育、養生、品德、心靈成長、外文類，從閱讀的力量療癒心靈、培養世界觀、增進自信、強化思考。透過閱讀的共同話題，讓親子間的互動更緊密，讓孩子從小養成良好的閱讀習慣，進而潛移默化成為有品德的人。", "11/7（六）–11/13（五）", "09:00–18:00", "風雨長廊"],
@@ -408,6 +573,7 @@ export default function Home() {
   const [activityFilter, setActivityFilter] = useState<(typeof activityFilters)[number]>("全部");
   const [savedActivities, setSavedActivities] = useState<string[]>([]);
   const [itineraryReady, setItineraryReady] = useState(false);
+  const bookTouchStartX = useRef<number | null>(null);
   const foodTouchStartX = useRef<number | null>(null);
 
   const closeMenu = () => setMenuOpen(false);
@@ -416,6 +582,14 @@ export default function Home() {
     setActiveBook(index);
     setActiveBookPage(0);
   };
+  const showPreviousBookPage = () => setActiveBookPage((page) => {
+    const pageCount = activeBook === null ? 0 : bookShowcase[activeBook].images.length;
+    return pageCount ? (page + pageCount - 1) % pageCount : 0;
+  });
+  const showNextBookPage = () => setActiveBookPage((page) => {
+    const pageCount = activeBook === null ? 0 : bookShowcase[activeBook].images.length;
+    return pageCount ? (page + 1) % pageCount : 0;
+  });
   const closeFood = () => setActiveFood(null);
   const openFood = (index: number) => {
     setActiveFood(index);
@@ -467,8 +641,8 @@ export default function Home() {
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") closeBook();
-      if (event.key === "ArrowLeft") setActiveBookPage((page) => (page + BOOK_DETAIL_PAGE_COUNT - 1) % BOOK_DETAIL_PAGE_COUNT);
-      if (event.key === "ArrowRight") setActiveBookPage((page) => (page + 1) % BOOK_DETAIL_PAGE_COUNT);
+      if (event.key === "ArrowLeft") showPreviousBookPage();
+      if (event.key === "ArrowRight") showNextBookPage();
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -498,6 +672,7 @@ export default function Home() {
   }, [activeFood]);
 
   const activeBookData = activeBook === null ? null : bookShowcase[activeBook];
+  const activeBookImages = activeBookData?.images ?? [];
   const activeFoodData = activeFood === null ? null : foodVendors[activeFood];
   const activeFoodPhotos = activeFoodData?.images ?? [];
   const normalizedActivityQuery = activityQuery.trim().toLowerCase();
@@ -513,19 +688,6 @@ export default function Home() {
   const activeSchedule = schedule[activeDay];
   const allDayActivities = activeSchedule.items.filter(([time]) => isAllDayScheduleTime(time));
   const timedActivities = activeSchedule.items.filter(([time]) => !isAllDayScheduleTime(time));
-  const bookDetailPages = activeBookData ? [
-    ["BOOK COVER", activeBookData[0], activeBookData[1]],
-    ["選書簡介", "這本書談什麼？", activeBookData[2]],
-    ["閱讀亮點", "從主題走進生活", `以「${activeBookData[1]}」為閱讀核心，從故事、知識與生活經驗建立連結。`],
-    ["核心主題", activeBookData[1], "透過清楚易讀的內容，引導讀者觀察、思考，並把閱讀所得帶回日常。"],
-    ["適讀對象", "推薦給這樣的你", "適合親子共讀、學生延伸學習，以及關注生活、文化與生命議題的讀者。"],
-    ["內容架構", "十頁圖文，循序認識一本書", "介紹頁可以依序安排封面、選書理由、內容摘要、閱讀亮點、核心主題、適讀對象、章節導讀、延伸閱讀、出版資訊與行動邀請。"],
-    ["延伸閱讀", "讀完之後，繼續探索", "可搭配書展講座、主題展覽與教育體驗，從一本書延伸至更完整的學習旅程。"],
-    ["長篇介紹示意", "可容納 300–500 字的文字說明", `《${activeBookData[0]}》以「${activeBookData[1]}」為主要方向，透過清楚易讀的文字、具體生活情境與循序漸進的閱讀安排，協助讀者從認識主題開始，逐步連結自身經驗，並延伸至家庭、校園與社會環境中的實際行動。本頁特別設計為長篇內容版型，可放置約三百至五百字的選書說明、作者介紹、章節摘要、策展觀點或閱讀指南；當文字超過畫面可見範圍時，內容區會自動提供捲動，不會壓縮標題、頁碼或 700 × 700 方形構圖。正式資料上線後，也可以加入段落分隔、重點語句與閱讀提示，讓讀者在點開書籍時，不只看到封面與簡短文案，還能完整理解本書特色、推薦理由、適讀對象及可延伸參與的書展活動。`],
-    ["書籍資料", "作者・出版社・ISBN", "正式作者、出版社、出版日期、書籍識別資訊、語言與裝訂方式，將於主辦單位確認書單後補充。"],
-    ["2026 線上書展", "完整書訊即將上線", "本頁為 700 × 700 方形圖文版型示意，正式封面、十頁內頁與選書資訊確認後可逐頁替換。"],
-  ] as const : [];
-
   return (
     <main>
       <a className="skip-link" href="#content">跳至主要內容</a>
@@ -948,21 +1110,20 @@ export default function Home() {
             </div>
           </div>
           <div className="catalog-intro">
-            <strong>好書推薦</strong>
+            <strong>好書推薦・共 {bookShowcase.length} 組選書</strong>
           </div>
           <div className="book-grid" aria-label="線上書展好書推薦">
-            {bookShowcase.map(([title, category, description], index) => (
-              <button className="book-card" type="button" key={title} onClick={() => openBook(index)} aria-label={`開啟《${title}》10頁圖文介紹`}>
+            {bookShowcase.map((book, index) => (
+              <button className="book-card" type="button" key={book.title} onClick={() => openBook(index)} aria-label={`開啟《${book.title}》${book.images.length}頁圖文介紹`}>
                 <div className="book-cover">
-                  <span>示意選書 {String(index + 1).padStart(2, "0")}</span>
-                  <img src={bookCoverAsset(index)} alt={`《${title}》示意封面`} width="700" height="700" />
-                  <small>700 × 700<br />BOOK FAIR</small>
+                  <img src={book.images[0]} alt={`《${book.title}》好書推薦`} width="1458" height="1458" />
                 </div>
                 <div className="book-card-copy">
-                  <span>{category}</span>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                  <strong>點選查看 10 頁介紹 →</strong>
+                  <span>{book.publisher}{book.booth ? `・攤位 ${book.booth}` : ""}</span>
+                  <h3>{book.title}</h3>
+                  <p className="book-author">{book.author}</p>
+                  <p>{book.description}</p>
+                  <strong>點選查看 {book.images.length} 頁圖文介紹 →</strong>
                 </div>
               </button>
             ))}
@@ -973,44 +1134,49 @@ export default function Home() {
               <section className="book-modal" role="dialog" aria-modal="true" aria-labelledby="book-modal-title">
                 <div className="book-modal-header">
                   <div>
-                    <small>ONLINE BOOK FAIR・700 × 700 方形圖文</small>
-                    <h3 id="book-modal-title">{activeBookData[0]}</h3>
+                    <small>ONLINE BOOK FAIR・好書推薦</small>
+                    <h3 id="book-modal-title">{activeBookData.title}</h3>
+                    <p>{activeBookData.author}・{activeBookData.publisher}{activeBookData.booth ? `・攤位 ${activeBookData.booth}` : ""}</p>
                   </div>
                   <button type="button" className="book-modal-close" onClick={closeBook} aria-label="關閉書籍介紹">×</button>
                 </div>
 
-                <div className="book-detail-stage">
-                  <button type="button" className="book-page-arrow previous" onClick={() => setActiveBookPage((page) => (page + BOOK_DETAIL_PAGE_COUNT - 1) % BOOK_DETAIL_PAGE_COUNT)} aria-label="上一頁">‹</button>
-                  <div className={`book-detail-page page-${activeBookPage + 1} ${activeBookPage > 0 && activeBookPage < 9 ? "text-focused" : ""}`}>
+                <div
+                  className="book-detail-stage"
+                  onTouchStart={(event) => { bookTouchStartX.current = event.touches[0].clientX; }}
+                  onTouchEnd={(event) => {
+                    if (bookTouchStartX.current === null) return;
+                    const delta = event.changedTouches[0].clientX - bookTouchStartX.current;
+                    if (Math.abs(delta) > 45) {
+                      if (delta > 0) showPreviousBookPage();
+                      else showNextBookPage();
+                    }
+                    bookTouchStartX.current = null;
+                  }}
+                >
+                  <button type="button" className="book-page-arrow previous" onClick={showPreviousBookPage} aria-label="上一頁" disabled={activeBookImages.length < 2}>‹</button>
+                  <div className="book-detail-page actual-book-page">
                     <span className="book-detail-number">{String(activeBookPage + 1).padStart(2, "0")}</span>
                     <img
-                      src={bookPageAsset(activeBook!, activeBookPage)}
-                      alt={`《${activeBookData[0]}》第 ${activeBookPage + 1} 頁示意圖`}
-                      width="700"
-                      height="700"
-                      onError={(event) => {
-                        event.currentTarget.onerror = null;
-                        event.currentTarget.src = bookPlaceholderImages[(activeBook! + activeBookPage) % bookPlaceholderImages.length];
-                      }}
+                      src={activeBookImages[activeBookPage]}
+                      alt={`《${activeBookData.title}》第 ${activeBookPage + 1} 頁介紹`}
+                      width="1458"
+                      height="1458"
                     />
-                    <div className="book-detail-copy">
-                      <small>{bookDetailPages[activeBookPage][0]}</small>
-                      <h4>{bookDetailPages[activeBookPage][1]}</h4>
-                      <p>{bookDetailPages[activeBookPage][2]}</p>
-                    </div>
-                    <strong>{activeBookPage + 1} / {BOOK_DETAIL_PAGE_COUNT}</strong>
+                    <strong>{activeBookPage + 1} / {activeBookImages.length}</strong>
                   </div>
-                  <button type="button" className="book-page-arrow next" onClick={() => setActiveBookPage((page) => (page + 1) % BOOK_DETAIL_PAGE_COUNT)} aria-label="下一頁">›</button>
+                  <button type="button" className="book-page-arrow next" onClick={showNextBookPage} aria-label="下一頁" disabled={activeBookImages.length < 2}>›</button>
                 </div>
 
                 <div className="book-page-thumbnails" aria-label="介紹頁面選擇">
-                  {bookDetailPages.map(([label], index) => (
-                    <button type="button" className={activeBookPage === index ? "active" : ""} onClick={() => setActiveBookPage(index)} key={label} aria-label={`第${index + 1}頁：${label}`}>
-                      <span>{String(index + 1).padStart(2, "0")}</span><small>{label}</small>
+                  {activeBookImages.map((image, index) => (
+                    <button type="button" className={activeBookPage === index ? "active" : ""} onClick={() => setActiveBookPage(index)} key={image} aria-label={`查看《${activeBookData.title}》第${index + 1}頁`}>
+                      <img src={image} alt="" width="1458" height="1458" />
+                      <span>{String(index + 1).padStart(2, "0")}</span>
                     </button>
                   ))}
                 </div>
-                <p className="book-modal-note">使用左右方向鍵切換頁面，按 Esc 關閉；長篇頁可放置 300–500 字並支援內容捲動。</p>
+                <p className="book-modal-note">共 {activeBookImages.length} 頁・可使用方向鍵、畫面按鈕或在手機上左右滑動切換，按 Esc 關閉。</p>
               </section>
             </div>
           )}

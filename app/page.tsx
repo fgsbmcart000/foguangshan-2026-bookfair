@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 
+// The page has no request-time data and can be exported for GitHub Pages.
+export const dynamic = "force-static";
+
 const navigation = [
   ["關於書展", "about"],
   ["活動亮點", "highlights"],

@@ -12,7 +12,7 @@ const scratch = path.join(root, 'work', 'static-export');
 fs.mkdirSync(scratch, { recursive: true });
 fs.mkdirSync(out, { recursive: true });
 let page = fs.readFileSync(path.join(root, 'app/page.tsx'), 'utf8').replace(/\r\n/g, '\n');
-const excluded = ['schedule', 'online', 'booths', 'visitor-tools'];
+const excluded = ['schedule', 'booths', 'visitor-tools'];
 for (const id of excluded) {
   const start = page.indexOf(`        <section className="section ${id === 'online' ? 'online' : id === 'booths' ? 'booth' : id === 'visitor-tools' ? 'visitor-tools' : 'schedule'}-section" id="${id}"`);
   if (start < 0) throw new Error(`Missing expected section: ${id}`);
@@ -101,6 +101,12 @@ for (const relative of assetPaths) {
   fs.mkdirSync(path.dirname(path.join(out, relative)), { recursive: true });
   fs.copyFileSync(source, path.join(out, relative));
 }
+// The book detail gallery is opened dynamically, so its later pages do not
+// appear in the server-rendered HTML. Copy the complete catalogue explicitly.
+const bookCatalog = 'assets/catalog/recommended-books';
+const bookCatalogSource = path.join(root, 'public', bookCatalog);
+assert(fs.existsSync(bookCatalogSource), `Missing asset directory: ${bookCatalog}`);
+fs.cpSync(bookCatalogSource, path.join(out, bookCatalog), { recursive: true });
 // The itinerary empty state is shown after clearing a saved plan.
 for (const animal of ['owl', 'rabbit']) {
   const relative = `assets/animal-icons/${animal}.png`;
@@ -116,11 +122,13 @@ for (const m of html.matchAll(/href="#([^"]+)"/g)) assert(ids.has(m[1]), `Broken
 assert(!/(?:src|href)="\/(?!\/)/.test(html), 'Root-relative asset in static HTML');
 assert(html.indexOf('book-voucher-plan') < html.indexOf('<footer>'), 'Organizers must stay at the bottom');
 assert(!html.includes('id="visitor-tools"'), 'Visitor helper must be excluded');
+assert(html.includes('id="online"'), 'Online book fair must be included');
+assert(html.includes('href="#online"'), 'Online book fair navigation must be included');
 assert(!/https?:\/\/[^\s"']+\.(?:js|css)/.test(html), 'External runtime dependency');
 const commit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
 fs.writeFileSync(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${publicUrl}sitemap.xml\n`, 'utf8');
 fs.writeFileSync(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"><url><loc>${publicUrl}</loc><lastmod>2026-09-05</lastmod><image:image><image:loc>${publicUrl}assets/hero-horizontal.jpg</image:loc><image:title>佛光山2026年書展暨蔬食博覽會吉祥動物派對</image:title><image:caption>2026年11月7日至13日於佛光山佛陀紀念館舉行</image:caption></image:image></url></urlset>\n`, 'utf8');
 fs.writeFileSync(path.join(out, 'SEO_上線說明.txt'), `佛光山2026書展暨蔬食博覽會｜SEO 上線說明\n\n本版已加入搜尋結果標題與摘要、canonical、社群分享資訊、活動 JSON-LD 結構化資料、robots.txt 與 sitemap.xml。\n將完整資料夾部署到正式網址後，請在 Google Search Console 提交 sitemap.xml 並要求建立首頁索引。\n直接以 file:/// 開啟的本機檔案不會被搜尋引擎檢索。\n\n正式網址：${publicUrl}\n`, 'utf8');
-fs.writeFileSync(path.join(out, 'README_使用說明.txt'), '\ufeff佛光山2026書展暨蔬食博覽會｜本機靜態版\n\n解壓縮完整資料夾後，直接雙擊 index.html 開啟，不需安裝 Node.js，也不需登入。\n請保留 index.html、styles.css、site.js、favicon.svg、robots.txt、sitemap.xml 與 assets 資料夾的相對位置。\n\n本機版不包含每日活動表、線上書展、攤位一覽、參觀小幫手及其選單項目。活動一覽表中的相關活動仍保留。\n手機選單可使用；活動報名等外部連結保留。\nGoogle 表單、地圖等外部連結需要網路。\n本機版已加入 SEO 收錄資訊；部署到公開網址後才可被搜尋引擎檢索。\n\n之後修改以網站原始碼為主，重新匯出本機版，並發布同一份原始碼的線上版。\n正式網址：https://foguangshan-2026-bookfair.bmc-news.chatgpt.site/\n來源 commit：' + commit + '\n', 'utf8');
-fs.writeFileSync(path.join(out, 'export-manifest.json'), JSON.stringify({ sourceCommit: commit, excludedSections: excluded, assets: assetPaths, generatedAt: new Date().toISOString() }, null, 2));
+fs.writeFileSync(path.join(out, 'README_使用說明.txt'), '\ufeff佛光山2026書展暨蔬食博覽會｜本機靜態版\n\n解壓縮完整資料夾後，直接雙擊 index.html 開啟，不需安裝 Node.js，也不需登入。\n請保留 index.html、styles.css、site.js、favicon.svg、robots.txt、sitemap.xml 與 assets 資料夾的相對位置。\n\n本機版不包含每日活動表、攤位一覽、參觀小幫手及其選單項目；線上書展及完整書籍介紹圖已保留。活動一覽表中的相關活動仍保留。\n手機選單可使用；活動報名等外部連結保留。\nGoogle 表單、地圖等外部連結需要網路。\n本機版已加入 SEO 收錄資訊；部署到公開網址後才可被搜尋引擎檢索。\n\n之後修改以網站原始碼為主，重新匯出本機版，並發布同一份原始碼的線上版。\n正式網址：https://foguangshan-2026-bookfair.bmc-news.chatgpt.site/\n來源 commit：' + commit + '\n', 'utf8');
+fs.writeFileSync(path.join(out, 'export-manifest.json'), JSON.stringify({ sourceCommit: commit, excludedSections: excluded, assets: assetPaths, copiedDirectories: [bookCatalog], generatedAt: new Date().toISOString() }, null, 2));
 console.log(JSON.stringify({ output: out, assetCount: assetPaths.length, excludedSections: excluded, htmlBytes: Buffer.byteLength(html), verified: true }));

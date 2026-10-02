@@ -943,13 +943,11 @@ export default function Home() {
               <p className="eyebrow">Online book fair</p>
               <h2>線上書展</h2>
             </div>
-            <p className="lead">以線上書店方式展示 24 本主題選書，不標示價格，讓讀者專注探索每本書的內容與閱讀價值。</p>
           </div>
           <div className="catalog-intro">
-            <strong>24 本主題選書</strong>
-            <span>以下書名、封面與介紹為版型示意，正式書單確認後可逐本替換。</span>
+            <strong>好書推薦</strong>
           </div>
-          <div className="book-grid" aria-label="線上書展24本主題選書">
+          <div className="book-grid" aria-label="線上書展好書推薦">
             {bookShowcase.map(([title, category, description], index) => (
               <button className="book-card" type="button" key={title} onClick={() => openBook(index)} aria-label={`開啟《${title}》10頁圖文介紹`}>
                 <div className="book-cover">
@@ -1057,7 +1055,6 @@ export default function Home() {
           <section className="food-showcase" aria-labelledby="food-showcase-title">
             <div className="subsection-heading">
               <div><small>VEGETARIAN EXPO</small><h3 id="food-showcase-title">蔬食博覽會</h3></div>
-              <p>依攤位提供資料呈現品牌與特色商品；點選卡片即可瀏覽各攤位照片。</p>
             </div>
             <div className="food-grid" aria-label="蔬食博覽會攤位介紹">
               {foodVendors.map(({ booth, name, description, images }, index) => (

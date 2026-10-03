@@ -1346,9 +1346,11 @@ export default function Home() {
               </div>
             </article>
             <div className="travel-cards">
-              <article><img src="/assets/animal-icons/rhino.png" alt="" /><div><h3>自行開車</h3><p>國道 10 號「旗山大樹交流道」下，接省道 29 號右轉前往佛光山佛陀紀念館。</p></div></article>
               <article><img src="/assets/animal-icons/turtle.png" alt="" /><div><h3>開放時間</h3><p>週一至週五 09:00–18:00<br />週六至週日 09:00–19:00</p></div></article>
-              <article><img src="/assets/animal-icons/rabbit.png" alt="" /><div><h3>開幕典禮</h3><p>11 月 7 日（六）10:30<br />佛陀紀念館本館大覺堂</p></div></article>
+              <a className="travel-card-link" href="https://www.fgsbmc.org.tw/tw/public-service.aspx#traffic" target="_blank" rel="noreferrer">
+                <article><img src="/assets/animal-icons/rabbit.png" alt="" /><div><h3>交通資訊</h3><p>前往佛光山佛陀紀念館的交通相當便利，除可以自行開車外，亦可搭乘公共交通運輸。</p></div></article>
+              </a>
+              <article><img src="/assets/animal-icons/rhino.png" alt="" /><div><h3>自行開車</h3><p>國道 10 號「旗山大樹交流道」下，接省道 29 號右轉前往佛光山佛陀紀念館。</p></div></article>
             </div>
           </div>
           <div className="notice-bar"><strong>參觀提醒</strong><span>戶外活動建議準備防曬、防雨用品與環保水瓶；最新交通及活動異動以主辦單位公告為準。</span></div>

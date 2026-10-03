@@ -35,6 +35,7 @@ const escape = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;
 const publicUrl = 'https://foguangshan-2026-bookfair.bmc-news.chatgpt.site/';
 const localTitle = '佛光山2026書展暨蔬食博覽會｜吉祥動物派對・高雄免費活動';
 const localDescription = '佛光山2026年書展暨蔬食博覽會「吉祥動物派對」11月7日至13日於高雄佛光山佛陀紀念館登場，包含書展、蔬食博覽會、藝術特展、名家講座、親子體驗與環境教育，免費參觀。';
+const exportDate = new Date().toISOString().slice(0, 10);
 const structuredData = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
@@ -45,6 +46,26 @@ const structuredData = JSON.stringify({
       name: '佛光山2026年書展暨蔬食博覽會',
       alternateName: 'Fo Guang Shan 2026 Book Fair and Vegetarian Expo',
       inLanguage: 'zh-Hant',
+      publisher: { '@id': `${publicUrl}#organizer` },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${publicUrl}#webpage`,
+      url: publicUrl,
+      name: localTitle,
+      description: localDescription,
+      inLanguage: 'zh-Hant',
+      isPartOf: { '@id': `${publicUrl}#website` },
+      mainEntity: { '@id': `${publicUrl}#event` },
+      dateModified: exportDate,
+      primaryImageOfPage: { '@type': 'ImageObject', url: `${publicUrl}assets/hero-horizontal.jpg`, width: 1920, height: 1080 },
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${publicUrl}#organizer`,
+      name: '財團法人人間文教基金會',
+      url: publicUrl,
+      logo: { '@type': 'ImageObject', url: `${publicUrl}assets/brand-reading-group-transparent.png` },
     },
     {
       '@type': 'ExhibitionEvent',
@@ -71,7 +92,7 @@ const structuredData = JSON.stringify({
           addressCountry: 'TW',
         },
       },
-      organizer: { '@type': 'Organization', name: '財團法人人間文教基金會', url: publicUrl },
+      organizer: { '@id': `${publicUrl}#organizer` },
       offers: {
         '@type': 'Offer',
         url: publicUrl,
@@ -86,7 +107,7 @@ const structuredData = JSON.stringify({
   ],
 }, null, 2);
 const html = `<!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escape(localTitle)}</title><meta name="description" content="${escape(localDescription)}"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="keywords" content="佛光山2026書展,佛光山書展,蔬食博覽會,吉祥動物派對,佛陀紀念館活動,高雄免費活動,高雄親子活動,洪易藝術展,素食展"><meta name="author" content="財團法人人間文教基金會"><meta name="theme-color" content="#208784"><link rel="canonical" href="${publicUrl}"><link rel="alternate" hreflang="zh-Hant" href="${publicUrl}"><link rel="alternate" hreflang="x-default" href="${publicUrl}"><meta property="og:locale" content="zh_TW"><meta property="og:type" content="website"><meta property="og:site_name" content="佛光山2026年書展暨蔬食博覽會"><meta property="og:title" content="佛光山2026書展暨蔬食博覽會｜吉祥動物派對"><meta property="og:description" content="11月7日至13日於高雄佛光山佛陀紀念館登場，書展、蔬食、藝術特展、名家講座與親子體驗，免費參觀。"><meta property="og:url" content="${publicUrl}"><meta property="og:image" content="${publicUrl}assets/hero-horizontal.jpg"><meta property="og:image:width" content="1920"><meta property="og:image:height" content="1080"><meta property="og:image:alt" content="佛光山2026年書展暨蔬食博覽會吉祥動物派對主視覺"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="佛光山2026書展暨蔬食博覽會｜吉祥動物派對"><meta name="twitter:description" content="11月7日至13日於高雄佛光山佛陀紀念館登場，免費參觀。"><meta name="twitter:image" content="${publicUrl}assets/hero-horizontal.jpg"><link rel="icon" href="./favicon.svg"><link rel="stylesheet" href="./styles.css"><script type="application/ld+json">${structuredData}</script></head><body><div id="app">${rendered.html}</div><script src="./site.js" defer></script></body></html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escape(localTitle)}</title><meta name="description" content="${escape(localDescription)}"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="keywords" content="佛光山2026書展,佛光山書展,蔬食博覽會,吉祥動物派對,佛陀紀念館活動,高雄免費活動,高雄親子活動,洪易藝術展,素食展"><meta name="author" content="財團法人人間文教基金會"><meta name="application-name" content="佛光山2026年書展暨蔬食博覽會"><meta name="geo.region" content="TW-KHH"><meta name="geo.placename" content="高雄市大樹區"><meta name="theme-color" content="#208784"><link rel="canonical" href="${publicUrl}"><link rel="alternate" hreflang="zh-Hant" href="${publicUrl}"><link rel="alternate" hreflang="x-default" href="${publicUrl}"><meta property="og:locale" content="zh_TW"><meta property="og:type" content="website"><meta property="og:site_name" content="佛光山2026年書展暨蔬食博覽會"><meta property="og:title" content="佛光山2026書展暨蔬食博覽會｜吉祥動物派對"><meta property="og:description" content="11月7日至13日於高雄佛光山佛陀紀念館登場，書展、蔬食、藝術特展、名家講座與親子體驗，免費參觀。"><meta property="og:url" content="${publicUrl}"><meta property="og:image" content="${publicUrl}assets/hero-horizontal.jpg"><meta property="og:image:width" content="1920"><meta property="og:image:height" content="1080"><meta property="og:image:alt" content="佛光山2026年書展暨蔬食博覽會吉祥動物派對主視覺"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="佛光山2026書展暨蔬食博覽會｜吉祥動物派對"><meta name="twitter:description" content="11月7日至13日於高雄佛光山佛陀紀念館登場，免費參觀。"><meta name="twitter:image" content="${publicUrl}assets/hero-horizontal.jpg"><link rel="icon" href="./favicon.svg"><link rel="manifest" href="./site.webmanifest"><link rel="stylesheet" href="./styles.css"><script type="application/ld+json">${structuredData}</script></head><body><div id="app">${rendered.html}</div><script src="./site.js" defer></script></body></html>
 `;
 const builtAssets = path.join(root, 'dist/client/assets');
 const styles = fs.readdirSync(builtAssets).filter(f => /^index-.*\.css$/.test(f));
@@ -127,8 +148,10 @@ assert(html.includes('href="#online"'), 'Online book fair navigation must be inc
 assert(!/https?:\/\/[^\s"']+\.(?:js|css)/.test(html), 'External runtime dependency');
 const commit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
 fs.writeFileSync(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${publicUrl}sitemap.xml\n`, 'utf8');
-fs.writeFileSync(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"><url><loc>${publicUrl}</loc><lastmod>2026-09-05</lastmod><image:image><image:loc>${publicUrl}assets/hero-horizontal.jpg</image:loc><image:title>佛光山2026年書展暨蔬食博覽會吉祥動物派對</image:title><image:caption>2026年11月7日至13日於佛光山佛陀紀念館舉行</image:caption></image:image></url></urlset>\n`, 'utf8');
-fs.writeFileSync(path.join(out, 'SEO_上線說明.txt'), `佛光山2026書展暨蔬食博覽會｜SEO 上線說明\n\n本版已加入搜尋結果標題與摘要、canonical、社群分享資訊、活動 JSON-LD 結構化資料、robots.txt 與 sitemap.xml。\n將完整資料夾部署到正式網址後，請在 Google Search Console 提交 sitemap.xml 並要求建立首頁索引。\n直接以 file:/// 開啟的本機檔案不會被搜尋引擎檢索。\n\n正式網址：${publicUrl}\n`, 'utf8');
-fs.writeFileSync(path.join(out, 'README_使用說明.txt'), '\ufeff佛光山2026書展暨蔬食博覽會｜本機靜態版\n\n解壓縮完整資料夾後，直接雙擊 index.html 開啟，不需安裝 Node.js，也不需登入。\n請保留 index.html、styles.css、site.js、favicon.svg、robots.txt、sitemap.xml 與 assets 資料夾的相對位置。\n\n本機版不包含每日活動表、攤位一覽、參觀小幫手及其選單項目；線上書展及完整書籍介紹圖已保留。活動一覽表中的相關活動仍保留。\n手機選單可使用；活動報名等外部連結保留。\nGoogle 表單、地圖等外部連結需要網路。\n本機版已加入 SEO 收錄資訊；部署到公開網址後才可被搜尋引擎檢索。\n\n之後修改以網站原始碼為主，重新匯出本機版，並發布同一份原始碼的線上版。\n正式網址：https://foguangshan-2026-bookfair.bmc-news.chatgpt.site/\n來源 commit：' + commit + '\n', 'utf8');
+fs.writeFileSync(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"><url><loc>${publicUrl}</loc><lastmod>${exportDate}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority><image:image><image:loc>${publicUrl}assets/hero-horizontal.jpg</image:loc><image:title>佛光山2026年書展暨蔬食博覽會吉祥動物派對</image:title><image:caption>2026年11月7日至13日於佛光山佛陀紀念館舉行</image:caption></image:image></url></urlset>\n`, 'utf8');
+fs.writeFileSync(path.join(out, 'site.webmanifest'), JSON.stringify({ name: '佛光山2026年書展暨蔬食博覽會', short_name: '佛光山2026書展', description: localDescription, lang: 'zh-Hant', start_url: './', scope: './', display: 'standalone', background_color: '#f8f1df', theme_color: '#208784', icons: [{ src: './favicon.svg', sizes: 'any', type: 'image/svg+xml' }] }, null, 2), 'utf8');
+fs.writeFileSync(path.join(out, 'web.config'), `<?xml version="1.0" encoding="UTF-8"?>\n<configuration>\n  <system.webServer>\n    <defaultDocument enabled="true"><files><clear /><add value="index.html" /></files></defaultDocument>\n    <directoryBrowse enabled="false" />\n    <staticContent><remove fileExtension=".webmanifest" /><mimeMap fileExtension=".webmanifest" mimeType="application/manifest+json" /></staticContent>\n    <httpProtocol><customHeaders><remove name="X-Robots-Tag" /><add name="X-Robots-Tag" value="index, follow, max-image-preview:large" /><add name="X-Content-Type-Options" value="nosniff" /></customHeaders></httpProtocol>\n  </system.webServer>\n</configuration>\n`, 'utf8');
+fs.writeFileSync(path.join(out, 'SEO_上線說明.txt'), `佛光山2026書展暨蔬食博覽會｜SEO 上線說明\n\n本版已加入搜尋結果標題與摘要、Google／Bing 爬蟲指示、地區資訊、canonical、社群分享資訊、網站／主辦單位／活動 JSON-LD 結構化資料、robots.txt、sitemap.xml、site.webmanifest，以及 IIS web.config 的 X-Robots-Tag。\n將完整資料夾部署到可公開瀏覽的正式網址後，請在 Google Search Console 與 Bing Webmaster Tools 提交 sitemap.xml 並要求建立首頁索引。\n直接以 file:/// 開啟的本機檔案不會被搜尋引擎檢索。\n\n目前 SEO 正式網址：${publicUrl}\n如果日後改用其他正式網域，canonical、Open Graph、JSON-LD、robots.txt 與 sitemap.xml 也必須同步換成新網址；把新網址告訴 Codex 即可協助更新。\n`, 'utf8');
+fs.writeFileSync(path.join(out, 'README_使用說明.txt'), '\ufeff佛光山2026書展暨蔬食博覽會｜本機靜態版\n\n解壓縮完整資料夾後，直接雙擊 index.html 開啟，不需安裝 Node.js，也不需登入。\n請保留 index.html、styles.css、site.js、favicon.svg、site.webmanifest、robots.txt、sitemap.xml、web.config 與 assets 資料夾的相對位置。\n\n本機版不包含每日活動表、攤位一覽、參觀小幫手及其選單項目；線上書展及完整書籍介紹圖已保留。活動一覽表中的相關活動仍保留。\n手機選單可使用；活動報名等外部連結保留。\nGoogle 表單、地圖等外部連結需要網路。\n本機版已加入 SEO 收錄資訊與 IIS 搜尋引擎標頭；部署到公開網址後才可被搜尋引擎檢索。\n\n之後修改以網站原始碼為主，重新匯出本機版，並發布同一份原始碼的線上版。\n正式網址：https://foguangshan-2026-bookfair.bmc-news.chatgpt.site/\n來源 commit：' + commit + '\n', 'utf8');
 fs.writeFileSync(path.join(out, 'export-manifest.json'), JSON.stringify({ sourceCommit: commit, excludedSections: excluded, assets: assetPaths, copiedDirectories: [bookCatalog], generatedAt: new Date().toISOString() }, null, 2));
 console.log(JSON.stringify({ output: out, assetCount: assetPaths.length, excludedSections: excluded, htmlBytes: Buffer.byteLength(html), verified: true }));

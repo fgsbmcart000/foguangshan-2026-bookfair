@@ -281,14 +281,14 @@ const foodVendors = [
     ],
   },
   {
-    booth: "V18",
-    name: "健飽卡豌豆分離蛋白",
-    description: "素食者常擔心蛋白質攝取不足，外食又難找到方便又營養的選擇。健飽卡以植物性蛋白打造，簡單沖泡就能補充蛋白質，讓素食也能吃得方便、吃得飽足。",
+    booth: "V68",
+    name: "虎哥農場",
+    description: "bio-Hygge 虎哥農場結合益生菌與蔬果，推出藍莓、枸杞纖酵蔬果昔與豆漿優格，100%全素，對體內與環境友善。",
     images: [
-      "/assets/catalog/food/vendors/v18/01-main.png",
-      "/assets/catalog/food/vendors/v18/02.png",
-      "/assets/catalog/food/vendors/v18/03.png",
-      "/assets/catalog/food/vendors/v18/04.png",
+      "/assets/catalog/food/vendors/v68/01-main.jpg",
+      "/assets/catalog/food/vendors/v68/02.jpg",
+      "/assets/catalog/food/vendors/v68/03.jpg",
+      "/assets/catalog/food/vendors/v68/04.jpg",
     ],
   },
   {
@@ -364,14 +364,14 @@ const foodVendors = [
     images: ["/assets/catalog/food/vendors/v67/01-main.png"],
   },
   {
-    booth: "V68",
-    name: "虎哥農場",
-    description: "bio-Hygge 虎哥農場結合益生菌與蔬果，推出藍莓、枸杞纖酵蔬果昔與豆漿優格，100%全素，對體內與環境友善。",
+    booth: "V18",
+    name: "健飽卡豌豆分離蛋白",
+    description: "素食者常擔心蛋白質攝取不足，外食又難找到方便又營養的選擇。健飽卡以植物性蛋白打造，簡單沖泡就能補充蛋白質，讓素食也能吃得方便、吃得飽足。",
     images: [
-      "/assets/catalog/food/vendors/v68/01-main.jpg",
-      "/assets/catalog/food/vendors/v68/02.jpg",
-      "/assets/catalog/food/vendors/v68/03.jpg",
-      "/assets/catalog/food/vendors/v68/04.jpg",
+      "/assets/catalog/food/vendors/v18/01-main.png",
+      "/assets/catalog/food/vendors/v18/02.png",
+      "/assets/catalog/food/vendors/v18/03.png",
+      "/assets/catalog/food/vendors/v18/04.png",
     ],
   },
   {

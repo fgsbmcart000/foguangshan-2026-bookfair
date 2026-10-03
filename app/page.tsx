@@ -296,8 +296,8 @@ const foodVendors = [
     name: "威聚蔬食餐飲股份有限公司",
     description: "從選油開始，講究每一口。威聚蔬蔬嚴選苦茶油與印加果油，延伸至黑松露燒賣、養身五穀粽，讓健康與美味自然相遇。",
     images: [
-      "/assets/catalog/food/vendors/v05/01-main.png",
       "/assets/catalog/food/vendors/v05/02.jpg",
+      "/assets/catalog/food/vendors/v05/01-main.png",
       "/assets/catalog/food/vendors/v05/03.jpg",
       "/assets/catalog/food/vendors/v05/04.jpg",
     ],

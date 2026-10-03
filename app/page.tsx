@@ -303,6 +303,16 @@ const foodVendors = [
     ],
   },
   {
+    booth: "V06",
+    name: "奮起湖百年檜木甜甜圈",
+    description: "奮起湖百年檜木甜甜圈，經由高溫烘烤後，外皮呈現酥脆、糖微焦糖化；內部則如可頌般層次分明、香軟Ｑ彈，帶有極為濃郁的奶香與甜潤，口感柔韌鬆軟、質地濕潤，甜而不膩，有別於一般台式油炸甜甜圈。",
+    images: [
+      "/assets/catalog/food/vendors/v06/01-main.jpg",
+      "/assets/catalog/food/vendors/v06/02.jpg",
+      "/assets/catalog/food/vendors/v06/03.jpg",
+    ],
+  },
+  {
     booth: "V43",
     name: "味榮食品工業股份有限公司",
     description: "嚐見八十年釀造底蘊，味榮以有機釀造、安心食材與台灣風味，為全素餐桌帶來醇厚多層次的好滋味。",

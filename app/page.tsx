@@ -1242,7 +1242,7 @@ export default function Home() {
               <article><span>LOCAL</span><strong>在地好物</strong><small>農產・加工・伴手禮</small></article>
               <article><span>LIFE</span><strong>綠色生活</strong><small>健康・環保・質感選物</small></article>
             </div>
-            <div className="booth-status"><span>名單整理中</span><strong>完整攤位圖即將公開</strong><p>主辦單位將於參展商與位置確認後更新此頁。</p></div>
+            <div className="booth-status"><span>名單整理中</span><strong>完整攤位圖即將公開</strong></div>
           </div>
 
           <section className="food-showcase" aria-labelledby="food-showcase-title">

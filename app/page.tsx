@@ -313,14 +313,14 @@ const foodVendors = [
     ],
   },
   {
-    booth: "V43",
-    name: "味榮食品工業股份有限公司",
-    description: "嚐見八十年釀造底蘊，味榮以有機釀造、安心食材與台灣風味，為全素餐桌帶來醇厚多層次的好滋味。",
+    booth: "V03",
+    name: "吉鄉好粽",
+    description: "1977年起，吉鄉以職人之心分享來自花蓮純淨山海的美麗台灣味。2018年外銷日本；2021年榮獲全國點心粽冠軍；2022年外銷澳洲；2023年外銷新加坡並完成ESG評估證書；2024年獲外交部駐加拿大指定為國宴伴手禮；2025年外銷美國並榮獲FDA認證；2026年成為端午節7-ELEVEN暖心專案指定伴手禮。",
     images: [
-      "/assets/catalog/food/vendors/v43/01-main.jpg",
-      "/assets/catalog/food/vendors/v43/02.png",
-      "/assets/catalog/food/vendors/v43/03.jpg",
-      "/assets/catalog/food/vendors/v43/04.jpg",
+      "/assets/catalog/food/vendors/v03/01-main.jpg",
+      "/assets/catalog/food/vendors/v03/02.png",
+      "/assets/catalog/food/vendors/v03/03.jpg",
+      "/assets/catalog/food/vendors/v03/04.jpg",
     ],
   },
   {
@@ -374,12 +374,14 @@ const foodVendors = [
     ],
   },
   {
-    booth: "V70",
-    name: "大丘園養蜂場",
-    description: "全國蜂蜜評鑑連年得獎。從農後才深知，養蜂是順應天候的修行。大丘園想把這份源自南投山林的生命力，化作最真實的甜蜜。",
+    booth: "V14",
+    name: "丞羽莊園",
+    description: "丞羽莊園以四代製茶工藝結合友善耕作可可，從土地到風味，呈現茶與可可交融的自然滋味。",
     images: [
-      "/assets/catalog/food/vendors/v70/01-main.jpg",
-      "/assets/catalog/food/vendors/v70/02.jpg",
+      "/assets/catalog/food/vendors/v14/01-main.jpg",
+      "/assets/catalog/food/vendors/v14/02.jpg",
+      "/assets/catalog/food/vendors/v14/03.jpg",
+      "/assets/catalog/food/vendors/v14/04.jpg",
     ],
   },
   {
@@ -400,14 +402,12 @@ const foodVendors = [
     ],
   },
   {
-    booth: "V14",
-    name: "丞羽莊園",
-    description: "丞羽莊園以四代製茶工藝結合友善耕作可可，從土地到風味，呈現茶與可可交融的自然滋味。",
+    booth: "V70",
+    name: "大丘園養蜂場",
+    description: "全國蜂蜜評鑑連年得獎。從農後才深知，養蜂是順應天候的修行。大丘園想把這份源自南投山林的生命力，化作最真實的甜蜜。",
     images: [
-      "/assets/catalog/food/vendors/v14/01-main.jpg",
-      "/assets/catalog/food/vendors/v14/02.jpg",
-      "/assets/catalog/food/vendors/v14/03.jpg",
-      "/assets/catalog/food/vendors/v14/04.jpg",
+      "/assets/catalog/food/vendors/v70/01-main.jpg",
+      "/assets/catalog/food/vendors/v70/02.jpg",
     ],
   },
   {
@@ -422,14 +422,14 @@ const foodVendors = [
     ],
   },
   {
-    booth: "V03",
-    name: "吉鄉好粽",
-    description: "1977年起，吉鄉以職人之心分享來自花蓮純淨山海的美麗台灣味。2018年外銷日本；2021年榮獲全國點心粽冠軍；2022年外銷澳洲；2023年外銷新加坡並完成ESG評估證書；2024年獲外交部駐加拿大指定為國宴伴手禮；2025年外銷美國並榮獲FDA認證；2026年成為端午節7-ELEVEN暖心專案指定伴手禮。",
+    booth: "V43",
+    name: "味榮食品工業股份有限公司",
+    description: "嚐見八十年釀造底蘊，味榮以有機釀造、安心食材與台灣風味，為全素餐桌帶來醇厚多層次的好滋味。",
     images: [
-      "/assets/catalog/food/vendors/v03/01-main.jpg",
-      "/assets/catalog/food/vendors/v03/02.png",
-      "/assets/catalog/food/vendors/v03/03.jpg",
-      "/assets/catalog/food/vendors/v03/04.jpg",
+      "/assets/catalog/food/vendors/v43/01-main.jpg",
+      "/assets/catalog/food/vendors/v43/02.png",
+      "/assets/catalog/food/vendors/v43/03.jpg",
+      "/assets/catalog/food/vendors/v43/04.jpg",
     ],
   },
   {

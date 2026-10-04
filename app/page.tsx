@@ -364,14 +364,14 @@ const foodVendors = [
     images: ["/assets/catalog/food/vendors/v67/01-main.png"],
   },
   {
-    booth: "V18",
-    name: "健飽卡豌豆分離蛋白",
-    description: "素食者常擔心蛋白質攝取不足，外食又難找到方便又營養的選擇。健飽卡以植物性蛋白打造，簡單沖泡就能補充蛋白質，讓素食也能吃得方便、吃得飽足。",
+    booth: "V31",
+    name: "陳家庄居仁米",
+    description: "陳家庄．居仁米位於宜蘭五結的陳家庄農園，傳承三代稻作精神，以父親「居仁」為命名，象徵職農初心與對土地的情感。嚴選純種不混米的米種，堅持友善環境耕作，展現宜蘭米的自然原味。",
     images: [
-      "/assets/catalog/food/vendors/v18/01-main.png",
-      "/assets/catalog/food/vendors/v18/02.png",
-      "/assets/catalog/food/vendors/v18/03.png",
-      "/assets/catalog/food/vendors/v18/04.png",
+      "/assets/catalog/food/vendors/v31/01-main.jpg",
+      "/assets/catalog/food/vendors/v31/02.jpg",
+      "/assets/catalog/food/vendors/v31/03.jpg",
+      "/assets/catalog/food/vendors/v31/04.jpg",
     ],
   },
   {
@@ -452,14 +452,14 @@ const foodVendors = [
     ],
   },
   {
-    booth: "V31",
-    name: "陳家庄居仁米",
-    description: "陳家庄．居仁米位於宜蘭五結的陳家庄農園，傳承三代稻作精神，以父親「居仁」為命名，象徵職農初心與對土地的情感。嚴選純種不混米的米種，堅持友善環境耕作，展現宜蘭米的自然原味。",
+    booth: "V18",
+    name: "健飽卡豌豆分離蛋白",
+    description: "素食者常擔心蛋白質攝取不足，外食又難找到方便又營養的選擇。健飽卡以植物性蛋白打造，簡單沖泡就能補充蛋白質，讓素食也能吃得方便、吃得飽足。",
     images: [
-      "/assets/catalog/food/vendors/v31/01-main.jpg",
-      "/assets/catalog/food/vendors/v31/02.jpg",
-      "/assets/catalog/food/vendors/v31/03.jpg",
-      "/assets/catalog/food/vendors/v31/04.jpg",
+      "/assets/catalog/food/vendors/v18/01-main.png",
+      "/assets/catalog/food/vendors/v18/02.png",
+      "/assets/catalog/food/vendors/v18/03.png",
+      "/assets/catalog/food/vendors/v18/04.png",
     ],
   },
 ] as const;
